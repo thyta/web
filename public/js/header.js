@@ -168,6 +168,20 @@ closecart.addEventListener("click", () =>{
 });
 // EVENT CART: END
 
+//EVENT CONTACT: START
+const contact = document.getElementById("contact")
+const btnContact = document.getElementById("btn-contact")
+const closeContact = document.getElementById('close-contact');
+
+btnContact.addEventListener("click", () =>{
+    contact.classList.add('show-contact');
+});
+closeContact.addEventListener('click', () => {
+    contact.classList.toggle('show-contact');
+    overlayRight.style.display = "none";
+});
+//EVENT CONTACT: END
+
 //OPEN / CLOSE OVERLAY
 function on__left() {
     document.getElementById("overlay-left").style.display = "block";
@@ -196,6 +210,7 @@ function on__left() {
     searchInput.classList.remove('show-text');
     searchSuggest.classList.remove('show-text');
     cart.classList.remove('show');
+    contact.classList.remove('show-contact');
   }
 
 // MENU MOBILE: START 

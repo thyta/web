@@ -68,7 +68,7 @@ li {
     width: 40%;
     height: 500px;
     overflow: auto;
-    z-index: 101;
+    z-index: 102;
     opacity: 1;
     border-radius: 10px;
 }
@@ -159,7 +159,7 @@ li {
 }
 
 .right-sidebar {
-    z-index: 9;
+    z-index: 101;
 }
 
 .second-sidebar {
@@ -409,11 +409,87 @@ li {
 }
 
 /* CSS CART: END */
+
 /* CSS CONTACT: START */
-::placeholder {
-    color: red;
+input:focus {
+    border-bottom: 1px solid black;
+    outline: none;
 }
+
+::placeholder {
+    color: #b48a3682;
+}
+
+.contact {
+    display: none;
+    opacity: 0;
+}
+
+.contact__col {
+    display: flex;
+}
+
+.group__input {
+    background-color: #fefbf4;
+    width: 510px;
+    height: 45px;
+    margin-bottom: 40px;
+    font-size: 16px;
+    border: none;
+    border-bottom: #b48a3682 1px solid;
+}
+
+.contact__name {
+    width: 240px;
+    margin-right: 30px;
+}
+
+.contact__tel {
+    width: 240px;
+}
+
+.contact__title {
+    color: #1f1c17;
+    font-size: 30px;
+    margin-bottom: 50px;
+}
+
+.btnSend {
+    font-size: 22px;
+    width: 250px;
+    height: 70px;
+    margin-right: 10px;
+    float: left;
+    border: none;
+}
+
+.btnSend:hover {
+    background-color: rgb(103, 91, 91);
+}
+
+.btnCall {
+    font-size: 22px;
+    background-color: #fefbf4;
+    color: #1f1c17;
+    width: 250px;
+    height: 70px;
+    border-radius: 5px;
+    border: 1px solid #b48936;
+}
+
+.btnCall:hover {
+    background-color: #1f1c17;
+    color: #fefbf4;
+}
+.show-contact {
+    display: grid;
+    place-items: center;
+    opacity: 1;
+    animation: fadeIn 0.4s ease;
+}
+
 /* CSS CONTACT: END */
+
 /* CSS HEADER MOBILE: START */
 @media screen and (max-width: 1023px) {
     .header__mobile {
