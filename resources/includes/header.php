@@ -10,18 +10,21 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <!-- Themify fonticon -->
+    <link rel="stylesheet" href="../../public/font/themify-icons/themify-icons.css">
     <!-- Css -->
     <link rel="stylesheet" href="../../public/css/header.css">
-    <!-- <link rel="stylesheet" href="./css/ds"> -->
     <!-- Feather icon -->
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+
 
 </head>
 
 <body>
     <!-- HEADER PC: START -->
-    <header class="header__pc" style="z-index: 9999;">
+    <header class="header__pc">
         <div class="banner">Tận hưởng giao hàng toàn quốc với hóa đơn 99.000 đ +</div>
         <nav class="nav">
             <ul class="nav__list">
@@ -250,7 +253,6 @@
                 </ul>
             </div>
         </div>
-
         <!-- CATEGORY PRODUCT - SECOND SIDEBAR: END -->
 
         <!-- SHOW PRODUCT - THIRD SIDEBAR: START -->
@@ -476,67 +478,9 @@
             <!-- SKINCARE PRODUCT: END-->
 
             <!-- HAIRCARE PRODUCT: START-->
-            <div class="group__third--content" id="haircare-1">
-                <img src="../../public/img/bachkgroundtoc.png" alt="">
+            <div class="group__third--content group__background" id="haircare-1">
+                <img src="../../public/img/backgroundtoc.png" alt="">
             </div>
-            <!-- DAU GOI -->
-            <div class="group__third--content" id="haircare-2">
-                <p>Dầu Gội</p>
-                <ul class="group__product--list" id="haircare-2-list">
-                    <li class="group__product--item">
-                        <a href="" class="group__product--link link-pc">
-                            <div class="group__info--product">
-                                <div class="group__name--product">Dầu gội bưởi không sulfate 310ml</div>
-                                <div class="group__describe--product">Giảm gãy rụng và làm mềm tóc</div>
-                                <div class="group__price--product"> 245.000 đ</div>
-                            </div>
-                            <img src="../../public/img/daugoibuoi310ml.png" alt="">
-                        </a>
-                    </li>
-
-                    <li class="group__product--item">
-                        <a href="" class="group__product--link link-pc">
-                            <div class="group__info--product">
-                                <div class="group__name--product">Dầu gội bưởi không sulfate 310ml</div>
-                                <div class="group__describe--product">Giảm gãy rụng và làm mềm tóc</div>
-                                <div class="group__price--product"> 245.000 đ</div>
-                            </div>
-                            <img src="../../public/img/daugoibuoi500ml.png" alt="">
-                        </a>
-                    </li>
-
-                    <li class="group__product--item">
-                        <a href="" class="group__product--link link-pc">
-                            <div class="group__info--product">
-                                <div class="group__name--product">Dầu gội bưởi refill không sulfate 500ml</div>
-                                <div class="group__describe--product">Giảm gãy rụng và làm mềm tóc</div>
-                                <div class="group__price--product">355.000 đ</div>
-                            </div>
-                            <img src="../../public/img/daugoibuoirefill500ml.png" alt="">
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- KEM U -->
-            <div class="group__third--content" id="haircare-3">
-                <p>Kem Ủ</p>
-                <ul class="group__product--list" id="haircare-3-list">
-                    <li class="group__product--item">
-                        <a href="" class="group__product--link link-pc">
-                            <div class="group__info--product">
-                                <div class="group__name--product">Kem ủ tóc bưởi 200ml</div>
-                                <div class="group__describe--product">Giảm gãy rụng và làm mềm tóc</div>
-                                <div class="group__price--product"> 215.000 đ</div>
-                            </div>
-                            <img src="../../public/img/kemu200ml.png" alt="">
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <!-- HAIRCARE PRODUCT: END-->
-
-            <!-- HAIRCARE PRODUCT: START-->
             <!-- DAU GOI -->
             <div class="group__third--content" id="haircare-2">
                 <p>Dầu Gội</p>
@@ -595,7 +539,7 @@
             <!-- HAIRCARE PRODUCT: END-->
 
         </div>
-        <!-- SHOW PRODUCT: END -->
+        <!-- SHOW PRODUCT - THIRD SIDEBAR: END -->
 
         <!-- DISCOUNT: START -->
         <div class="discount side-bar" id="discount">
@@ -623,26 +567,28 @@
         <!-- SEARCH: START -->
         <div class="search side-bar-right" id="search">
             <i data-feather="x" class="close__search close-sample" id="close-search"></i>
-            <div>
-                <form method="GET" action="postcontroller.php">
-                    <input type="hidden" name="action" value="Search">
-                    <div class="search__input" id="search-input">
-                        <p>Nhập từ khóa bạn muốn tìm kiếm</p>
-                        <input type="text" placeholder="Tìm kiếm theo tên sản phẩm..." name="keyword" id="keyword">
-                        <button type="submit" class="btn-sample">
-                            <i data-feather="arrow-right"></i>
-                        </button>
-                    </div>
-                </form>
-            </div>
-            <div class="search__suggest" id="search-suggest">
-                <p>Gợi ý tìm kiếm:</p>
-                <ul class="suggest__list" id="suggest-list">
-                    <li class="suggest__item"><a href="" class="suggest__link link-pc">Sữa rửa mặt</a></li>
-                    <li class="suggest__item"><a href="" class="suggest__link link-pc">Nước tẩy trang</a></li>
-                    <li class="suggest__item"><a href="" class="suggest__link link-pc">Gel tắm</a>
-                    </li>
-                </ul>
+            <div class="search__container">
+                <div>
+                    <form method="GET" action="postcontroller.php">
+                        <input type="hidden" name="action" value="Search">
+                        <div class="search__input" id="search-input">
+                            <p>Nhập từ khóa bạn muốn tìm kiếm</p>
+                            <input type="text" placeholder="Tìm kiếm theo tên sản phẩm..." name="keyword" id="keyword">
+                            <button type="submit" class="btn-sample">
+                                <i data-feather="arrow-right"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="search__suggest" id="search-suggest">
+                    <p>Gợi ý tìm kiếm:</p>
+                    <ul class="suggest__list" id="suggest-list">
+                        <li class="suggest__item"><a href="" class="suggest__link link-pc">Sữa rửa mặt</a></li>
+                        <li class="suggest__item"><a href="" class="suggest__link link-pc">Nước tẩy trang</a></li>
+                        <li class="suggest__item"><a href="" class="suggest__link link-pc">Gel tắm</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
         <!-- SEARCH: END -->
@@ -650,6 +596,7 @@
         <!-- CART: END -->
         <div class="cart side-bar-right" id="cart">
             <i data-feather="x" class="close__cart close-sample" id="close-cart"></i>
+            <div></div>
             <div class="cart-empty__body">
                 <div class="title link-pc">OOPSS</div>
                 <div class="message link-pc">Giỏ hàng hiện đang trống <br>
@@ -661,41 +608,102 @@
         </div>
         <!-- CART: END -->
 
-         <!-- CONTACT: START -->
-         <div class="contact side-bar-center" id="contact">
+    </header>
 
-            <i data-feather="x" class="close__contact close-sample" id="close-contact"></i>
-            <div class="contact__container">
-                <div class="contact__title">Liên hệ với The Cosmetic Scrupts</div>
-                <form action="" method="">
-                    <div class="contact__col">
+    <!-- HEADER PC: END -->
+    <!-- CONTACT: START -->
+    <div class="contact side-bar-center" id="contact">
+
+        <i data-feather="x" class="close__contact close-sample" id="close-contact"></i>
+        <div class="contact__container">
+            <div class="contact__title">Liên hệ với The Cosmetic Scrupts</div>
+            <form action="" method="">
+                <div class="contact__col">
+                    <div>
                         <div>
-                            <input type="text" class="contact__name group__input" required="required" name="" id="yourname"
-                                placeholder="Tên của bạn*" autocomplete="off">
+                            <input type="text" class="contact__name group__input" required="required" name=""
+                                id="yourname" placeholder="Tên của bạn*" tabindex="1" autocomplete="off">
                         </div>
-                        <div>
-                            <input type="tel" class="contact__tel group__input" required="required" name="" id="yourtel"
-                                placeholder="Số điện thoại*" autocomplete="off">
-                        </div>
-                    </div>
-                    <div >
-                        <input type="email" class="contact__email group__input" required="required" name="" id="youremail"
-                            placeholder="Địa chỉ Email*" autocomplete="off">
-                    </div>
-                    <div >
-                        <input type="text" class="contact__question group__input" required="required" name="" id="yourquestion"
-                            placeholder="Nhập câu hỏi của bạn*" autocomplete="off">
+                        <span data-v-00568c7a class="group__status">Vui lòng nhập tên của bạn!</span>
                     </div>
                     <div>
-                        <button class="btnSend button">GỬI COSMETIC</button>
-                        <a href="" class="btnCall button">GỌI CHO COSMETIC</a>
+                        <div>
+                            <input type="tel" class="contact__tel group__input" required="required" name="" id="yourtel"
+                                placeholder="Số điện thoại*" tabindex="1" autocomplete="off">
+                        </div>
+                        <span data-v-00568c7a class="group__status">Vui lòng nhập số điện thoại hợp lệ!</span>
                     </div>
-                </form>
+                </div>
+                <div>
+                    <div>
+                        <input type="email" class="contact__email group__input" required="required" name=""
+                            id="youremail" placeholder="Địa chỉ Email*" tabindex="1" autocomplete="off">
+                    </div>
+                    <span data-v-00568c7a class="group__status">Vui lòng nhập email hợp lệ!</span>
+                </div>
+                <div>
+                    <div>
+                        <input type="text" class="contact__question group__input" required="required" name=""
+                            id="yourquestion" placeholder="Nhập câu hỏi của bạn*" tabindex="1" autocomplete="off">
+                    </div>
+                    <span data-v-00568c7a class="group__status">Vui lòng nhập câu hỏi!</span>
+                </div>
+                <div class="contact__btn">
+                    <button class="btnSend button">GỬI COSMETIC</button>
+                    <a href="" class="btnCall button">GỌI CHO COSMETIC</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- CONTACT: END -->
+
+    <!-- LOGIN: START -->
+    <div class="login side-bar-center" id="login">
+
+        <i data-feather="x" class="close__login close-sample" id="close-login"></i>
+        <div class="login__container">
+            <div class="d-flex justify-content-between align-content-center">
+                <p class="login__title">Đăng nhập</p>
+            </div>
+            <p class="heading">The Cosmetic chào bạn quay trở lại.</p>
+            <div class="dk-tai-khoan d-flex">
+                <p style="opacity: 50%; font-size: 14px;">Bạn chưa có tài khoản?</p>
+                <a class="tao-tk" href="#">Tạo tài khoản</a>
+            </div>
+            <div class="d-flex login-tai-khoan">
+                <p class="icon ti-user"></p>
+                <input data-v-00568c7a="" name="phone" placeholder="Nhập số điện thoại" type="tel" class="login__input"
+                    pattern="((\+84)|0)+(9|3|7|8|5)+([0-9]{8})\b" required="required" tabindex="1" id="phoneNumber">
+                <span class="error-message" id="phoneError"></span>
+            </div>
+            <p class="note-pass mb-5">Vui lòng nhập số điện thoại hợp lệ!</p>
+
+            <div class="d-flex login-tai-khoan">
+                <p class="icon ti-lock"></p>
+                <input data-v-00568c7a="" name="password" placeholder="Nhập mật khẩu" type="" class="login__input"
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required="required" minlength="8" tabindex="1"
+                    id="login-pass">
+                <span class="error-message" id="passError"></span>
+            </div>
+            <p class="note-pass">Vui lòng nhập mật khẩu có ít nhất 8 ký tự, ít nhất 1 ký tự hoa, 1 ký tự thường và 1
+                số!</p>
+            <a href="#" class="quen-mk mb-3">Quên mật khẩu?</a>
+            <div class="d-flex ghi-nho-mat-khau ">
+                <input type="checkbox" tabindex="1" class="checkbox bg-primary-yellow border-transparent">
+                <p class="m-0  p-lg-2">Ghi nhớ mật khẩu cho lần sau</p>
+            </div>
+            <button type="submit" class="dang-nhap">ĐĂNG NHẬP</button>
+            <div class="dn-khac mt-4 d-flex justify-content-between">
+                <p style="font-size: 16px; color: #414548" class="">Hoặc đăng nhập bằng</p>
+                <div class="icon-dn-khac">
+                    <a href="" class="dn-khac-item ti-facebook ml-2"></a>
+                    <a href="" class="dn-khac-item ti-apple ml-2"></a>
+                    <a href="" class="dn-khac-item ti-google"></a>
+                </div>
             </div>
         </div>
-        <!-- CONTACT: END -->
-    </header>
-    <!-- HEADER PC: END -->
+    </div>
+    <!-- LOGIN: END -->
 
     <!-- HEADER MOBILE: START -->
     <header class="header__mobile">
@@ -793,17 +801,16 @@
                     <li class="nav__item"><button type="button" onclick="on__left()" class="nav__link btn-sample"
                             id="btn">EN</button></li>
                 </ul>
-                <div><i data-feather="user" class="login" id="btn-login"></i></div>
+                <div><i data-feather="user" class="login__mobile" id="btn-login-mobile"></i></div>
             </div>
-
             <i data-feather="menu" class="open__menu" id="open-menu"></i>
             <div class="nav__logo"><img src="../../public/img/logo.png" alt=""></div>
 
             <ul class="nav__list">
-                <li class="nav__item"><button type="button" onclick="on__left()" class="nav__link btn-sample"
-                        id="btn"><i data-feather="search" class="search" id="search-menu"></i></button></li>
-                <li class="nav__item"><button type="button" onclick="on__left()" class="nav__link btn-sample"
-                        id="btn"><i data-feather="shopping-bag" class="cart" id="cart-id"></i></button></li>
+                <li class="nav__item"><button type="button" onclick="on__right()" class="nav__link btn-sample"
+                        id="btn"><i data-feather="search" id="search-menu"></i></button></li>
+                <li class="nav__item"><button type="button" onclick="on__right()" class="nav__link btn-sample"
+                        id="btn"><i data-feather="shopping-bag" id="cart-id"></i></button></li>
             </ul>
         </nav>
     </header>
@@ -812,4 +819,5 @@
 <!-- SCRIPT -->
 <script>feather.replace()</script>
 <script src="../../public/js/header.js"></script>
+
 </html>

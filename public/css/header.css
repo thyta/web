@@ -13,7 +13,7 @@ li {
     position: absolute;
     background-color: #fefbf4;
     width: 33%;
-    height: 611px;
+    height: 631px;
     border: 1px solid rgb(223, 215, 215);
     padding: 90px 80px 50px;
     overflow: auto;
@@ -27,7 +27,7 @@ li {
     position: absolute;
     background-color: #fefbf4;
     width: 33%;
-    height: 611px;
+    height: 631px;
     border: 1px solid rgb(223, 215, 215);
     padding: 90px 80px 50px;
     overflow: auto;
@@ -48,7 +48,7 @@ li {
     position: absolute;
     background-color: #fefbf4;
     width: 34%;
-    height: 611px;
+    height: 631px;
     border: 1px solid rgb(223, 215, 215);
     padding: 90px 80px 50px;
     overflow: auto;
@@ -60,17 +60,18 @@ li {
 
 .side-bar-center {
     position: fixed;
-    top: 20%;
+    top: 10%;
     left: 30%;
     right: 30%;
     bottom: 15%;
     background-color: #fefbf4;
     width: 40%;
-    height: 500px;
+    height: 600px;
     overflow: auto;
-    z-index: 102;
+    z-index: 103;
     opacity: 1;
-    border-radius: 10px;
+    border-radius: 8px;
+    box-shadow: 0 1px 21px rgba(229,184,96,.25);
 }
 
 .side-bar-third p {
@@ -86,22 +87,48 @@ li {
 }
 
 .group__background img {
-    height: 611px;
+    height: 631px;
 }
 
 .side-bar-right {
     position: absolute;
     right: 0;
+    top: 0;
     background-color: #fefbf4;
     width: 34%;
-    height: 611px;
+    height: 100vh;
     border: 1px solid rgb(223, 215, 215);
     padding: 90px 80px 50px;
     overflow: auto;
-    z-index: 10;
+    z-index: 102;
     opacity: 0;
     transform: translateX(100%);
     transition: all linear 0.4s;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px 5px rgba(67, 50, 50, 0.42);
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+    animation: fadeIn ease-in-out 0.3s;
+}
+
+.right-sidebar {
+    z-index: 101;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.second-sidebar {
+    z-index: 4;
 }
 
 .show-second {
@@ -142,28 +169,6 @@ li {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-.overlay {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 0;
-    background-color: rgba(0, 0, 0, 0.3);
-    display: none;
-    animation: fadeIn ease-in-out 0.3s;
-}
-
-.right-sidebar {
-    z-index: 101;
-}
-
-.second-sidebar {
-    z-index: 4;
 }
 
 .group__link:hover {
@@ -239,6 +244,8 @@ li {
     background-color: #fefbf4;
     position: relative;
     z-index: 100;
+    box-shadow: 0px 3px 3px 0px rgba(151, 108, 108, 0.22);
+    border-bottom: #b7b77082 0.5px solid;
 }
 
 .nav__list {
@@ -359,6 +366,9 @@ li {
 /* CSS COSMETIC:END */
 
 /* CSS SEARCH: START */
+.search__container {
+   margin-top: 30%;
+}
 .search__input {
     margin-left: 32px;
     margin-bottom: 32px;
@@ -398,6 +408,7 @@ li {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: 500;
 }
 
 .cart-empty__body {
@@ -409,7 +420,6 @@ li {
 }
 
 /* CSS CART: END */
-
 /* CSS CONTACT: START */
 input:focus {
     border-bottom: 1px solid black;
@@ -422,7 +432,7 @@ input:focus {
 
 .contact {
     display: none;
-    opacity: 0;
+    padding: 24px;
 }
 
 .contact__col {
@@ -433,12 +443,16 @@ input:focus {
     background-color: #fefbf4;
     width: 510px;
     height: 45px;
-    margin-bottom: 40px;
+    margin:20px 0 10px;
     font-size: 16px;
     border: none;
     border-bottom: #b48a3682 1px solid;
 }
-
+.group__status {
+    color: #be2f31;
+    font-size: 12px;
+    font-style: italic;
+}
 .contact__name {
     width: 240px;
     margin-right: 30px;
@@ -451,9 +465,11 @@ input:focus {
 .contact__title {
     color: #1f1c17;
     font-size: 30px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
-
+.contact__btn {
+    margin-top: 50px;
+}
 .btnSend {
     font-size: 22px;
     width: 250px;
@@ -481,15 +497,129 @@ input:focus {
     background-color: #1f1c17;
     color: #fefbf4;
 }
+
 .show-contact {
     display: grid;
     place-items: center;
     opacity: 1;
-    animation: fadeIn 0.4s ease;
+    animation: fadeIn 0.5s ease;
 }
-
 /* CSS CONTACT: END */
 
+/* CSS LOGIN: START */
+.show-login {
+    opacity: 1;
+    animation: fadeIn 0.5s ease;
+}
+
+.login__title {
+    color: #1f1c17;
+    font-size: 16px;
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+.login {
+    top: 5%;
+    left: 35%;
+    right: 35%;
+    width: 30%;
+    display: none;
+    height: 656px;
+    padding: 32px;
+}
+
+.txt-dn{
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.heading{
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+.dk-tai-khoan{
+    font-size: 12px;
+    margin-bottom: 24px;
+}
+
+.tao-tk{
+    color: #C5A25D;
+    font-size: 14px;
+    margin-left: 3px;
+}
+
+.login-tai-khoan{
+    margin-bottom: 12px;
+    align-items: center;
+}
+.login__input {
+    width: 100%;
+    background-color: #fefbf4;
+    font-size: 16px;
+    border: none;
+    outline-style: none;
+    border-bottom: #b48a3682 1px solid;
+}
+
+.icon{
+    margin-right: 10px;
+    margin-bottom: 0;
+    color: #C5A25D;
+}
+
+.note-pass{
+    font-style: italic;
+    font-size: 12px;
+}
+.quen-mk:hover{
+    --tw-text-opacity: 1;
+    color: rgba(204, 180, 143, var(--tw-text-opacity));
+    font-weight: 600;
+}
+.quen-mk{
+    float: right;
+    --tw-text-opacity: 1;
+    color: rgba(204, 180, 143, var(--tw-text-opacity));
+    text-decoration: none;
+    font-size: 12px;
+}
+.ghi-nho-mat-khau{
+    padding-top: 24px;
+    padding-bottom: 32px;
+}
+.dang-nhap{
+    background-color: #000;
+    color: aliceblue;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 50px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.dang-nhap:hover{
+    opacity: 70%;
+    border-radius: 0.5;
+}
+.dn-khac-item{
+    width: 64px;
+    height: 64px;
+    font-size: 20px;
+    margin-right: 12px;
+    text-decoration: none;
+    color: #C5A25D;
+}
+.dn-khac-item:hover{
+    color: #C5A25D;
+    opacity: 120%;
+}
+.error-input{
+    color: red;
+}
+/* CSS LOGIN: END */
 /* CSS HEADER MOBILE: START */
 @media screen and (max-width: 1023px) {
     .header__mobile {
@@ -555,7 +685,7 @@ input:focus {
         color: #414548;
     }
 
-    .login {
+    .login__mobile {
         position: absolute;
         right: 35px;
         top: 50px;

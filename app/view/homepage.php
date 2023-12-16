@@ -10,14 +10,13 @@
     <link rel="stylesheet" href="../../public/css/style.css">
 
     <!-- include config for header and footer -->
-    <?php include '../../resources/head/fh_head.php' ?>
-
+    <?php include('../../resources/head/fh_head.php') ?>
+    <!-- include header -->
+    <?php include('../../resources/includes/header.php') ?>
 </head>
 
 <body>
-    <!-- include header -->
-    <?php include '../../resources/includes/header.php' ?>
-
+    <div style="width: 100%; height: 111px"></div>
     <div class="slider-full w-100">
         <div class="slider-item slider-item-1 ">
             <div class="slider-desc slider-desc-1">
