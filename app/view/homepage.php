@@ -12,7 +12,20 @@
     <!-- include config for header and footer -->
     <?php include('../../resources/head/fh_head.php') ?>
     <!-- include header -->
-    <?php include('../../resources/includes/header.php') ?>
+    <?php
+    session_start();
+
+    // Check if the user is logged in
+
+    // IF not session or not logged in
+    if (!isset($_SESSION['user_id'])) {
+        include '../../resources/includes/header.php';
+    }
+    else{
+        include '../../resources/includes/headerLogged.php';
+    }
+    ?>
+
 </head>
 
 <body>

@@ -44,7 +44,7 @@
                         id="btn-search">
                         <i data-feather="search"></i></button></li>
                 <li class="nav__item"><button type="button" onclick="on__right()" class="nav__link btn-sample"
-                        id="btn-login">Đăng nhập</button></li>
+                        id="btn-login">Tài khoản</button></li>
                 <li class="nav__item"><button type="button" onclick="on__right()" class="nav__link btn-sample"
                         id="btn-contact">Liên hệ</button></li>
                 <li class="nav__item"><button type="button" onclick="on__right()" class="nav__link btn-sample"
@@ -658,59 +658,16 @@
     <!-- CONTACT: END -->
 
     <!-- LOGIN: START -->
-    <form action="../controller/logginController.php" method="post" class="login side-bar-center" id="login">
-
+    <!-- LOGIN: START -->
+    <form action="../controller/logoutController.php" method="post" class="login side-bar-center" id="login">
         <i data-feather="x" class="close__login close-sample" id="close-login"></i>
         <div class="login__container">
             <div class="d-flex justify-content-between align-content-center">
-                <p class="login__title">Đăng nhập</p>
-            </div>
-            <p class="heading">The Cosmetic chào bạn quay trở lại.</p>
-            <div class="dk-tai-khoan d-flex">
-                <p style="opacity: 50%; font-size: 14px;">Bạn chưa có tài khoản?</p>
-                <a class="tao-tk" href="#">Tạo tài khoản</a>
-            </div>
-            <div class="d-flex login-tai-khoan">
-                <p class="icon ti-user"></p>
-                <input data-v-00568c7a="" name="phone" placeholder="Nhập số điện thoại" type="tel" class="login__input"
-                    pattern="((\+84)|0)+(9|3|7|8|5)+([0-9]{8})\b" required="required" tabindex="1" id="phoneNumber">
-                <span class="error-message" id="phoneError"></span>
-            </div>
-            <p class="note-pass mb-5">Vui lòng nhập số điện thoại hợp lệ!</p>
-
-            <!-- <div class="d-flex login-tai-khoan">
-                <p class="icon ti-lock"></p>
-                <input data-v-00568c7a="" name="password" placeholder="Nhập mật khẩu" type="" class="login__input"
-                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required="required" minlength="8" tabindex="1"
-                    id="login-pass">
-                <span class="error-message" id="passError"></span>
-            </div> -->
-
-            <div class="d-flex login-tai-khoan">
-                <p class="icon ti-lock"></p>
-                <input data-v-00568c7a="" name="password" placeholder="Nhập mật khẩu" type="" class="login__input"
-                    id="login-pass">
-                <span class="error-message" id="passError"></span>
-            </div>
-
-            <p class="note-pass">Vui lòng nhập mật khẩu có ít nhất 8 ký tự, ít nhất 1 ký tự hoa, 1 ký tự thường và 1
-                số!</p>
-            <a href="#" class="quen-mk mb-3">Quên mật khẩu?</a>
-            <div class="d-flex ghi-nho-mat-khau ">
-                <input type="checkbox" tabindex="1" class="checkbox bg-primary-yellow border-transparent">
-                <p class="m-0  p-lg-2">Ghi nhớ mật khẩu cho lần sau</p>
-            </div>
-            <button type="submit" class="dang-nhap">ĐĂNG NHẬP</button>
-            <div class="dn-khac mt-4 d-flex justify-content-between">
-                <p style="font-size: 16px; color: #414548" class="">Hoặc đăng nhập bằng</p>
-                <div class="icon-dn-khac">
-                    <a href="" class="dn-khac-item ti-facebook ml-2"></a>
-                    <a href="" class="dn-khac-item ti-apple ml-2"></a>
-                    <a href="" class="dn-khac-item ti-google"></a>
-                </div>
+                <button type="submit" class="dang-nhap">ĐĂNG XUÂT</button>
             </div>
         </div>
     </form>
+
     <!-- LOGIN: END -->
 
     <!-- HEADER MOBILE: START -->
