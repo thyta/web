@@ -16,7 +16,6 @@
 </head>
 
 <body>
-    <div style="width: 100%; height: 111px"></div>
     <div class="slider-full w-100">
         <div class="slider-item slider-item-1 ">
             <div class="slider-desc slider-desc-1">
@@ -266,8 +265,6 @@
         </div>
     </div>
 
-
-
     <!--Tin tứk-->
     <div class="story-telling">
         <div class="story-header">
@@ -348,9 +345,9 @@
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery.min.js"></script>
+    <script src="../../public/js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../../public/js/bootstrap.min.js"></script>
     <script>
         let slideIndex = 0;
 

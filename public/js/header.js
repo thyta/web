@@ -215,12 +215,28 @@ function invalidateInput(){
 };
 //EVENT LOGIN: END
 
+//EVENT ACCOUNT: START
+function openAccount() {
+    document.getElementById('acc').classList.toggle('show-account');
+}
+
+window.onclick = function(e) {
+    
+    if (!e.target.matches('.#btn-account')) {
+        var myDropdown = document.getElementById("acc");
+        if (myDropdown.classList.contains('show-account')) {
+            myDropdown.classList.remove('show-account');
+        }
+    }
+};
+//EVENT ACCOUNT: END
+
 //OPEN / CLOSE OVERLAY
-function on__left() {
+function onLeft() {
     document.getElementById("overlay-left").style.display = "block";
   }
   
-  function off__left() {
+  function offLeft() {
     document.getElementById("overlay-left").style.display = "none";
     product.classList.remove("show");
     cosmetic.classList.remove("show");
@@ -233,11 +249,11 @@ function on__left() {
     groupSecondSidebar.classList.remove('show-second')
   }
 
-  function on__right() {
+  function onRight() {
     document.getElementById("overlay-right").style.display = "block";
   }
   
-  function off__right() {
+  function offRight() {
     document.getElementById("overlay-right").style.display = "none";
     search.classList.remove('show');
     searchInput.classList.remove('show-text');
@@ -285,7 +301,4 @@ const cosmeticMobile = document.getElementById("cosmetic-mobile");
 btnCosmeticMobile.addEventListener('click', () => {
     cosmeticMobile.classList.toggle('show-mobile');
 });
-
-
-
 //MENU MOBILE: END
