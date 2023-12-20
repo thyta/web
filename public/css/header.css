@@ -2,7 +2,9 @@ body,
 html {
     width: 100%;
     height: 100%;
-    position: relative;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 li {
@@ -218,8 +220,15 @@ li {
 /* CSS HEADER PC: START */
 .header__pc {
     width: 100%;
-    font-family: 'Nunito';
+    position: relative;
+    transition: position 0.3s ease;
+}
+
+.fixed {
     position: fixed;
+    height: auto;
+    top: 0;
+    width: 100%;
 }
 
 .banner {
@@ -236,13 +245,13 @@ li {
 }
 
 .nav {
+    position: relative;
     width: 100%;
     height: 76px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #fefbf4;
-    position: relative;
     z-index: 100;
     box-shadow: 0px 3px 3px 0px rgba(151, 108, 108, 0.22);
     border-bottom: #b7b77082 0.5px solid;
@@ -648,11 +657,13 @@ input:focus {
     z-index: 10;
     margin-top: 26px;
 }
+
 .account__icon {
-   width: 16px;
-   height: 16px;
-   margin:0 24px 0 0;
+    width: 16px;
+    height: 16px;
+    margin: 0 24px 0 0;
 }
+
 .btn__logout:hover {
     background-color: #c5a25d2f;
 }
@@ -665,6 +676,7 @@ input:focus {
     width: 325px;
     height: 30px;
 }
+
 .account__item {
     border: none;
     background-color: #fefbf4;
@@ -675,6 +687,7 @@ input:focus {
     padding: 5px 0 0 8%;
     cursor: pointer;
 }
+
 .account__item:hover {
     background-color: #c5a25d2f;
 }
@@ -694,7 +707,7 @@ input:focus {
         width: 100%;
         height: auto;
         font-family: 'Nunito';
-        position: fixed;
+        position: relative;
     }
 
     .header__pc {
@@ -702,11 +715,13 @@ input:focus {
     }
 
     .banner {
+        position: fixed;
         width: 100%;
         height: 33px;
     }
 
     .nav {
+        position: fixed;
         width: 100%;
         height: 60px;
         justify-content: space-between;
@@ -733,7 +748,7 @@ input:focus {
     }
 
     .nav__link {
-        font-weight: 600;
+        font-weight: 500;
         font-size: 16px;
     }
 

@@ -4,6 +4,9 @@
     --menu-height: 3.8125rem;
 }
 
+body, html {
+    margin-top: 60px;
+}
 .slider-full {}
 
 .slider-item {
