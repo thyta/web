@@ -1,30 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>header</title>
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <!-- Themify fonticon -->
-    <link rel="stylesheet" href="../../public/font/themify-icons/themify-icons.css">
-    <!-- Css -->
-    <link rel="stylesheet" href="../../public/css/header.css">
-    <!-- Feather icon -->
-    <script src="https://unpkg.com/feather-icons"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-
-
-
-</head>
-
-<body>
-    <!-- HEADER PC: START -->
-    <header class="header__pc">
+    <header class="header__pc" style="z-index:1000;">
         <div class="banner">Tận hưởng giao hàng toàn quốc với hóa đơn 99.000 đ +</div>
         <nav class="nav">
             <ul class="nav__list">
@@ -780,9 +755,7 @@
         </nav>
     </header>
 
-</body>
 <!-- SCRIPT -->
 <script>feather.replace()</script>
 <script src="../../public/js/header.js"></script>
 
-</html>

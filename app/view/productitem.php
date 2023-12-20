@@ -20,22 +20,22 @@
 
 
     <div class="body">
-        <div class="base-product" style="padding-top: 50px;">
-            <div class="slick-slider-img product-item-base">
+        <div class="base-product row" style="padding-top: 50px;">
+            <div class="slick-slider-img product-item-base col-md-6">
                 <div class="img-item-detail">
+                    <img class="img-product-item"
+                        src="../../public/img/z4374728860573_f8ef100cf0353db83ee14abccdb73785_9a8d0470dd.jpg" alt="">
+                </div>
+                <!-- <div class="img-item-detail">
                     <img class="img-product-item"
                         src="../../public/img/z4374728860573_f8ef100cf0353db83ee14abccdb73785_9a8d0470dd.jpg" alt="">
                 </div>
                 <div class="img-item-detail">
                     <img class="img-product-item"
                         src="../../public/img/z4374728860573_f8ef100cf0353db83ee14abccdb73785_9a8d0470dd.jpg" alt="">
-                </div>
-                <div class="img-item-detail">
-                    <img class="img-product-item"
-                        src="../../public/img/z4374728860573_f8ef100cf0353db83ee14abccdb73785_9a8d0470dd.jpg" alt="">
-                </div>
+                </div> -->
             </div>
-            <div class="product-summary">
+            <div class="product-summary col-md-6">
                 <div class="product-link">
                     <a href="" class="">Chăm sóc da</a>
                     <span class="ml-1">•</span>

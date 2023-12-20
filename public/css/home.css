@@ -17,6 +17,7 @@
     align-items: center;
     justify-content: flex-start;
     width: 50%;
+    
     padding: 30px 110px;
     flex: 1;
 }
@@ -39,15 +40,18 @@
     background-repeat: no-repeat;
     background-position: center center;
 }
-.img-1{
-    background-image: url(/asset/img/slider_dau.jpg);
+.img-1 {
+    background-image: url('../img/img_slider_2.jpg');
 }
-.img-2{
-    background-image: url(/asset/img/slider_1.jpg);
+
+.img-2 {
+    background-image: url('../img/img_slider_1.jpg');
 }
-.img-3{
-    background-image: url(/asset/img/slider_2.jpg);
-} 
+
+.img-3 {
+    background-image: url('../img/Hình slider_dau');
+}
+
 .See-more{
     display: flex;
     justify-content:space-between;
@@ -457,3 +461,6 @@
     font-size: 16px;
     font-weight: 600;
 }
+
+
+

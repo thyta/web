@@ -16,8 +16,6 @@
 </head>
 
 <body>
-</body>
-
 <footer style="position: relative; z-index: -1;">
 <div class="row">
 
@@ -101,7 +99,7 @@
 
         </div>
 </footer>
-
+</body>
 </html>
 
 

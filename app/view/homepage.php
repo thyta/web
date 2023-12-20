@@ -7,14 +7,13 @@
     <title>Homepage</title>
 
     <!--Style of homepage-->
-    <link rel="stylesheet" href="../../public/css/style.css">
+    <link rel="stylesheet" href="../../public/css/home.css">
 
     <!-- include config for header and footer -->
     <?php include('../../resources/head/fh_head.php') ?>
     <!-- include header -->
     <?php
     session_start();
-
     // Check if the user is logged in
 
     // IF not session or not logged in
@@ -29,7 +28,6 @@
 </head>
 
 <body>
-    <div style="width: 100%; height: 111px"></div>
     <div class="slider-full w-100">
         <div class="slider-item slider-item-1 ">
             <div class="slider-desc slider-desc-1">
