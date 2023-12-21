@@ -630,41 +630,43 @@
             <i data-feather="x" class="close__contact close-sample" id="close-contact"></i>
             <div class="contact__container">
                 <div class="contact__title">Liên hệ với The Cosmetic Scrupts</div>
-                <form action="" method="">
+                <form action="../../app/controller/contactController.php" method="POST">
                     <div class="contact__col">
                         <div>
                             <div>
-                                <input type="text" class="contact__name group__input" required="required" name=""
-                                    id="yourname" placeholder="Tên của bạn*" tabindex="1" autocomplete="off">
+                                <input type="text" class="contact__name group__input" required="required"
+                                    name="nameContact" id="yourname" placeholder="Tên của bạn*" tabindex="1"
+                                    autocomplete="off">
                             </div>
                             <span data-v-00568c7a class="group__status">Vui lòng nhập tên của bạn!</span>
                         </div>
                         <div>
                             <div>
-                                <input type="tel" class="contact__tel group__input" required="required" name=""
-                                    id="yourtel" placeholder="Số điện thoại*" tabindex="1" autocomplete="off">
+                                <input type="tel" class="contact__tel group__input" required="required"
+                                    name="telContact" id="yourtel" placeholder="Số điện thoại*" tabindex="1"
+                                    autocomplete="off">
                             </div>
                             <span data-v-00568c7a class="group__status">Vui lòng nhập số điện thoại hợp lệ!</span>
                         </div>
                     </div>
                     <div>
                         <div>
-                            <input type="email" class="contact__email group__input" required="required" name=""
-                                id="youremail" placeholder="Địa chỉ Email*" tabindex="1" autocomplete="off">
+                            <input type="email" class="contact__email group__input" required="required"
+                                name="emailContact" id="youremail" placeholder="Địa chỉ Email*" tabindex="1"
+                                autocomplete="off">
                         </div>
                         <span data-v-00568c7a class="group__status">Vui lòng nhập email hợp lệ!</span>
                     </div>
                     <div>
                         <div>
-                            <input type="text" class="contact__question group__input" required="required" name=""
-                                id="yourquestion" placeholder="Nhập câu hỏi của bạn*" tabindex="1"
-                                autocomplete="off">
+                            <input type="text" class="contact__question group__input" required="required"
+                                name="questionContact" id="yourquestion" placeholder="Nhập câu hỏi của bạn*"
+                                tabindex="1" autocomplete="off">
                         </div>
                         <span data-v-00568c7a class="group__status">Vui lòng nhập câu hỏi!</span>
                     </div>
-                    <div class="contact__btn">
-                        <button class="btnSend button">GỬI COSMETIC</button>
-                        <a href="" class="btnCall button">GỌI CHO COSMETIC</a>
+                    <div class="sign-up__btn">
+                        <button type="submit" class="btnSend button">GỬI COSMETIC</button>
                     </div>
                 </form>
             </div>
@@ -677,12 +679,12 @@
             <i data-feather="x" class="close__login close-sample" id="close-login"></i>
             <div class="login__container">
                 <div class="d-flex justify-content-between align-content-center">
-                    <p class="login__title">Đăng nhập</p>
+                    <p class="group__title">Đăng nhập</p>
                 </div>
                 <p class="heading">The Cosmetic chào bạn quay trở lại.</p>
                 <div class="dk-tai-khoan d-flex">
                     <p style="opacity: 50%; font-size: 14px;">Bạn chưa có tài khoản?</p>
-                    <a class="tao-tk" href="#">Tạo tài khoản</a>
+                    <a class="tao-tk" id="btn-sign-up" onclick="onRight()" href="#">Tạo tài khoản</a>
                 </div>
                 <div class="d-flex login-tai-khoan">
                     <p class="icon ti-user"></p>
@@ -728,6 +730,43 @@
         </form>
         <!-- LOGIN: END -->
 
+        <!-- SIGN UP: START -->
+        <div class="sign-up" id="sign-up">
+
+            <i data-feather="x" class="close__sign-up close-sample" id="close-sign-up"></i>
+            <div class="sign-up__container">
+                <div class="group__title">Đăng ký tài khoản</div>
+                <form action="" method="POST">
+                    <div>
+                        <div>
+                            <input type="tel" class="sign-up__input" required="required" name="" id="yourname"
+                                placeholder="Số điện thoại*" tabindex="1" >
+                        </div>
+                        <span data-v-00568c7a class="group__status">Nhập số điện thoại của bạn!</span>
+                    </div>
+                    <div>
+                        <div>
+                            <input type="password" class="sign-up__input" required="required" name="" id="yourtel"
+                                placeholder="Nhập mật khẩu*" tabindex="1" >
+                        </div>
+                        <span data-v-00568c7a class="group__status">Vui lòng nhập mật khẩu!</span>
+                    </div>
+                    <div>
+                        <div>
+                            <input type="password" class="sign-up__input " required="required" name="" id="youremail"
+                                placeholder="Nhập lại mật khẩu*" tabindex="1">
+                        </div>
+                        <span data-v-00568c7a class="group__status">Vui lòng nhập lại mật khẩu trùng
+                            khớp!</span>
+                    </div>
+                    <div class="sign-up__btn">
+                        <button class="btnSignUp button">ĐĂNG KÝ</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- SIGN UP: END -->
+
         <!-- HEADER MOBILE: START -->
         <header class="header__mobile">
             <div class="banner">Tận hưởng giao hàng toàn quốc với hóa đơn 99.000 đ +</div>
@@ -739,7 +778,7 @@
                             <!-- PRODUCT MOBILE: START -->
                             <div class="product__mobile" id="product-mobile">
                                 <div class="product__mobile--category">
-                                    <p class="group__title" id="btn-product-mobile">Sản phẩm</p>
+                                    <p class="group__title--mobile" id="btn-product-mobile">Sản phẩm</p>
                                     <ul class="product-list-mobile" id="product-list-mobile">
                                         <li class="group__item--mobile">
                                             <a class="group__link--mobile btn-sample">Sản Phẩm Mới</a>
@@ -764,7 +803,7 @@
 
                                 <!-- RELATED PRODUCT MOBILE: START -->
                                 <div>
-                                    <p class="group__title" id="btn-product-related">Có thể bạn quan tâm</p>
+                                    <p class="group__title--mobile" id="btn-product-related">Có thể bạn quan tâm</p>
                                     <ul class="product__related--mobile" id="product-related-mobile">
                                         <li class="group__item--mobile"><button type="button"
                                                 class="group__link--mobile btn-sample">Vấn
@@ -778,7 +817,7 @@
                                 <div>
                                     <ul>
                                         <li class="group__item--mobile"><button type="button"
-                                                class="group__title btn-sample">Tìm Hiểu Nguyên Liệu</button></li>
+                                                class="group__title--mobile btn-sample">Tìm hiểu nguyên liệu</button></li>
                                     </ul>
                                 </div>
                             </div>
@@ -786,7 +825,7 @@
                         </li>
                         <li class="nav__item">
                             <div>
-                                <p class="group__title" id="btn-discount-mobile">Khuyến Mãi</p>
+                                <p class="group__title--mobile" id="btn-discount-mobile">Khuyến Mãi</p>
                                 <ul class="discount__mobile" id="discount-mobile">
                                     <li class="group__item--mobile">
                                         <a href="" class="group__link--mobile btn-sample">
@@ -798,7 +837,7 @@
                         </li>
                         <li class="nav__item">
                             <div>
-                                <p class="group__title" id="btn-cosmetic-mobile">Cosmetic</p>
+                                <p class="group__title--mobile" id="btn-cosmetic-mobile">Cosmetic</p>
                                 <ul class="cosmetic__mobile" id="cosmetic-mobile">
                                     <li class="group__item--mobile">
                                         <a href="" class="group__link--mobile btn-sample">
@@ -820,7 +859,7 @@
                         </li>
                         <li class="nav__item"><a href="" class="nav__link link-mobile">Bài viết</a></li>
                         <li class="nav__item"><button type="button" onclick="onLeft()" class="nav__link btn-sample"
-                                id="btn">Liên hệ</button></li>
+                                id="btn-contact-mobile">Liên hệ <i data-feather="arrow-right" class="contact__icon"></i> </button></li>
                         <li class="nav__item"><button type="button" onclick="onLeft()" class="nav__link btn-sample"
                                 id="btn">EN</button></li>
                     </ul>
@@ -829,7 +868,7 @@
                 <i data-feather="menu" class="open__menu" id="open-menu"></i>
                 <div class="nav__logo"><img src="../../public/img/logo.png" alt=""></div>
 
-                <ul class="nav__list">
+                <ul class="nav__list--mobile">
                     <li class="nav__item"><button type="button" onclick="onRight()" class="nav__link btn-sample"
                             id="btn"><i data-feather="search" id="search-menu"></i></button></li>
                     <li class="nav__item"><button type="button" onclick="onRight()" class="nav__link btn-sample"
@@ -842,6 +881,7 @@
 </body>
 <!-- SCRIPT -->
 <script>
+    //Change header => fixed
     window.onscroll = function () {
         var header = document.getElementById('header');
         var scrollPosition = window.scrollY || document.documentElement.scrollTop;

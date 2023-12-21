@@ -185,59 +185,20 @@ closeContact.addEventListener('click', () => {
 });
 //EVENT CONTACT: END
 
-//EVENT LOGIN: START
-const login = document.getElementById("login");
-const btnLogin = document.getElementById("btn-login");
-const btnLoginMobile = document.getElementById("btn-login-mobile")
-const closeLogin = document.getElementById('close-login');
-
-btnLogin.addEventListener("click", () =>{
-    login.classList.add('show-login');
-    login.style.display ="block"
-});
-btnLoginMobile.addEventListener('click', () => {
-    login.classList.add('show-login-mobile');
-    login.style.display = 'block';
-})
-closeLogin.addEventListener('click', () => {
-    login.style.display = 'none';
-    overlayRight.style.display = "none";
-});
-
-function invalidateInput(){
-    var logintaikhoan = document.getElementsByClassName('login-tai-khoan');
-    var phoneNumber = document.getElementById('phoneNumber');
-    var phoneNumbervalue = phoneNumber.value;
-    if (phoneNumbervalue.trim() === '') {
-        logintaikhoan.classList.add('error-input');
-        return false; // Ngăn chặn việc submit form
-      } else {
-        logintaikhoan.classList.remove('error-input');
-        return true; // Cho phép submit form
-      }
-};
-//EVENT LOGIN: END
-
-//EVENT SIGN UP: START
-const signUp = document.getElementById('sign-up');
-const btnSignUp = document.getElementById('btn-sign-up');
-const btnCloseSignUp = document.getElementById('close-sign-up');
-btnSignUp.addEventListener('click', () => {
-    signUp.classList.add('show-sign-up');
-    login.classList.remove('show-login');
-});
-
-btnCloseSignUp.addEventListener('click', () => {
-    signUp.classList.remove('show-sign-up');
-    overlayRight.style.display = 'none';
-
-})
-//EVENT SIGN UP: END
 //EVENT ACCOUNT: START
 function openAccount() {
     document.getElementById('acc').classList.toggle('show-account');
-}
 
+};
+const btnAccountMobile = document.getElementById("btn-account-mobile");
+const accountMobile = document.getElementById("acc-mobile")
+const closeAccountMobile= document.getElementById('close-account-mobile');
+btnAccountMobile.addEventListener('click', () => {
+    accountMobile.classList.add('show-account-mobile');
+});
+closeAccountMobile.addEventListener('click', () => {
+    accountMobile.classList.toggle('show-account-mobile');
+});
 //EVENT ACCOUNT: END
 
 //OPEN / CLOSE OVERLAY
@@ -311,4 +272,8 @@ const cosmeticMobile = document.getElementById("cosmetic-mobile");
 btnCosmeticMobile.addEventListener('click', () => {
     cosmeticMobile.classList.toggle('show-mobile');
 });
+
+// 
+
 //MENU MOBILE: END
+
