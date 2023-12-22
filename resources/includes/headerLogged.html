@@ -23,7 +23,7 @@
 </head>
 
 <body>
-    <div class="header" id="header" style="z-index: 8000;">
+    <div class="header" id="header">
         <!-- HEADER PC: START -->
         <header class="header__pc">
             <div class="banner">Tận hưởng giao hàng toàn quốc với hóa đơn 99.000 đ +</div>
@@ -44,8 +44,36 @@
                     <li class="nav__item"><button type="button" onclick="onRight()" class="nav__link btn-sample"
                             id="btn-search">
                             <i data-feather="search"></i></button></li>
-                    <li class="nav__item"><button type="button" onclick="onRight()" class="nav__link btn-sample"
-                            id="btn-login">Đăng nhập</button></li>
+                    <li class="nav__item">
+                        <div><button type="button" onclick="openAccount()" class="nav__link btn-sample"
+                                id="btn-account">Tài khoản</button>
+                            <!-- ACCOUNT: START -->
+                            <div class="account" id="acc">
+                                <form action="../controller/logoutController.php" method="post">
+                                    <div class="account__container">
+                                        <div class="account__item"><a href="#" class="link__sample">
+                                                <i data-feather="phone" class="account__icon"></i>
+                                                0387779614</a></div>
+                                        <div class="account__item"><a href="#" class="link__sample">
+                                                <i data-feather="user" class="account__icon"></i>
+                                                Thông tin tài khoản</a>
+                                        </div>
+                                        <div class="account__item"><a href="#" class="link__sample">
+                                                <i data-feather="archive" class="account__icon"></i>
+                                                Lịch sử mua hàng</a>
+                                        </div>
+                                        <div>
+                                            <button type="submit" class="account__item link__sample">
+                                                <i data-feather="log-out" class="account__icon"
+                                                    style="margin-left: 3px;"></i>
+                                                ĐĂNG XUẤT</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- ACCOUNT: END -->
                     <li class="nav__item"><button type="button" onclick="onRight()" class="nav__link btn-sample"
                             id="btn-contact">Liên hệ</button></li>
                     <li class="nav__item"><button type="button" onclick="onRight()" class="nav__link btn-sample"
@@ -673,100 +701,6 @@
         </div>
         <!-- CONTACT: END -->
 
-        <!-- LOGIN: START -->
-        <form style="z-index: 8100;" action="../controller/logginController.php" method="post" class="login side-bar-center" id="login">
-
-            <i data-feather="x" class="close__login close-sample" id="close-login"></i>
-            <div class="login__container">
-                <div class="d-flex justify-content-between align-content-center">
-                    <p class="group__title">Đăng nhập</p>
-                </div>
-                <p class="heading">The Cosmetic chào bạn quay trở lại.</p>
-                <div class="dk-tai-khoan d-flex">
-                    <p style="opacity: 50%; font-size: 14px;">Bạn chưa có tài khoản?</p>
-                    <a class="tao-tk" id="btn-sign-up" onclick="onRight()" href="#">Tạo tài khoản</a>
-                </div>
-                <div class="d-flex login-tai-khoan">
-                    <p class="icon ti-user"></p>
-                    <input data-v-00568c7a="" name="phone" placeholder="Nhập số điện thoại" type="tel"
-                        class="login__input" pattern="((\+84)|0)+(9|3|7|8|5)+([0-9]{8})\b" required="required"
-                        tabindex="1" id="phoneNumber">
-                    <span class="error-message" id="phoneError"></span>
-                </div>
-                <p class="note-pass mb-5">Vui lòng nhập số điện thoại hợp lệ!</p>
-
-                <!-- <div class="d-flex login-tai-khoan">
-                <p class="icon ti-lock"></p>
-                <input data-v-00568c7a="" name="password" placeholder="Nhập mật khẩu" type="" class="login__input"
-                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required="required" minlength="8" tabindex="1"
-                    id="login-pass">
-                <span class="error-message" id="passError"></span>
-            </div> -->
-
-                <div class="d-flex login-tai-khoan">
-                    <p class="icon ti-lock"></p>
-                    <input data-v-00568c7a="" name="password" placeholder="Nhập mật khẩu" type="" class="login__input"
-                        id="login-pass">
-                    <span class="error-message" id="passError"></span>
-                </div>
-
-                <p class="note-pass">Vui lòng nhập mật khẩu có ít nhất 8 ký tự, ít nhất 1 ký tự hoa, 1 ký tự thường và 1
-                    số!</p>
-                <a href="#" class="quen-mk mb-3">Quên mật khẩu?</a>
-                <div class="d-flex ghi-nho-mat-khau ">
-                    <input type="checkbox" tabindex="1" class="checkbox bg-primary-yellow border-transparent">
-                    <p class="m-0  p-lg-2">Ghi nhớ mật khẩu cho lần sau</p>
-                </div>
-                <button type="submit" class="dang-nhap">ĐĂNG NHẬP</button>
-                <div class="dn-khac mt-4 d-flex justify-content-between">
-                    <p style="font-size: 16px; color: #414548" class="">Hoặc đăng nhập bằng</p>
-                    <div class="icon-dn-khac">
-                        <a href="" class="dn-khac-item ti-facebook ml-2"></a>
-                        <a href="" class="dn-khac-item ti-apple ml-2"></a>
-                        <a href="" class="dn-khac-item ti-google"></a>
-                    </div>
-                </div>
-            </div>
-        </form>
-        <!-- LOGIN: END -->
-
-        <!-- SIGN UP: START -->
-        <div class="sign-up" id="sign-up">
-
-            <i data-feather="x" class="close__sign-up close-sample" id="close-sign-up"></i>
-            <div class="sign-up__container">
-                <div class="group__title">Đăng ký tài khoản</div>
-                <form action="" method="POST">
-                    <div>
-                        <div>
-                            <input type="tel" class="sign-up__input" required="required" name="" id="yourname"
-                                placeholder="Số điện thoại*" tabindex="1" >
-                        </div>
-                        <span data-v-00568c7a class="group__status">Nhập số điện thoại của bạn!</span>
-                    </div>
-                    <div>
-                        <div>
-                            <input type="password" class="sign-up__input" required="required" name="" id="yourtel"
-                                placeholder="Nhập mật khẩu*" tabindex="1" >
-                        </div>
-                        <span data-v-00568c7a class="group__status">Vui lòng nhập mật khẩu!</span>
-                    </div>
-                    <div>
-                        <div>
-                            <input type="password" class="sign-up__input " required="required" name="" id="youremail"
-                                placeholder="Nhập lại mật khẩu*" tabindex="1">
-                        </div>
-                        <span data-v-00568c7a class="group__status">Vui lòng nhập lại mật khẩu trùng
-                            khớp!</span>
-                    </div>
-                    <div class="sign-up__btn">
-                        <button class="btnSignUp button">ĐĂNG KÝ</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <!-- SIGN UP: END -->
-
         <!-- HEADER MOBILE: START -->
         <header class="header__mobile">
             <div class="banner">Tận hưởng giao hàng toàn quốc với hóa đơn 99.000 đ +</div>
@@ -789,9 +723,9 @@
                                         <li class="group__item--mobile">
                                             <a class="group__link--mobile btn-sample">Chăm Sóc Tóc</a>
                                         </li>
-                                        <li class="group__item--mobile"><a class="group__link--mobile btn-sample">Tắm &
-                                                Dưỡng
-                                                Thể</a></li>
+                                        <li class="group__item--mobile">
+                                            <a class="group__link--mobile btn-sample">Tắm & Dưỡng Thể</a>
+                                        </li>
                                         <li class="group__item--mobile">
                                             <a class="group__link--mobile btn-sample">Dưỡng Môi</a>
                                         </li>
@@ -817,7 +751,8 @@
                                 <div>
                                     <ul>
                                         <li class="group__item--mobile"><button type="button"
-                                                class="group__title--mobile btn-sample">Tìm hiểu nguyên liệu</button></li>
+                                                class="group__title--mobile btn-sample">Tìm hiểu nguyên liệu</button>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -859,11 +794,12 @@
                         </li>
                         <li class="nav__item"><a href="" class="nav__link link-mobile">Bài viết</a></li>
                         <li class="nav__item"><button type="button" onclick="onLeft()" class="nav__link btn-sample"
-                                id="btn-contact-mobile">Liên hệ <i data-feather="arrow-right" class="contact__icon"></i> </button></li>
+                                id="btn-contact-mobile">Liên hệ <i data-feather="arrow-right"
+                                    class="contact__icon"></i> </button></li>
                         <li class="nav__item"><button type="button" onclick="onLeft()" class="nav__link btn-sample"
                                 id="btn">EN</button></li>
                     </ul>
-                    <div><i data-feather="user" class="login__mobile" id="btn-login-mobile"></i></div>
+                    <div><i data-feather="user" class="login__mobile" id="btn-account-mobile"></i></div>
                 </div>
                 <i data-feather="menu" class="open__menu" id="open-menu"></i>
                 <div class="nav__logo"><img src="../../public/img/logo.png" alt=""></div>
@@ -875,6 +811,32 @@
                             id="btn"><i data-feather="shopping-bag" id="cart-id"></i></button></li>
                 </ul>
             </nav>
+            <!-- ACCOUNT MOBILE: START -->
+            <div class="account-mobile side-bar-center" id="acc-mobile">
+                <i data-feather="x" class="close__account close-sample" id="close-account-mobile"></i>
+                <div><i data-feather="user" class="account__icon--mobile"></i></div>
+                <form action="../controller/logoutController.php" method="post">
+                    <div class="account__container--mobile">
+                        <div class="account__item"><a href="#" class="link__sample">
+                                <i data-feather="phone" class="account__icon"></i>
+                                0387779614</a></div>
+                        <div class="account__item"><a href="#" class="link__sample">
+                                <i data-feather="user" class="account__icon"></i>
+                                Thông tin tài khoản</a>
+                        </div>
+                        <div class="account__item"><a href="#" class="link__sample">
+                                <i data-feather="archive" class="account__icon"></i>
+                                Lịch sử mua hàng</a>
+                        </div>
+                        <div>
+                            <button type="submit" class="account__item link__sample">
+                                <i data-feather="log-out" class="account__icon" style="margin-left: 3px;"></i>
+                                ĐĂNG XUẤT</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- ACCOUNT MOBILE: END -->
         </header>
         <!-- HEADER MOBILE: END -->
     </div>
@@ -893,8 +855,18 @@
             header.classList.remove('fixed');
         }
     };
+    //Close account tab
+    window.onclick = function (e) {
+
+        if (!e.target.matches('#btn-account')) {
+            var myDropdown = document.getElementById("acc");
+            if (myDropdown.classList.contains('show-account')) {
+                myDropdown.classList.remove('show-account');
+            }
+        }
+    };
 </script>
 <script>feather.replace()</script>
-<script src="../../public/js/header.js"></script>
+<script src="../../public/js/headerLogged.js"></script>
 
 </html>

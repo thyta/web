@@ -21,7 +21,7 @@
 
     <div class="body">
         <div class="base-product row" style="padding-top: 50px;">
-            <div class="slick-slider-img product-item-base col-md-6">
+            <div class="slick-slider-img product-item-base col-sm-6">
                 <div class="img-item-detail">
                     <img class="img-product-item"
                         src="../../public/img/z4374728860573_f8ef100cf0353db83ee14abccdb73785_9a8d0470dd.jpg" alt="">
@@ -35,7 +35,7 @@
                         src="../../public/img/z4374728860573_f8ef100cf0353db83ee14abccdb73785_9a8d0470dd.jpg" alt="">
                 </div> -->
             </div>
-            <div class="product-summary col-md-6">
+            <div class="product-summary col-sm-6">
                 <div class="product-link">
                     <a href="" class="">Chăm sóc da</a>
                     <span class="ml-1">•</span>
@@ -107,11 +107,13 @@
                 </div>
             </div>
         </div>
-        <div class="info-fuel">
-            <div class="img-desc-fuel">
+
+
+        <div class="info-fuel row">
+            <div class="img-desc-fuel col-sm-6">
                 <img class="img-fuel" src="../../public/img/shutterstock_10sx43655889_huge_4e93a4e182.jpg" alt="">
             </div>
-            <div class="txt-desc-fuel">
+            <div class="txt-desc-fuel col-sm-6">
                 <div class="txt-fuel-1">
                     <div class="clamped-text">
                         <p style="margin: 0;">Hoa hồng vốn đã là một loài hoa tuyệt sắc mà bất cứ ai cũng phải trầm trồ
@@ -148,84 +150,8 @@
                     </div>
                 </div>
 
-
-
             </div>
         </div>
-        <div class="elements-descr">
-            <div class="element-descr-detail">
-                <span class="element-descr-detail-heading">Thành phần chính</span>
-                <div class="element-descr-item">
-                    <span class="element-descr-item-subheading">Nước cất hoa hồng hữu cơ (organic rose hydrosol)</span>
-                    <p class="element-descr-item-txt">Giúp làm se, làm mềm và chống oxy hóa cho làn da.</p>
-                </div>
-                <div class="element-descr-item">
-                    <span class="element-descr-item-subheading">Vitamin B5 (Panthenol)</span>
-                    <p class="element-descr-item-txt">Dưỡng ẩm, kháng viêm và làm dịu làn da dễ bị kích ứng và da nhạy
-                        cảm.</p>
-                </div>
-                <div class="element-descr-item">
-                    <span class="element-descr-item-subheading">Astaxanthin</span>
-                    <p class="element-descr-item-txt">Là thành viên của nhóm carotenoid và được xem là một trong những
-                        chất chống ôxi hoá tự nhiên mạnh nhất từng được biết đến với khả năng trung hoà gốc tự do cực kỳ
-                        mạnh mẽ (gấp 6000 lần so với vitamin C; gấp 1000 lần so với vitamin E và gấp 800 lần so với
-                        coenzym Q10, ...).</p>
-                </div>
-                <div class="element-descr-item">
-                    <span class="element-descr-item-subheading">NatraGem™ S150</span>
-                    <p class="element-descr-item-txt">Gồm tổ hợp chất Polyglyceryl-4 Laurate/Sebacate và Polyglyceryl-4
-                        Caprylate/Caprate, sở hữu những ưu điểm vượt trội: có nguồn gốc 100% từ thực vật, được chứng
-                        nhận hữu cơ bởi Ecocert; có khả năng hoà tan mạnh những chất ưa dầu có trong các sản phẩm trang
-                        điểm vì thế có khả năng làm sạch mạnh mẽ và cuốn trôi nhanh chóng lớp make up, bã nhờn và bụi
-                        bẩn trên da. Khi so sánh với các chất làm sạch khác, tổ hợp chất này đã được chứng minh hạn chế
-                        gây mất nước qua da và rất an toàn trên làn da thông qua các bài test in-Vivo.</p>
-                </div>
-            </div>
-            <div class="element-descr-img-present img-desc-fuel">
-                <img src="../../public/img/shutterstock_10sx43655889_huge_4e93a4e182.jpg" alt="" class="img-fuel">
-            </div>
-        </div>
-        <div class="elements-descr" style="background-color: rgb(255, 243, 229);;">
-            <div class="element-descr-img-present img-desc-fuel">
-                <img src="../../public/img/shutterstock_10sx43655889_huge_4e93a4e182.jpg" alt="" class="img-fuel">
-            </div>
-            <div class="element-descr-detail">
-                <span class="element-descr-detail-heading">Cách sử dụng</span>
-                <div class="element-descr-detail-htu">
-                    <p style="font-size: 20px; font-family:'Volkorn'; line-height:1.625rem;font-weight:400;">Lắc đều.
-                        Thấm sản phẩm lên bông tẩy trang, nhẹ nhàng lau khắp mặt để làm sạch lớp trang điểm và bụi bẩn.
-                        Dịu nhẹ cho vùng môi và mắt.</p>
-                    <p style="font-size: 20px; font-family:'Volkorn'; line-height:1.625rem;font-weight:400;">Lưu ý:
-                        Tránh ánh nắng mặt trời</p>
-                </div>
-                <hr style="margin:5px 0; color:rgb(201, 172, 137)">
-                <div class="element-descr-item">
-                    <span class="element-descr-item-subheading">Lượng dùng</span>
-                    <p class="element-descr-item-txt">Một lượng vừa đủ để làm ướt bông tẩy trang</p>
-                </div>
-                <hr style="margin:5px 0; color:rgb(201, 172, 137)">
-                <div class="element-descr-item">
-                    <span class="element-descr-item-subheading">Kết cấu</span>
-                    <p class="element-descr-item-txt">Dạng dầu và nước</p>
-                </div>
-                <hr style="margin:5px 0; color:rgb(201, 172, 137)">
-                <div class="element-descr-item">
-                    <span class="element-descr-item-subheading">Mùi hương</span>
-                    <p class="element-descr-item-txt">Sản phẩm không có hương liệu</p>
-                </div>
-                <hr style="margin:5px 0; color:rgb(201, 172, 137)">
-                <div class="element-descr-item">
-                    <span class="element-descr-item-subheading">Lưu ý</span>
-                    <p class="element-descr-item-txt">Tránh sản phẩm tiếp xúc với ánh nắng mặt trời.</p>
-                </div>
-                <hr style="margin:5px 0; color:rgb(201, 172, 137)">
-                <div class="element-descr-item">
-                    <span class="element-descr-item-subheading">Xuất xứ</span>
-                    <p class="element-descr-item-txt">Việt Nam</p>
-                </div>
-            </div>
-        </div>
-    </div>
     </div>
 
     <!--Slick slide chùa-->

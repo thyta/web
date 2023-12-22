@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-
     <!--Style of homepage-->
-    <link rel="stylesheet" href="../../public/css/home.css">
+    <link rel="stylesheet" href="../../public/css/style.css">
+    <!-- Font family -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
 
     <!-- include config for header and footer -->
     <?php include('../../resources/head/fh_head.php') ?>
@@ -277,8 +277,6 @@
         </div>
     </div>
 
-
-
     <!--Tin tứk-->
     <div class="story-telling">
         <div class="story-header">
@@ -356,12 +354,6 @@
            -->
 
     </div>
-
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
     <script>
         let slideIndex = 0;
 
@@ -456,6 +448,10 @@
         });
     </script>
 </body>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../../public/js/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../public/js/bootstrap.min.js"></script>
 
 <!-- <?php include '../../resources/includes/footer.php' ?> -->
 

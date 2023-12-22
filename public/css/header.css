@@ -2,7 +2,9 @@ body,
 html {
     width: 100%;
     height: 100%;
-    position: relative;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 li {
@@ -17,7 +19,7 @@ li {
     border: 1px solid rgb(223, 215, 215);
     padding: 90px 80px 50px;
     overflow: auto;
-    z-index: 997;
+    z-index: 7;
     opacity: 0;
     transform: translateX(-100%);
     transition: all ease-in-out 0.6s;
@@ -31,7 +33,7 @@ li {
     border: 1px solid rgb(223, 215, 215);
     padding: 90px 80px 50px;
     overflow: auto;
-    z-index: 996;
+    z-index: 6;
     opacity: 0;
     transform: translateX(-100%);
     transition: all ease-out 0.7s;
@@ -52,7 +54,7 @@ li {
     border: 1px solid rgb(223, 215, 215);
     padding: 90px 80px 50px;
     overflow: auto;
-    z-index: 995;
+    z-index: 5;
     opacity: 0;
     transform: translateX(-100%);
     transition: all ease-out 0.65s;
@@ -68,10 +70,11 @@ li {
     width: 40%;
     height: 600px;
     overflow: auto;
-    z-index: 9910;
-    opacity: 1;
+    z-index: 103;
+    opacity: 0;
     border-radius: 8px;
-    box-shadow: 0 1px 21px rgba(229,184,96,.25);
+    box-shadow: 0 1px 21px rgba(229, 184, 96, .25);
+    display: none;
 }
 
 .side-bar-third p {
@@ -100,7 +103,7 @@ li {
     border: 1px solid rgb(223, 215, 215);
     padding: 90px 80px 50px;
     overflow: auto;
-    z-index: 9910;
+    z-index: 102;
     opacity: 0;
     transform: translateX(100%);
     transition: all linear 0.4s;
@@ -116,19 +119,19 @@ li {
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 990;
+    z-index: 0;
     background-color: rgba(0, 0, 0, 0.3);
     display: none;
     animation: fadeIn ease-in-out 0.3s;
 }
 
 .right-sidebar {
-    z-index: 9900;
+    z-index: 101;
     background-color: rgba(0, 0, 0, 0.5);
 }
 
 .second-sidebar {
-    z-index: 994;
+    z-index: 4;
 }
 
 .show-second {
@@ -218,8 +221,15 @@ li {
 /* CSS HEADER PC: START */
 .header__pc {
     width: 100%;
-    font-family: 'Nunito';
+    position: relative;
+    transition: position 0.3s ease;
+}
+
+.fixed {
     position: fixed;
+    height: auto;
+    top: 0;
+    width: 100%;
 }
 
 .banner {
@@ -232,18 +242,18 @@ li {
     justify-content: center;
     font-size: 14px;
     position: relative;
-    z-index: 9911;
+    z-index: 100;
 }
 
 .nav {
+    position: relative;
     width: 100%;
     height: 76px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #fefbf4;
-    position: relative;
-    z-index: 9900;
+    z-index: 100;
     box-shadow: 0px 3px 3px 0px rgba(151, 108, 108, 0.22);
     border-bottom: #b7b77082 0.5px solid;
 }
@@ -367,8 +377,9 @@ li {
 
 /* CSS SEARCH: START */
 .search__container {
-   margin-top: 30%;
+    margin-top: 30%;
 }
+
 .search__input {
     margin-left: 32px;
     margin-bottom: 32px;
@@ -443,16 +454,18 @@ input:focus {
     background-color: #fefbf4;
     width: 510px;
     height: 45px;
-    margin:20px 0 10px;
+    margin: 20px 0 10px;
     font-size: 16px;
     border: none;
     border-bottom: #b48a3682 1px solid;
 }
+
 .group__status {
     color: #be2f31;
     font-size: 12px;
     font-style: italic;
 }
+
 .contact__name {
     width: 240px;
     margin-right: 30px;
@@ -467,35 +480,16 @@ input:focus {
     font-size: 30px;
     margin-bottom: 30px;
 }
-.contact__btn {
-    margin-top: 50px;
-}
+
 .btnSend {
     font-size: 22px;
     width: 250px;
     height: 70px;
-    margin-right: 10px;
-    float: left;
     border: none;
 }
 
 .btnSend:hover {
     background-color: rgb(103, 91, 91);
-}
-
-.btnCall {
-    font-size: 22px;
-    background-color: #fefbf4;
-    color: #1f1c17;
-    width: 250px;
-    height: 70px;
-    border-radius: 5px;
-    border: 1px solid #b48936;
-}
-
-.btnCall:hover {
-    background-color: #1f1c17;
-    color: #fefbf4;
 }
 
 .show-contact {
@@ -504,6 +498,7 @@ input:focus {
     opacity: 1;
     animation: fadeIn 0.5s ease;
 }
+
 /* CSS CONTACT: END */
 
 /* CSS LOGIN: START */
@@ -512,7 +507,7 @@ input:focus {
     animation: fadeIn 0.5s ease;
 }
 
-.login__title {
+.group__title {
     color: #1f1c17;
     font-size: 16px;
     margin-bottom: 40px;
@@ -527,32 +522,35 @@ input:focus {
     display: none;
     height: 656px;
     padding: 32px;
+    display: none;
 }
 
-.txt-dn{
+.txt-dn {
     font-size: 12px;
     font-weight: 600;
 }
 
-.heading{
+.heading {
     font-size: 24px;
     margin-bottom: 12px;
 }
-.dk-tai-khoan{
+
+.dk-tai-khoan {
     font-size: 12px;
     margin-bottom: 24px;
 }
 
-.tao-tk{
+.tao-tk {
     color: #C5A25D;
     font-size: 14px;
     margin-left: 3px;
 }
 
-.login-tai-khoan{
+.login-tai-khoan {
     margin-bottom: 12px;
     align-items: center;
 }
+
 .login__input {
     width: 100%;
     background-color: #fefbf4;
@@ -562,33 +560,37 @@ input:focus {
     border-bottom: #b48a3682 1px solid;
 }
 
-.icon{
+.icon {
     margin-right: 10px;
     margin-bottom: 0;
     color: #C5A25D;
 }
 
-.note-pass{
+.note-pass {
     font-style: italic;
     font-size: 12px;
 }
-.quen-mk:hover{
+
+.quen-mk:hover {
     --tw-text-opacity: 1;
     color: rgba(204, 180, 143, var(--tw-text-opacity));
     font-weight: 600;
 }
-.quen-mk{
+
+.quen-mk {
     float: right;
     --tw-text-opacity: 1;
     color: rgba(204, 180, 143, var(--tw-text-opacity));
     text-decoration: none;
     font-size: 12px;
 }
-.ghi-nho-mat-khau{
+
+.ghi-nho-mat-khau {
     padding-top: 24px;
     padding-bottom: 32px;
 }
-.dang-nhap{
+
+.dang-nhap {
     background-color: #000;
     color: aliceblue;
     left: 0;
@@ -600,11 +602,13 @@ input:focus {
     border-radius: 5px;
     margin-bottom: 10px;
 }
-.dang-nhap:hover{
+
+.dang-nhap:hover {
     opacity: 70%;
     border-radius: 0.5;
 }
-.dn-khac-item{
+
+.dn-khac-item {
     width: 64px;
     height: 64px;
     font-size: 20px;
@@ -612,22 +616,123 @@ input:focus {
     text-decoration: none;
     color: #C5A25D;
 }
-.dn-khac-item:hover{
+
+.dn-khac-item:hover {
     color: #C5A25D;
     opacity: 120%;
 }
-.error-input{
+
+.error-input {
     color: red;
 }
+
 /* CSS LOGIN: END */
+
+/* CSS SIGN UP: START */
+.sign-up {
+    position: fixed;
+    top: 10%;
+    left: 35%;
+    right: 35%;
+    bottom: 15%;
+    background-color: #fefbf4;
+    width: 30%;
+    height: 525px;
+    overflow: auto;
+    z-index: 103;
+    opacity: 0;
+    border-radius: 8px;
+    box-shadow: 0 1px 21px rgba(229, 184, 96, .25);
+    padding: 32px;
+    display: none;
+}
+
+.show-sign-up {
+    display: block;
+    opacity: 1;
+    animation: fadeIn 0.5s ease;
+}
+
+.sign-up__input {
+    background-color: #fefbf4;
+    width: 100%;
+    height: 45px;
+    margin: 20px 0 10px;
+    font-size: 16px;
+    border: none;
+    border-bottom: #b48a3682 1px solid;
+}
+
+.sign-up__btn {
+    margin-top: 50px;
+    display: grid;
+    place-items: center;
+}
+
+/* CSS SIGN UP: END */
+
+/* CSS ACCOUNT: START */
+.account {
+    display: none;
+    position: absolute;
+    background-color: #fefbf4;
+    min-width: 160px;
+    box-shadow: 3px 3px 21px rgba(229, 184, 96, .25);
+    z-index: 10;
+    margin-top: 26px;
+    opacity: 0;
+}
+
+.account__icon {
+    width: 16px;
+    height: 16px;
+    margin: 0 24px 0 0;
+}
+
+.btn__logout:hover {
+    background-color: #c5a25d2f;
+}
+
+.link__sample {
+    text-decoration: none;
+    color: #414548;
+    font-size: 16px;
+    font-weight: 600;
+    width: 325px;
+    height: 30px;
+}
+
+.account__item {
+    border: none;
+    background-color: #fefbf4;
+    width: 475px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 5px 0 0 8%;
+    cursor: pointer;
+}
+
+.account__item:hover {
+    background-color: #c5a25d2f;
+}
+
+.show-account {
+    display: block;
+    opacity: 1;
+    animation: fadeIn 0.5s ease;
+}
+
+/* CSS ACCOUNT: END */
+
 /* CSS HEADER MOBILE: START */
 @media screen and (max-width: 1023px) {
     .header__mobile {
         display: block;
         width: 100%;
         height: auto;
-        font-family: 'Nunito';
-        position: fixed;
+        position: relative;
+        background-color: #fefbf4;
     }
 
     .header__pc {
@@ -635,11 +740,13 @@ input:focus {
     }
 
     .banner {
+        position: relative;
         width: 100%;
         height: 33px;
     }
 
     .nav {
+        position: fixed;
         width: 100%;
         height: 60px;
         justify-content: space-between;
@@ -654,7 +761,7 @@ input:focus {
         width: 100%;
         height: 100vh;
         overflow: auto;
-        z-index: 991;
+        z-index: 1;
         list-style: none;
         opacity: 0;
         transform: translateX(-100%);
@@ -663,6 +770,7 @@ input:focus {
 
     .nav__item {
         margin: 5px 10px 0;
+        font-weight: 600;
     }
 
     .nav__link {
@@ -683,14 +791,11 @@ input:focus {
         cursor: pointer;
         margin: 25px 0;
         color: #414548;
+        transition: transform 1s;
     }
 
-    .login__mobile {
-        position: absolute;
-        right: 35px;
-        top: 50px;
-        display: block;
-        cursor: pointer;
+    .close__menu:hover {
+        transform: rotate(180deg);
     }
 
     .open__menu {
@@ -703,16 +808,142 @@ input:focus {
         opacity: 1;
     }
 
+    /* CSS LOGIN: START */
+    .login__mobile {
+        position: absolute;
+        right: 35px;
+        top: 50px;
+        display: block;
+        cursor: pointer;
+    }
+    .login__mobile:hover {
+        color: #C5A25D;
+    }
+    .sign-up {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+    }
+
+    .show-login-mobile {
+        opacity: 1;
+        animation: fadeIn 0.5s ease;
+    }
+
+    .login {
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: none;
+        height: auto;
+        padding: 32px;
+    }
+
+    .show-account-mobile {
+        position: relative;
+        display: block;
+        opacity: 1;
+        animation: fadeIn 0.5s ease;
+    }
+    .close__account {
+        position: absolute;
+        top: 10px;
+        left: 35px;
+    }
+    .account-mobile {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 640px;
+    }
+    .account__icon--mobile {
+        position: absolute;
+        top: 10px;
+        right: 35px;
+    }
+    .account__icon--mobile:hover {
+        color: #C5A25D;
+        cursor: pointer;
+    }
+    .account__container--mobile {
+        margin-top: 50px;
+    }
+    /* CSS LOGIN: END */
+
+    /* CSS CONTACT MOBILE: END */
+    .contact__icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .contact {
+        display: none;
+        width: 100%;
+        top: 0;
+        left: 0;
+        height: auto;
+    }
+
+    .group__input {
+        background-color: #fefbf4;
+        width: 100%;
+        height: 45px;
+        margin: 20px 0 10px;
+        font-size: 16px;
+        border: none;
+        border-bottom: #b48a3682 1px solid;
+    }
+
+    .contact__name {
+        width: 100%;
+    }
+
+    .contact__title {
+        color: #1f1c17;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .contact__tel {
+        width: 100%;
+    }
+
+    .contact__col {
+        display: block;
+    }
+
+    .contact__btn {
+        margin-top: 20px;
+    }
+
+    .btnSend {
+        font-size: 16px;
+        width: 150px;
+        height: 50px;
+        border: none;
+    }
+
+    .show-contact {
+        display: grid;
+        place-items: center;
+        opacity: 1;
+        animation: fadeIn 0.5s ease;
+    }
+
+    /* CSS CONTACT MOBILE: END */
+
     /* CSS PRODUCT MOBILE: START */
     .product__mobile--category {
         margin-bottom: 30px;
     }
 
-    .group__title {
+    .group__title--mobile {
         font-weight: 600;
         font-size: 16px;
         color: #1f1c17;
         cursor: pointer;
+        margin: 0 0 5px 0;
     }
 
     .product__mobile {
@@ -722,7 +953,6 @@ input:focus {
     /* .product__list {
         margin-bottom: 40px;
     } */
-
     .product__item {
         margin-left: -32px;
     }
@@ -744,6 +974,14 @@ input:focus {
 
     .group__item--mobile {
         margin-left: -32px;
+    }
+
+    .nav__list--mobile {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        padding-right: 10px;
+        padding-top: 5px;
     }
 
     /* CSS PRODUCT MOBILE: END */
