@@ -887,7 +887,7 @@
         var scrollPosition = window.scrollY || document.documentElement.scrollTop;
 
         // Khi cuộn xuống đủ xa, thay đổi position thành fixed
-        if (scrollPosition > 100) {
+        if (scrollPosition > 0) {
             header.classList.add('fixed');
         } else {
             header.classList.remove('fixed');

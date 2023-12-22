@@ -568,7 +568,7 @@
         </div>
         <!-- SEARCH: END -->
 
-        <!-- CART: END -->
+        <!-- CART: START -->
         <div class="cart side-bar-right" id="cart">
             <i data-feather="x" class="close__cart close-sample" id="close-cart"></i>
             <div></div>

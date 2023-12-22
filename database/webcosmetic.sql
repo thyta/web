@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS coupons (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
-=======
+
 USE web;
 -- BẢNG LIÊN HỆ CỦA BIN, ĐỪNG ĐỤNG DÔ T CHẶT TAY
 CREATE TABLE IF NOT EXISTS `contacts` (
@@ -64,4 +64,3 @@ CREATE TABLE IF NOT EXISTS `contacts` (
 INSERT INTO `contacts` (`contact_id`, `contact_name`, `contact_phone`, `contact_email`, `question`) VALUES
 -- thông tin
 COMMIT;
->>>>>>> 2e052a6f809aee7679cc13b20e0fc6137ad1efa1

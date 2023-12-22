@@ -44,18 +44,15 @@
                 // Serialize parameters into a query string
                 var queryString = $.param(parameters);
 
-                alert(queryString);
+                // alert(queryString);
 
                 $.get("../../../app/controller/admin/adCreateController.php?" + queryString, function (data, status) {
                     console.log("Response data:", data);
-                    alert(data);
+                    alert("Sản phẩm đã được tạo");
                 });
             });
         });
     </script>
-
-
-
 </head>
 
 <body class="bg-light">
