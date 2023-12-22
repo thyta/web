@@ -55,13 +55,10 @@ USE web;
 -- BẢNG LIÊN HỆ CỦA BIN, ĐỪNG ĐỤNG DÔ T CHẶT TAY
 CREATE TABLE IF NOT EXISTS `contacts` (
     contact_id INT AUTO_INCREMENT PRIMARY KEY,
-    contact_name VARCHAR(255) COLLATE utf8_unicode_ci NOT NULL,
+    contact_name VARCHAR(255) NOT NULL,
     contact_phone VARCHAR(20) NOT NULL,
     contact_email VARCHAR(255) NOT NULL,
-    question TEXT COLLATE utf8_unicode_ci NOT NULL,
+    question TEXT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-INSERT INTO `contacts` (`contact_id`, `contact_name`, `contact_phone`, `contact_email`, `question`) VALUES
--- thông tin
-COMMIT;
 >>>>>>> 2e052a6f809aee7679cc13b20e0fc6137ad1efa1
