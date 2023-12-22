@@ -26,6 +26,7 @@
                 var discountStartDate = $("#discountStartDate").val();
                 var discountEndDate = $("#discountEndDate").val();
                 var description = $("#description").val();
+                var statusProduct = $("#statusProduct").prop("checked") ? 1 : 0; // 1 for available, 0 for unavailable
 
                 // Organize parameters in an object
                 var parameters = {
@@ -36,11 +37,14 @@
                     discountPercentage: discountPercentage,
                     discountStartDate: discountStartDate,
                     discountEndDate: discountEndDate,
-                    description: description
+                    description: description,
+                    statusProduct: statusProduct
                 };
 
                 // Serialize parameters into a query string
                 var queryString = $.param(parameters);
+
+                alert(queryString);
 
                 $.get("../../../app/controller/admin/adCreateController.php?" + queryString, function (data, status) {
                     console.log("Response data:", data);
@@ -48,7 +52,6 @@
                 });
             });
         });
-
     </script>
 
 
@@ -113,6 +116,14 @@
                             value="2024-12-21" required>
                     </div>
 
+                    <div class="form-group">
+                        <label for="statusProduct">Trạng thái sản phẩm:</label>
+                        <div class="form-check">
+                            <input type="checkbox" id="statusProduct" name="statusProduct" class="form-check-input"
+                                checked>
+                            <label class="form-check-label" for="statusProduct">Khả dụng</label>
+                        </div>
+                    </div>
 
                     <!-- <button type="submit" class="btn btn-primary btn-block" id="btnCreate">Tạo sản phẩm</button> -->
                     <button type="button" class="btn btn-primary btn-block" id="btnCreate">Tạo sản phẩm</button>

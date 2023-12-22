@@ -30,6 +30,7 @@ CREATE TABLE IF NOT EXISTS products (
     discount_percentage DECIMAL(5, 2),
     discount_start_date DATE,
     discount_end_date DATE,
+    status_product BOOLEAN,
     FOREIGN KEY (category_id) REFERENCES categories(category_id)
 );
 
