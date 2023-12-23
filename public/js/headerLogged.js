@@ -129,27 +129,6 @@ closeCosmetic.addEventListener("click", () =>{
 });
 //EVENT OPEN / CLOSE COSMETIC: END
 
-// EVENT SEARCH: START
-const search = document.getElementById('search');
-const btnSearch = document.getElementById('btn-search');
-const closeSearch = document.getElementById('close-search');
-const searchInput = document.getElementById('search-input');
-const searchSuggest = document.getElementById('search-suggest');
-btnSearch.addEventListener("click", () =>{
-    search.classList.add("show");
-    searchInput.classList.add('show-text');
-    searchSuggest.classList.add('show-text');
-    cart.classList.remove('show');
-})
-
-closeSearch.addEventListener("click", () =>{
-    search.classList.toggle('show');
-    searchInput.classList.remove('show-text');
-    searchSuggest.classList.remove('show-text');
-    overlayRight.style.display = "none";
-});
-// EVENT SEARCH: END
-
 // EVENT CART: START
 const cart = document.getElementById('cart');
 const btncart = document.getElementById('btn-cart');
@@ -157,9 +136,6 @@ const closecart = document.getElementById('close-cart');
 
 btncart.addEventListener("click", () =>{
     cart.classList.add("show");
-    search.classList.remove('show');
-    searchInput.classList.remove('show-text');
-    searchSuggest.classList.remove('show-text');
 })
 
 closecart.addEventListener("click", () =>{
@@ -225,9 +201,6 @@ function onLeft() {
   
   function offRight() {
     document.getElementById("overlay-right").style.display = "none";
-    search.classList.remove('show');
-    searchInput.classList.remove('show-text');
-    searchSuggest.classList.remove('show-text');
     cart.classList.remove('show');
     contact.classList.remove('show-contact');
     login.style.display = 'none';

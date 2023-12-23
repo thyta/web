@@ -11,6 +11,18 @@ li {
     list-style: none;
 }
 
+.header {
+    z-index: 8000;
+}
+
+.group__title--p {
+    margin-left: 21px;
+}
+
+.group__title--third {
+    margin-left: -12px;
+}
+
 .side-bar {
     position: absolute;
     background-color: #fefbf4;
@@ -43,7 +55,6 @@ li {
     font-weight: 600;
     font-size: 16px;
     color: #414548;
-    margin-left: 32px;
 }
 
 .side-bar-third {
@@ -68,7 +79,7 @@ li {
     bottom: 15%;
     background-color: #fefbf4;
     width: 40%;
-    height: 600px;
+    height: 70%;
     overflow: auto;
     z-index: 103;
     opacity: 0;
@@ -174,15 +185,16 @@ li {
     }
 }
 
-.group__link:hover {
-    border-bottom: 1px solid #414548;
-}
-
-.link-pc {
+.link__pc--wb {
     text-decoration: none;
     font-size: 26px;
     color: #414548;
-    font-weight: 500;
+    font-weight: 400;
+    font-family: 'Roboto';
+}
+
+.link__pc--wb:hover {
+    color: #414548;
 }
 
 .link-mobile {
@@ -192,7 +204,7 @@ li {
     font-weight: 500;
 }
 
-.btn-sample {
+.btn__wb {
     background-color: #fefbf4;
     border: none;
     font-size: 20px;
@@ -201,6 +213,10 @@ li {
     padding: 0;
     text-decoration: none;
     cursor: pointer;
+}
+
+.btn__wb:hover {
+    color: #414548;
 }
 
 .close-sample {
@@ -245,7 +261,7 @@ li {
     z-index: 100;
 }
 
-.nav {
+.navigation {
     position: relative;
     width: 100%;
     height: 76px;
@@ -258,29 +274,31 @@ li {
     border-bottom: #b7b77082 0.5px solid;
 }
 
-.nav__list {
+.navigation__list {
     list-style: none;
     display: flex;
     align-items: center;
     padding: 0 30px;
 }
 
-.nav__logo img {
+.navigation__logo img {
     width: 150px;
     height: 65px;
     cursor: pointer;
 }
 
-.nav__item {
-    margin: 15px 10px 0px;
+.navigation__item {
+    margin: 10px 10px 0px;
+    font-family: 'Roboto', sans-serif;
 }
 
-.nav__link {
+.navigation__link {
     font-size: 16px;
     color: #1f1c17;
+    font-family: 'Roboto', sans-serif;
 }
 
-.nav__link:hover {
+.navigation__link:hover {
     border-bottom: 1px solid #414548;
 }
 
@@ -294,7 +312,6 @@ li {
     font-weight: 600;
     font-size: 16px;
     color: #1f1c17;
-    margin-left: 32px;
 }
 
 .product__related {
@@ -305,7 +322,6 @@ li {
     font-weight: 600;
     font-size: 16px;
     color: #414548;
-    margin-left: 32px;
 }
 
 .group__product--item {
@@ -360,7 +376,6 @@ li {
     font-weight: 600;
     font-size: 16px;
     color: #414548;
-    margin-left: 32px;
 }
 
 /* CSS DISCOUNT: END */
@@ -370,35 +385,17 @@ li {
     font-weight: 600;
     font-size: 16px;
     color: #414548;
-    margin-left: 32px;
 }
 
 /* CSS COSMETIC:END */
 
 /* CSS SEARCH: START */
-.search__container {
-    margin-top: 30%;
-}
-
-.search__input {
-    margin-left: 32px;
-    margin-bottom: 32px;
-}
-
-.search__input p {
-    font-weight: 600;
-    font-size: 16px;
+.search {
     color: #1f1c17;
-    margin-bottom: 64px;
 }
-
-.search__suggest p {
-    font-weight: 600;
-    font-size: 16px;
-    color: #1f1c17;
-    margin-left: 32px;
+.search:hover {
+    color: #C5A25D;
 }
-
 /* CSS SEARCH: END */
 
 /* CSS CART: START */
@@ -410,10 +407,10 @@ li {
 
 .button {
     text-decoration: none;
-    width: 200px;
+    width: 100%;
     height: 50px;
     color: #fefbf4;
-    font-size: 16px;
+    font-size: 12px;
     background-color: #1f1c17;
     border-radius: 5px;
     display: flex;
@@ -432,10 +429,10 @@ li {
 
 /* CSS CART: END */
 /* CSS CONTACT: START */
-input:focus {
-    border-bottom: 1px solid black;
+/* input:focus {
+    border-color: ;
     outline: none;
-}
+} */
 
 ::placeholder {
     color: #b48a3682;
@@ -453,7 +450,7 @@ input:focus {
 .group__input {
     background-color: #fefbf4;
     width: 510px;
-    height: 45px;
+    height: 35px;
     margin: 20px 0 10px;
     font-size: 16px;
     border: none;
@@ -482,10 +479,9 @@ input:focus {
 }
 
 .btnSend {
-    font-size: 22px;
-    width: 250px;
-    height: 70px;
+    font-size: 16px;
     border: none;
+    margin-top: 10px;
 }
 
 .btnSend:hover {
@@ -514,14 +510,18 @@ input:focus {
     font-weight: 600;
 }
 
+.navigation__link:hover {
+    color: #414548;
+}
+
 .login {
     top: 5%;
-    left: 35%;
-    right: 35%;
-    width: 30%;
+    left: 36%;
+    right: 36%;
+    width: 28%;
     display: none;
-    height: 656px;
-    padding: 32px;
+    height: 85%;
+    padding: 24px;
     display: none;
 }
 
@@ -593,6 +593,7 @@ input:focus {
 .dang-nhap {
     background-color: #000;
     color: aliceblue;
+    font-size: 12px;
     left: 0;
     right: 0;
     width: 100%;
@@ -631,19 +632,19 @@ input:focus {
 /* CSS SIGN UP: START */
 .sign-up {
     position: fixed;
-    top: 10%;
-    left: 35%;
-    right: 35%;
+    top: 5%;
+    left: 36%;
+    right: 36%;
     bottom: 15%;
     background-color: #fefbf4;
-    width: 30%;
-    height: 525px;
+    width: 28%;
+    height: 85%;
     overflow: auto;
     z-index: 103;
     opacity: 0;
     border-radius: 8px;
     box-shadow: 0 1px 21px rgba(229, 184, 96, .25);
-    padding: 32px;
+    padding: 24px;
     display: none;
 }
 
@@ -653,18 +654,34 @@ input:focus {
     animation: fadeIn 0.5s ease;
 }
 
+.sign-up__container p {
+    font-size: 16px;
+    color: #C5A25D;
+}
+
 .sign-up__input {
     background-color: #fefbf4;
     width: 100%;
     height: 45px;
-    margin: 20px 0 10px;
     font-size: 16px;
     border: none;
+    float: left;
+    margin-left: 10px;
     border-bottom: #b48a3682 1px solid;
+}
+.input__icon {
+    color: #C5A25D;
+}
+
+.input__container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-top: 20px;
 }
 
 .sign-up__btn {
-    margin-top: 50px;
+    margin-top: 40px;
     display: grid;
     place-items: center;
 }
@@ -700,6 +717,10 @@ input:focus {
     font-weight: 600;
     width: 325px;
     height: 30px;
+}
+
+.link__sample:hover {
+    color: #414548;
 }
 
 .account__item {
@@ -745,12 +766,6 @@ input:focus {
         height: 33px;
     }
 
-    .nav {
-        position: fixed;
-        width: 100%;
-        height: 60px;
-        justify-content: space-between;
-    }
 
     .nav__list--menu {
         position: fixed;
@@ -768,21 +783,21 @@ input:focus {
         transition: all linear 0.4s;
     }
 
-    .nav__item {
+    .navigation__item {
         margin: 5px 10px 0;
         font-weight: 600;
     }
 
-    .nav__link {
+    .navigation__link {
         font-weight: 600;
         font-size: 16px;
     }
 
-    .nav__logo {
+    .navigation__logo {
         width: 10px;
     }
 
-    .nav__logo img {
+    .navigation__logo img {
         width: 85px;
         height: 43px;
     }
@@ -790,6 +805,7 @@ input:focus {
     .close__menu {
         cursor: pointer;
         margin: 25px 0;
+        margin-left: -12px;
         color: #414548;
         transition: transform 1s;
     }
@@ -816,14 +832,16 @@ input:focus {
         display: block;
         cursor: pointer;
     }
+
     .login__mobile:hover {
         color: #C5A25D;
     }
+
     .sign-up {
         top: 0;
         left: 0;
         width: 100%;
-        height: auto;
+        height: 100%;
     }
 
     .show-login-mobile {
@@ -836,7 +854,7 @@ input:focus {
         left: 0;
         width: 100%;
         display: none;
-        height: auto;
+        height: 100%;
         padding: 32px;
     }
 
@@ -846,29 +864,35 @@ input:focus {
         opacity: 1;
         animation: fadeIn 0.5s ease;
     }
+
     .close__account {
         position: absolute;
         top: 10px;
         left: 35px;
     }
+
     .account-mobile {
-        top: 0;
+        top: -60px;
         left: 0;
         width: 100%;
         height: 640px;
     }
+
     .account__icon--mobile {
         position: absolute;
         top: 10px;
         right: 35px;
     }
+
     .account__icon--mobile:hover {
         color: #C5A25D;
         cursor: pointer;
     }
+
     .account__container--mobile {
         margin-top: 50px;
     }
+
     /* CSS LOGIN: END */
 
     /* CSS CONTACT MOBILE: END */
@@ -882,7 +906,7 @@ input:focus {
         width: 100%;
         top: 0;
         left: 0;
-        height: auto;
+        height: 100%;
     }
 
     .group__input {
@@ -943,7 +967,7 @@ input:focus {
         font-size: 16px;
         color: #1f1c17;
         cursor: pointer;
-        margin: 0 0 5px 0;
+        margin-left: -10px;
     }
 
     .product__mobile {
@@ -976,7 +1000,7 @@ input:focus {
         margin-left: -32px;
     }
 
-    .nav__list--mobile {
+    .navigation__list--mobile {
         list-style: none;
         display: flex;
         align-items: center;
