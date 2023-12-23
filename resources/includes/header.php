@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="../../public/font/themify-icons/themify-icons.css">
     <!-- Css -->
     <link rel="stylesheet" href="../../public/css/header.css">
-
     <!-- Font family -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
     <!-- Feather icon -->
@@ -572,7 +571,7 @@
                     <div class="contact__col">
                         <div>
                             <div>
-
+                                
                                 <input type="text" class="contact__name group__input" required="required"
                                     name="nameContact" id="nameContact" placeholder="Tên của bạn*" tabindex="1"
                                     autocomplete="off">
@@ -871,6 +870,21 @@
             header.classList.remove('fixed');
         }
     };
+
+</script>
+<script>
+    $(document).ready(function () {
+        $("#btnSend").click(function (event) {
+            var nameContact = $("#nameContact").val();
+            var telContact = $("#telContact").val();
+            var emailContact = $("#emailContact").val();
+            var questionContact = $("questionContact").val();
+            var parameters = "nameContact= " + nameContact + "&" + "telContact= " + telContact + "&" + "emailContact= " + emailContact + "&" + "password= " + password + "&" + "questionContact= " + questionContact
+            $.get("../../app/controller/contactController.php?=" + parameters, function (data, status) {
+                alert(status);
+            });
+        });
+    });
 </script>
 <script>feather.replace()</script>
 <script src="../../public/js/header.js"></script>

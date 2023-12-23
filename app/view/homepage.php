@@ -453,6 +453,6 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="../../public/js/bootstrap.min.js"></script>
 
-<!-- <?php include '../../resources/includes/footer.php' ?> -->
+<?php include '../../resources/includes/footer.php' ?>
 
 </html>

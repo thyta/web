@@ -1,25 +1,25 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = mysqli_real_escape_string($conn, $_POST['nameContact']);
-    $phone = mysqli_real_escape_string($conn, $_POST['telContact']);
-    $email = mysqli_real_escape_string($conn, $_POST['emailContact']);
-    $question = mysqli_real_escape_string($conn, $_POST['questionContact']);
+    $name = filter_input(INPUT_POST, 'nameContact', FILTER_SANITIZE_STRING);
+    $tel = filter_input(INPUT_POST, 'telContact', FILTER_SANITIZE_STRING);
+    $email = filter_input(INPUT_POST, 'emailContact', FILTER_SANITIZE_STRING);
+    $question = filter_input(INPUT_POST, 'questionContact', FILTER_SANITIZE_STRING);
 
-    define('DB_SERVER', 'localhost');
-    define('DB_USERNAME', 'root');
-    define('DB_PASSWORD', '');
-    define('DB_NAME', 'web');
-    
+    $servername = "localhost";
+    $username_db = "root";
+    $password_db = "";
+    $dbname = "web";
+
     // Create connection
-    $conn = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+    $conn = new mysqli($servername, $username_db, $password_db, $dbname);
 
     // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "INSERT INTO product (contact_name, contact_phone, contact_email, question)
-            VALUES ('" . $name . "','" . $phone . "','" . $email . "','" . $question . "')";
+    $sql = "INSERT INTO contacts (contact_name, contact_phone, contact_email, question)
+            VALUES ('" . $name . "','" . $tel . "','" . $email . "','" . $question . "')";
 
     if ($conn->query($sql) === TRUE) {
         echo "The question was sent successfully";
@@ -27,5 +27,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
 }
-    $conn->close();
+$conn->close();
 ?>

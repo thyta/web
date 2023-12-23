@@ -30,20 +30,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             die("Kết nối không thành công: " . $conn->connect_error);
         }
 
-        // Check if the email already exists
-        $check_email_query = $conn->prepare("SELECT id FROM users WHERE email = ?");
-        $check_email_query->bind_param("s", $email);
+        // Check if the phone already exists
+        $check_phone_query = $conn->prepare("SELECT id FROM users WHERE phone = ?");
+        $check_phone_query->bind_param("s", $phone);
 
         // Check if prepare() was successful
-        if (!$check_email_query) {
+        if (!$check_phone_query) {
             die("Prepare failed: " . $conn->error);
         }
 
-        $check_email_query->execute();
-        $check_email_result = $check_email_query->get_result();
+        $check_phone_query->execute();
+        $check_phone_result = $check_phone_query->get_result();
 
-        if ($check_email_result->num_rows > 0) {
-            echo "Email đã được sử dụng. Vui lòng nhập email khác.";
+        if ($check_phone_result->num_rows > 0) {
+            echo "Số điện thoại đã được sử dụng. Vui lòng nhập số khác.";
         } else {
             // Email is available, proceed with user registration
 
@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Execute the statement
             if ($insert_user_query->execute()) {
-                echo "Đăng ký thành công! Email: " . $email;
+                echo "Đăng ký thành công! Welcome: " . $full_name;
             } else {
                 echo "Đăng ký không thành công. Vui lòng thử lại.";
                 // Optionally, you can output more details about the error for debugging:
@@ -70,8 +70,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $insert_user_query->close();
         }
 
-        // Close the statement and connection for checking email
-        $check_email_query->close();
+        // Close the statement and connection for checking phone
+        $check_phone_query->close();
         $conn->close();
     }
 }
