@@ -390,28 +390,12 @@ li {
 /* CSS COSMETIC:END */
 
 /* CSS SEARCH: START */
-.search__container {
-    margin-top: 30%;
-}
-
-.search__input {
-    margin-left: 32px;
-    margin-bottom: 32px;
-}
-
-.search__input p {
-    font-weight: 600;
-    font-size: 16px;
-    color: #1f1c17;
-    margin-bottom: 64px;
-}
-
-.search__suggest p {
-    font-weight: 600;
-    font-size: 16px;
+.search {
     color: #1f1c17;
 }
-
+.search:hover {
+    color: #C5A25D;
+}
 /* CSS SEARCH: END */
 
 /* CSS CART: START */
@@ -445,10 +429,10 @@ li {
 
 /* CSS CART: END */
 /* CSS CONTACT: START */
-input:focus {
-    border-bottom: 1px solid #414548;
+/* input:focus {
+    border-color: ;
     outline: none;
-}
+} */
 
 ::placeholder {
     color: #b48a3682;

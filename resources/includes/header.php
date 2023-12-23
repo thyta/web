@@ -43,9 +43,8 @@
                 </ul>
                 <div class="navigation__logo"><img src="../../public/img/logo.png" alt=""></div>
                 <ul class="navigation__list">
-                    <li class="navigation__item"><button type="button" onclick="onRight()"
-                            class="navigation__link btn__wb" id="btn-search">
-                            <i data-feather="search"></i></button></li>
+                    <li class="navigation__item"><a href="" class="search" id="btn-search">
+                            <i data-feather="search"></i></a></li>
                     <li class="navigation__item"><button type="button" onclick="onRight()"
                             class="navigation__link btn__wb" id="btn-login">Đăng nhập</button></li>
                     <li class="navigation__item"><button type="button" onclick="onRight()"
@@ -518,7 +517,7 @@
             <!-- DISCOUNT: START -->
             <div class="discount side-bar" id="discount">
                 <i data-feather="x" class="close__discount close-sample" id="close-discount"></i>
-                <p>Discount</p>
+                <p class="group__title--p">Discount</p>
                 <ul class="discount__list" id="discount-list">
                     <li class="discount__item"><a href="" class="discount__link link__pc--wb">Cà phê Đắk Lắk nguyên
                             chất
@@ -530,7 +529,7 @@
             <!-- COSMETIC: START -->
             <div class="cosmetic side-bar" id="cosmetic">
                 <i data-feather="x" class="close__cosmetic close-sample" id="close-cosmetic"></i>
-                <p>Cosmetic</p>
+                <p class="group__title--p">Cosmetic</p>
                 <ul class="cosmetic__list" id="cosmetic-list">
                     <li class="cosmetic__item"><a href="" class="cosmetic__link link__pc--wb">Câu chuyện thương
                             hiệu</a>
@@ -543,38 +542,6 @@
                 </ul>
             </div>
             <!-- COSMETIC: END -->
-
-            <!-- SEARCH: START -->
-            <div class="search side-bar-right" id="search">
-                <i data-feather="x" class="close__search close-sample" id="close-search"></i>
-                <div class="search__container">
-                    <div>
-                        <form method="GET" action="postcontroller.php">
-                            <input type="hidden" name="action" value="Search">
-                            <div class="search__input" id="search-input">
-                                <p>Nhập từ khóa bạn muốn tìm kiếm</p>
-                                <input type="text" placeholder="Tìm kiếm theo tên sản phẩm..." name="keyword"
-                                    id="keyword">
-                                <button type="submit" class="btn__wb">
-                                    <i data-feather="arrow-right"></i>
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="search__suggest" id="search-suggest">
-                        <p>Gợi ý tìm kiếm:</p>
-                        <ul class="suggest__list" id="suggest-list">
-                            <li class="suggest__item"><a href="" class="suggest__link link__pc--wb">Sữa rửa mặt</a>
-                            </li>
-                            <li class="suggest__item"><a href="" class="suggest__link link__pc--wb">Nước tẩy trang</a>
-                            </li>
-                            <li class="suggest__item"><a href="" class="suggest__link link__pc--wb">Gel tắm</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!-- SEARCH: END -->
 
             <!-- CART: END -->
             <div class="cart side-bar-right" id="cart">
@@ -604,6 +571,7 @@
                     <div class="contact__col">
                         <div>
                             <div>
+                                
                                 <input type="text" class="contact__name group__input" required="required"
                                     name="nameContact" id="nameContact" placeholder="Tên của bạn*" tabindex="1"
                                     autocomplete="off">
@@ -896,7 +864,7 @@
         var scrollPosition = window.scrollY || document.documentElement.scrollTop;
 
         // Khi cuộn xuống đủ xa, thay đổi position thành fixed
-        if (scrollPosition > 100) {
+        if (scrollPosition > 0) {
             header.classList.add('fixed');
         } else {
             header.classList.remove('fixed');
