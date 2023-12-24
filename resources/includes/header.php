@@ -19,7 +19,7 @@
     <!-- Feather icon -->
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-
+    <?php include('../../resources/head/fh_head.php') ?>
 </head>
 
 <body>
@@ -43,7 +43,7 @@
                 </ul>
                 <div class="navigation__logo"><img src="../../public/img/logo.png" alt=""></div>
                 <ul class="navigation__list">
-                    <li class="navigation__item"><a href="" class="search" id="btn-search">
+                    <li class="navigation__item"><a href="../../app/view/search.php" class="search" id="btn-search">
                             <i data-feather="search"></i></a></li>
                     <li class="navigation__item"><button type="button" onclick="onRight()"
                             class="navigation__link btn__wb" id="btn-login">Đăng nhập</button></li>
@@ -571,7 +571,7 @@
                     <div class="contact__col">
                         <div>
                             <div>
-                                
+
                                 <input type="text" class="contact__name group__input" required="required"
                                     name="nameContact" id="nameContact" placeholder="Tên của bạn*" tabindex="1"
                                     autocomplete="off">
@@ -854,10 +854,12 @@
             </nav>
         </header>
         <!-- HEADER MOBILE: END -->
+
     </div>
+    <div class="empty__header"></div>
 </body>
 <!-- SCRIPT -->
-<script>
+<!-- <script>
     //Change header => fixed
     window.onscroll = function () {
         var header = document.getElementById('header');
@@ -871,8 +873,8 @@
         }
     };
 
-</script>
-<script>
+</script> -->
+<!-- <script>
     $(document).ready(function () {
         $("#btnSend").click(function (event) {
             var nameContact = $("#nameContact").val();
@@ -880,11 +882,11 @@
             var emailContact = $("#emailContact").val();
             var questionContact = $("questionContact").val();
             var parameters = "nameContact= " + nameContact + "&" + "telContact= " + telContact + "&" + "emailContact= " + emailContact + "&" + "password= " + password + "&" + "questionContact= " + questionContact
-            $.get("../../app/controller/contactController.php?=" + parameters, function (data, status) {
+            $.post("../../app/controller/contactController.php?=" + parameters, function (data, status) {
                 alert(status);
             });
         });
-    });
+    }); -->
 </script>
 <script>feather.replace()</script>
 <script src="../../public/js/header.js"></script>

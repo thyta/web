@@ -201,16 +201,16 @@ const btnSignUp = document.getElementById('btn-sign-up');
 const btnCloseSignUp = document.getElementById('close-sign-up');
 btnSignUp.addEventListener('click', () => {
     signUp.classList.add('show-sign-up');
-    login.classList.remove('show-login');
     signUp.style.display = 'block';
+    login.classList.remove('show-login');
+    login.style.display = 'none';
 });
 
 btnCloseSignUp.addEventListener('click', () => {
     signUp.classList.remove('show-sign-up');
     signUp.style.display = 'none';
     overlayRight.style.display = 'none';
-
-})
+});
 //EVENT SIGN UP: END
 //EVENT ACCOUNT: START
 function openAccount() {
@@ -245,6 +245,7 @@ function onLeft() {
     document.getElementById("overlay-right").style.display = "none";
     cart.classList.remove('show');
     contact.classList.remove('show-contact');
+    login.classList.remove('show-login');
     login.style.display = 'none';
     signUp.classList.remove('show-sign-up');
     signUp.style.display = 'none';

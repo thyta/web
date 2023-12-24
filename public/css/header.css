@@ -12,7 +12,10 @@ li {
 }
 
 .header {
+    width: 100%;
+    position: fixed;
     z-index: 8000;
+
 }
 
 .group__title--p {
@@ -237,16 +240,18 @@ li {
 /* CSS HEADER PC: START */
 .header__pc {
     width: 100%;
-    position: relative;
-    transition: position 0.3s ease;
+    height: auto;
+    top: 0;
+    position: fixed;
+    /* transition: position 0.3s ease; */
 }
 
-.fixed {
+/* .fixed {
     position: fixed;
     height: auto;
     top: 0;
     width: 100%;
-}
+} */
 
 .banner {
     background-color: black;
@@ -393,9 +398,11 @@ li {
 .search {
     color: #1f1c17;
 }
+
 .search:hover {
     color: #C5A25D;
 }
+
 /* CSS SEARCH: END */
 
 /* CSS CART: START */
@@ -429,10 +436,10 @@ li {
 
 /* CSS CART: END */
 /* CSS CONTACT: START */
-/* input:focus {
-    border-color: ;
+.group__input:focus {
+    border-bottom: 1px solid #414548;
     outline: none;
-} */
+}
 
 ::placeholder {
     color: #b48a3682;
@@ -560,6 +567,10 @@ li {
     border-bottom: #b48a3682 1px solid;
 }
 
+.login__input:focus {
+    border-bottom: #414548 1px solid;
+}
+
 .icon {
     margin-right: 10px;
     margin-bottom: 0;
@@ -669,6 +680,12 @@ li {
     margin-left: 10px;
     border-bottom: #b48a3682 1px solid;
 }
+
+.sign-up__input:focus {
+    border-bottom: #414548 1px solid;
+    outline: none;
+}
+
 .input__icon {
     color: #C5A25D;
 }
@@ -749,11 +766,16 @@ li {
 /* CSS HEADER MOBILE: START */
 @media screen and (max-width: 1023px) {
     .header__mobile {
-        display: block;
+        display: inline-block;
+        top: 0;
         width: 100%;
         height: auto;
-        position: relative;
+        position: fixed;
         background-color: #fefbf4;
+    }
+
+    .empty__header {
+        height: 81px;
     }
 
     .header__pc {
@@ -763,9 +785,13 @@ li {
     .banner {
         position: relative;
         width: 100%;
-        height: 33px;
+        height: 25px;
     }
 
+    .navigation {
+        position: relative;
+        height: 56px;
+    }
 
     .nav__list--menu {
         position: fixed;
@@ -1011,6 +1037,10 @@ li {
     /* CSS PRODUCT MOBILE: END */
 }
 
+.empty__header {
+    width: 100%;
+    height: 111px;
+}
 
 /* ANIMATION */
 
