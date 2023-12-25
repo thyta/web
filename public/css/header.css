@@ -761,6 +761,11 @@ li {
     animation: fadeIn 0.5s ease;
 }
 
+.empty__header {
+    width: 100%;
+    height: 111px;
+}
+
 /* CSS ACCOUNT: END */
 
 /* CSS HEADER MOBILE: START */
@@ -1037,10 +1042,6 @@ li {
     /* CSS PRODUCT MOBILE: END */
 }
 
-.empty__header {
-    width: 100%;
-    height: 111px;
-}
 
 /* ANIMATION */
 

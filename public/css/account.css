@@ -1,7 +1,7 @@
 .account__container {
     background-color: #fefbf4;
     width: 90%;
-    height: 80%;
+    height: 60%;
     border-radius: 18px;
     margin: 2% 5%;
     padding: 10px 20px;
@@ -18,7 +18,7 @@
 }
 
 .account__person {
-    margin-top: 5%;
+    margin-top: 40px;
     width: 25%;
 }
 
@@ -56,4 +56,13 @@
 
 .btnDelete:hover {
     background-color: rgb(103, 91, 91);
+}
+
+@media screen and (max-width: 1023px) {
+    .account__person p{
+        width: 300%;
+    }
+    .account__container {
+        height: 400px;
+    }
 }
