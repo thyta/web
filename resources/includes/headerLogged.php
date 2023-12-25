@@ -19,7 +19,7 @@
     <!-- Feather icon -->
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-
+    <?php include('../../resources/head/fh_head.php') ?>
 </head>
 
 <body>
@@ -55,7 +55,7 @@
                                         <div class="account__item"><a href="#" class="link__sample">
                                                 <i data-feather="phone" class="account__icon"></i>
                                                 0387779614</a></div>
-                                        <div class="account__item"><a href="#" class="link__sample">
+                                        <div class="account__item"><a href="../../app/view/account.php" class="link__sample">
                                                 <i data-feather="user" class="account__icon"></i>
                                                 Thông tin tài khoản</a>
                                         </div>
@@ -904,6 +904,7 @@
         </header>
         <!-- HEADER MOBILE: END -->
     </div>
+    <div class="empty__header"></div>
 </body>
 <!-- SCRIPT -->
 <script>

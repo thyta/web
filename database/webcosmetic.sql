@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS coupons (
 );
 =======
 USE web;
--- BẢNG LIÊN HỆ CỦA BIN, ĐỪNG ĐỤNG DÔ T CHẶT TAY
+
 CREATE TABLE IF NOT EXISTS `contacts` (
     contact_id INT AUTO_INCREMENT PRIMARY KEY,
     contact_name VARCHAR(255) NOT NULL,
