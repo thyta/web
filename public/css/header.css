@@ -109,7 +109,7 @@ li {
     right: 0;
     top: 0;
     background-color: #fefbf4;
-    width: 34%;
+    width: 50%;
     height: 100vh;
     border: 1px solid rgb(223, 215, 215);
     padding: 90px 80px 50px;
@@ -393,12 +393,48 @@ li {
 .search {
     color: #1f1c17;
 }
+
 .search:hover {
     color: #C5A25D;
 }
+
 /* CSS SEARCH: END */
 
 /* CSS CART: START */
+.img-cart {
+    width: 70px;
+    height: 70px;
+}
+
+.single-product-cart td {
+    padding-bottom: 20px;
+}
+
+.cart-name {
+    font-size: 15px;
+}
+
+.cart-btn {
+    /* Các thuộc tính khác cho button */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.cart-btn:hover {
+    background-color: #EDE0CC;
+    /* Màu nền khi di chuột qua */
+    color: white;
+    /* Màu chữ khi di chuột qua */
+}
+
+.cart-quantity {
+    background: none;
+    border: solid #EDE0CC;
+    width: 60px;
+}
+
 .message {
     color: #ccb48f;
     font-style: italic;
@@ -425,6 +461,11 @@ li {
     margin-top: 100px;
     display: grid;
     place-items: center;
+}
+
+.divMainCart {
+    margin: 0;
+    padding: 0;
 }
 
 /* CSS CART: END */
@@ -669,6 +710,7 @@ li {
     margin-left: 10px;
     border-bottom: #b48a3682 1px solid;
 }
+
 .input__icon {
     color: #C5A25D;
 }

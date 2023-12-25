@@ -6,6 +6,14 @@ VALUES
     ('admin'),
     ('user');
 
+-- Thêm dữ liệu vào bảng order_statuses
+INSERT INTO
+    order_statuses (status_name)
+VALUES
+    ('Chờ'),
+    ('Xác nhận'),
+    ('Huỷ');
+
 -- INSERT INTO users (username, password, full_name, tel, email, type_id) VALUES
 -- ('admin', 'admin', 'Thy Anh Tran', '123-456-7890', 'tathy@gm.com', 1), -- 'admin' type
 -- ('daniis', 'password', 'Daniis Axelor', '987-654-3210', 'da@gm.com', 2); -- 'user' type

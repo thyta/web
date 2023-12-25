@@ -1,0 +1,30 @@
+html {
+    background-color: #F7F0E4;
+}
+
+body {
+    margin: 0; /* Remove default body margin */
+}
+
+.div-logo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px; /* Add padding for better visibility */
+}
+
+.checkout-img-logo {
+    width: 15%; /* Adjust the width as needed */
+    height: auto; /* Maintain the aspect ratio */
+    max-width: 100%; /* Ensure the image doesn't exceed its natural size */
+    max-height: 100%; /* Ensure the image doesn't exceed its natural size */
+}
+
+.divCheckout {
+    margin-top: 15%;
+    background-color: #FEFBF4;
+}
+
+.deliveryAddress {
+
+}

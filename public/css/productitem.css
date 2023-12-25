@@ -176,14 +176,15 @@ a{
 }
 .clamped-text {
     display: -webkit-box;
-    -webkit-line-clamp: 4; /* Giới hạn 3 dòng văn bản */
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
     width: 100%;
-    font-size: 32px;
+    font-size: 15px;
     font-weight: 400;
     font-family: 'Vollkorn';
     transition-duration: 1s;
+    padding: 5px 0 5px 0;
   }
   
   /* Ẩn nút khi đoạn văn bản đã được hiển thị toàn bộ */

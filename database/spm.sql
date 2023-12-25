@@ -25,8 +25,8 @@ VALUES(
     CURRENT_TIMESTAMP,
     CURRENT_TIMESTAMP,
     0,
-    NULL,
-    NULL
+    '2023-02-28',
+    '2023-03-15'
 ),
 -- Record 9
 (

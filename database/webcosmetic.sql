@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 -- CREATE DATABASE web;
 USE web;
 
@@ -61,7 +60,35 @@ CREATE TABLE IF NOT EXISTS `contacts` (
     question TEXT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
->>>>>>> 2e052a6f809aee7679cc13b20e0fc6137ad1efa1
-INSERT INTO `contacts` (`contact_id`, `contact_name`, `contact_phone`, `contact_email`, `question`) VALUES
--- thông tin
-COMMIT;
+
+-- Thanh toán
+
+-- Tạo bảng orders
+USE web;
+
+-- Tạo bảng order_statuses
+CREATE TABLE IF NOT EXISTS order_statuses (
+    status_id INT PRIMARY KEY AUTO_INCREMENT,
+    status_name VARCHAR(50) NOT NULL
+);
+
+-- Tạo bảng orders
+CREATE TABLE IF NOT EXISTS orders (
+    order_id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT,
+    order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    status_id INT,
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (status_id) REFERENCES order_statuses(status_id)
+);
+
+-- Tạo bảng order_items để lưu chi tiết sản phẩm trong mỗi đơn hàng
+CREATE TABLE IF NOT EXISTS order_items (
+    order_item_id INT PRIMARY KEY AUTO_INCREMENT,
+    order_id INT,
+    product_id INT,
+    quantity INT NOT NULL,
+    total_amount DECIMAL(10, 2) NOT NULL,
+    FOREIGN KEY (order_id) REFERENCES orders(order_id),
+    FOREIGN KEY (product_id) REFERENCES products(product_id)
+);

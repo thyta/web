@@ -12,42 +12,91 @@
     <!-- include config for header and footer -->
     <?php include '../../resources/head/fh_head.php' ?>
 
+    <!-- import ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- connect to the database -->
+    <?php
+    $conn = new mysqli("localhost", "root", "", "web");
+
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $PHP_productID = isset($_GET["productID"]) ? $_GET["productID"] : null;
+
+    if ($PHP_productID) {
+        $sql = "SELECT p.*, c.category_name FROM products p JOIN categories c ON p.category_id = c.category_id WHERE product_id = $PHP_productID";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $product_name = $row["product_name"];
+            $category_name = $row["category_name"];
+            $price = $row["price"];
+            $description = $row["description"];
+            $imgLink = $row["imgLink"];
+            // Add more fields as needed
+        }
+    }
+    ?>
+    <script>
+        $(document).ready(function () {
+            // Sử dụng sự kiện delegation trên một phần tử cha tĩnh (thay thế 'body' bằng phần tử cha tĩnh gần nhất)
+            $("body").on("click", ".btnAddToCart", function () {
+                var productID = <?php echo $PHP_productID ?>
+                // alert(productID);
+
+                $.ajax({
+                    url: "../../app/controller/cartController.php?action=add&productID=" + productID,
+                    method: "GET",
+                    success: function (data) {
+                        console.log("Response data:", data);
+                        $(".divMainCart").html(data);
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error:", error);
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 
 <body>
-    <!-- include header -->
-    <?php include '../../resources/includes/header.php' ?>
 
+    <!-- include header -->
+    <?php
+    include '../../resources/includes/header.php';
+    ?>
 
     <div class="body">
-        <div class="base-product row" style="padding-top: 50px;">
-            <div class="slick-slider-img product-item-base col-sm-6">
+        <div class="base-product row" style="padding-top: 50px; padding-bottom:8%">
+            <div class="slick-slider-img product-item-base col-md-6">
                 <div class="img-item-detail">
-                    <img class="img-product-item"
-                        src="../../public/img/z4374728860573_f8ef100cf0353db83ee14abccdb73785_9a8d0470dd.jpg" alt="">
+                    <img class="img-product-item" src="<?php echo $imgLink; ?>" alt="">
                 </div>
-                <!-- <div class="img-item-detail">
-                    <img class="img-product-item"
-                        src="../../public/img/z4374728860573_f8ef100cf0353db83ee14abccdb73785_9a8d0470dd.jpg" alt="">
-                </div>
-                <div class="img-item-detail">
-                    <img class="img-product-item"
-                        src="../../public/img/z4374728860573_f8ef100cf0353db83ee14abccdb73785_9a8d0470dd.jpg" alt="">
-                </div> -->
             </div>
-            <div class="product-summary col-sm-6">
+            <div class="product-summary col-md-6">
+                <!-- load catergory -->
                 <div class="product-link">
-                    <a href="" class="">Chăm sóc da</a>
-                    <span class="ml-1">•</span>
-                    <a href="">Tẩy trang</a>
+                    <a href="#"><?php echo $category_name; ?></a>
                 </div>
+                <!-- load name -->
                 <div class="product-heading mt-3">
-                    Nước tẩy trang hoa hồng 310ml
+                    <?php echo $product_name; ?>
                 </div>
-                <div class="product-price">245.000 đ</div>
-                <div class="product-desc">Một công thức có tỉ lệ cân bằng từ nước cất hoa hồng hữu cơ, vitamin B5 và
-                    astaxanthin hoà quyện trong hệ nhũ hoá siêu nhỏ giúp tẩy sạch lớp trang điểm lâu trôi chỉ trong một
-                    bước, hỗ trợ cấp ẩm, làm mềm và làm dịu, mang lại làn da sạch sẽ và tươi mới.</div>
+                <!-- load prive -->
+                <div class="product-price"><?php echo number_format($price, 0); ?> đ</div>
+                <!-- load description -->
+                <div class="txt-fuel-1">
+                    <div class="clamped-text">
+                        <p style="font-size: 15px"><?php echo $description; ?></p>
+                    </div>
+                    <button id="readMoreBtn">Xem thêm</button>
+                    <button id="readLessBtn">Rút gọn</button>
+                </div>
+                <!-- load license -->
                 <div class="suit-desc">
                     <span class="suit-item">
                         <img src="../../public/img/alcohol_free_94159f7a8c.svg" alt="" class="logo-suit"
@@ -70,6 +119,7 @@
                         Không sultafe
                     </span>
                 </div>
+                <!-- fixed infor -->
                 <div class="Suit-da" style="border-bottom: 1px solid rgb(244, 231, 172);">
                     <span style="font-weight: 600;">Thích hợp với</span>
                     <p style="margin: 0; line-height:2rem;">Mọi loại da</p>
@@ -85,8 +135,8 @@
 
                     <img src="../../public/img/3_Vegan_5995e46a21.png" alt="" class="logo-brand">
                 </div>
-                <button class="btn-background">
-                    <span class="btn-txt">THÊM VÀO GIỎ - 245.000 Đ</span>
+                <button class="btn-background btnAddToCart">
+                    <span class="btn-txt">THÊM VÀO GIỎ</span>
                     <span class="ti-shopping-cart btn-icon"></span>
                 </button>
                 <div class="share-comment">
@@ -107,62 +157,10 @@
                 </div>
             </div>
         </div>
-
-
-        <div class="info-fuel row">
-            <div class="img-desc-fuel col-sm-6">
-                <img class="img-fuel" src="../../public/img/shutterstock_10sx43655889_huge_4e93a4e182.jpg" alt="">
-            </div>
-            <div class="txt-desc-fuel col-sm-6">
-                <div class="txt-fuel-1">
-                    <div class="clamped-text">
-                        <p style="margin: 0;">Hoa hồng vốn đã là một loài hoa tuyệt sắc mà bất cứ ai cũng phải trầm trồ
-                            khi chiêm ngưỡng, và những đóa hồng Damask được chúng tôi khai phá tại vùng đất Cao Bằng lại
-                            ẩn chứa sự tuyệt diệu hơn thế.
-
-                        <p style="margin: 0;">Nơi cao nguyên đầy đá vôi xen lẫn núi đất, khí hậu mát mẻ quanh năm này đã
-                            gìn giữ một vườn hồng nguyên sơ có độ tuổi trên 5 năm được nuôi trồng theo phương pháp canh
-                            tác hữu cơ. </p>
-
-                        <p style="margin: 0;">Chúng sở hữu vẻ đẹp hoang dại nhưng đầy kiêu kỳ cùng hương thơm quyến
-                            rũ,đồng thời lại rất giàu nhóm chất tannin mang lại hiệu quả làm se trên da cùng nhiều dưỡng
-                            chất khác có khả năng dưỡng ẩm sâu và phục hồi cho làn da </p>
-
-                    </div>
-                    <button id="readMoreBtn">Xem thêm</button>
-                    <button id="readLessBtn">Rút gọn</button>
-                </div>
-                <hr style="margin:20px 0;">
-                <div class="description-suit-use">
-
-                    <div class="suitable-use">
-                        <span class="suitable-heading">Lý tưởng cho</span>
-                        <span class="suitable-desc">Làn da cần tẩy sạch nhanh lớp trang điểm.</span>
-                        <span class="suitable-desc">Da thường xuyên trang điểm đậm cần một sản phẩm tẩy trang phù
-                            hợp.</span>
-                    </div>
-                    <div class="suitable-use">
-                        <span class="suitable-heading">Công dụng</span>
-                        <span class="suitable-desc">Làm sạch nhanh chóng lớp trang điểm lâu trôi.
-                            Cấp ẩm và làm mềm da</span>
-                        <span class="suitable-desc">Thích hợp cho cả vùng mắt, môi
-                            Thích hợp với mọi loại da, kể cả da nhạy cảm</span>
-                    </div>
-                </div>
-
-            </div>
-        </div>
     </div>
-
-    <!--Slick slide chùa-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <!-- <script src="../../public/js/slick-auto.js"></script> -->
     <!--Rút gọn văn bản-->
     <script src="../../public/js/clamped.js"></script>
 </body>
 
 <?php include '../../resources/includes/footer.php' ?>
-
 </html>

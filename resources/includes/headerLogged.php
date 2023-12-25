@@ -571,8 +571,8 @@
             </div>
             <!-- COSMETIC: END -->
 
-            <!-- CART: END -->
-            <div class="cart side-bar-right" id="cart">
+            <!-- CART: START -->
+            <div class="cart side-bar-right divCart__ck" id="cart">
                 <i data-feather="x" class="close__cart close-sample" id="close-cart"></i>
                 <div></div>
                 <div class="cart-empty__body">
