@@ -51,6 +51,7 @@ CREATE TABLE IF NOT EXISTS coupons (
 );
 
 USE web;
+
 -- BẢNG LIÊN HỆ CỦA BIN, ĐỪNG ĐỤNG DÔ T CHẶT TAY
 CREATE TABLE IF NOT EXISTS `contacts` (
     contact_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -62,7 +63,6 @@ CREATE TABLE IF NOT EXISTS `contacts` (
 );
 
 -- Thanh toán
-
 -- Tạo bảng orders
 USE web;
 
@@ -76,10 +76,12 @@ CREATE TABLE IF NOT EXISTS order_statuses (
 CREATE TABLE IF NOT EXISTS orders (
     order_id INT PRIMARY KEY AUTO_INCREMENT,
     user_id INT,
+    coupon_id INT,
     order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     status_id INT,
     FOREIGN KEY (user_id) REFERENCES users(id),
-    FOREIGN KEY (status_id) REFERENCES order_statuses(status_id)
+    FOREIGN KEY (status_id) REFERENCES order_statuses(status_id),
+    FOREIGN KEY (coupon_id) REFERENCES coupons(coupon_id)
 );
 
 -- Tạo bảng order_items để lưu chi tiết sản phẩm trong mỗi đơn hàng
