@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <!-- Themify fonticon -->
     <link rel="stylesheet" href="../../public/font/themify-icons/themify-icons.css">
+    <?php include('../../resources/head/fh_head.php') ?>
     <!-- Css -->
     <link rel="stylesheet" href="../../public/css/header.css">
     <!-- Font family -->
@@ -19,7 +20,9 @@
     <!-- Feather icon -->
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <?php include('../../resources/head/fh_head.php') ?>
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
 </head>
 
 <body>
@@ -41,7 +44,8 @@
                         <a href="" style="font-size: 16px; color: #1f1c17;" class="link__pc--wb">Bài viết</a>
                     </li>
                 </ul>
-                <div class="navigation__logo"><a href="../../app/view/homepage.php"><img src="../../public/img/logo.png" alt=""></a></div>
+                <div class="navigation__logo"><a href="../../app/view/homepage.php"><img src="../../public/img/logo.png"
+                            alt=""></a></div>
                 <ul class="navigation__list">
                     <li class="navigation__item"><a href="../../app/view/search.php" class="search" id="btn-search">
                             <i data-feather="search"></i></a></li>
@@ -644,7 +648,7 @@
                 <div class="d-flex login-tai-khoan">
                     <p class="icon ti-lock"></p>
                     <input data-v-00568c7a="" name="password" placeholder="Nhập mật khẩu" type="password"
-                        class="login__input" id="password">
+                        class="login__input" id="password" tabindex="1">
                     <span class="error-message" id="passError"></span>
                 </div>
 
@@ -675,69 +679,49 @@
             <div class="sign-up__container">
                 <div class="group__title">Đăng ký tài khoản</div>
                 <p>Chào mừng bạn đến với The Cosmetic Scrupts!!! </p>
-                <form action="../../app/controller/registerController.php" method="POST">
-                    <div class="input__container">
-                        <i data-feather="user" class="input__icon"></i>
-                        <input type="text" class="sign-up__input" required="required" name="full_name" id="full_name"
-                            placeholder="Tên của bạn*" tabindex="1">
-                    </div>
+                <div class="input__container">
+                    <i data-feather="user" class="input__icon"></i>
+                    <input type="text" class="sign-up__input" required="required" name="full_name" id="full_name"
+                        placeholder="Tên của bạn*" tabindex="1">
+                </div>
 
-                    <div class="input__container">
-                        <i data-feather="mail" class="input__icon"></i>
-                        <input type="email" class="sign-up__input" required="required" name="email" id="email"
-                            placeholder="Email của bạn*" tabindex="1">
-                    </div>
+                <div class="input__container">
+                    <i data-feather="mail" class="input__icon"></i>
+                    <input type="email" class="sign-up__input" required="required" name="email" id="email"
+                        placeholder="Email của bạn*" tabindex="1">
+                </div>
 
-                    <div class="input__container">
-                        <i data-feather="phone" class="input__icon"></i>
-                        <input type="tel" class="sign-up__input" required="required" name="phone" id="phone"
-                            placeholder="Số điện thoại*" tabindex="1">
-                    </div>
+                <div class="input__container">
+                    <i data-feather="phone" class="input__icon"></i>
+                    <input type="tel" class="sign-up__input" required="required" name="phone" id="tel"
+                        placeholder="Số điện thoại*" tabindex="1">
+                </div>
 
-                    <div class="input__container">
-                        <i data-feather="lock" class="input__icon"></i>
-                        <input type="password" class="sign-up__input" required="required" name="password" id="password"
-                            placeholder="Nhập mật khẩu*" tabindex="1">
-                    </div>
+                <div class="input__container">
+                    <i data-feather="lock" class="input__icon"></i>
+                    <input type="password" class="sign-up__input" required="required" name="password" id="pass"
+                        placeholder="Nhập mật khẩu*" tabindex="1">
+                </div>
 
-                    <div class="input__container">
-                        <i data-feather="lock" class="input__icon"></i>
-                        <input type="password" class="sign-up__input " required="required" name="confirm_password"
-                            id="confirm_password" placeholder="Nhập lại mật khẩu*" tabindex="1">
-                    </div>
+                <div class="input__container">
+                    <i data-feather="lock" class="input__icon"></i>
+                    <input type="password" class="sign-up__input " required="required" name="confirm_pass"
+                        id="confirm_password" placeholder="Nhập lại mật khẩu*" tabindex="1">
+                </div>
 
-                    <div class="sign-up__btn">
-                        <button class="btnSignUp button" id="btnSignUp">ĐĂNG KÝ</button>
-                    </div>
-                </form>
-                <div id="sign-up-message"></div>
+                <div class="sign-up__btn">
+                    <button type="submit" class="btnSignUp button" id="btnSignUp">ĐĂNG KÝ</button>
+                </div>
             </div>
-            <!-- ĐÃ CỐ AJAX NHƯNG TẠM THỜI CHƯA ĐƯỢC. KIỂU NÓ KHÔNG ĂN -->
-            <!-- <script>
-                $(document).ready(function () {
-                    $("#btnSignUp").click(function (event) {
-                        event.preventDefault(); // Ngăn chặn hành vi mặc định của nút
-
-                        var fullName = $("#full_name").val();
-                        var email = $("#email").val();
-                        var phone = $("#phone").val();
-                        var password = $("#password").val();
-                        var confirmPassword = $("#confirm_password").val();
-
-                        var parameters = "fullName= " + fullName + "&" + "email= " + email + "&" + "phone= " + phone + "&" + "password= " + password + "&" + "confirmPassword= " + confirmPassword
-
-                        $.get("../../app/controller/registerController.php?=" + parameters, function (data, status) {
-                            $("#sign-up-message").html(data);
-                        });
-                    });
-                });
-            </script> -->
-
         </div>
-        <!-- TABLE ANNOUNCE -->
-        <div class="announce"></div>
+
         <!-- SIGN UP: END -->
 
+        <!-- TABLE ANNOUNCE -->
+        <div class="announce" id="announce">
+            <div id="message__announce"></div>
+            <button class="btnOK button">OK</button>
+        </div>
         <!-- HEADER MOBILE: START -->
         <header class="header__mobile">
             <div class="banner">Tận hưởng giao hàng toàn quốc với hóa đơn 99.000 đ +</div>
@@ -847,9 +831,8 @@
                 <ul class="navigation__list--mobile">
                     <li class="navigation__item"><a href="../../app/view/search.php" class="navigation__link btn__wb"><i
                                 data-feather="search" id="search-menu"></i></a></li>
-                    <li class="navigation__item"><button type="button"
-                            class="navigation__link btn__wb" id="btn"><i data-feather="shopping-bag"
-                                id="cart-id"></i></button></li>
+                    <li class="navigation__item"><button type="button" class="navigation__link btn__wb" id="btn"><i
+                                data-feather="shopping-bag" id="cart-id"></i></button></li>
                 </ul>
             </nav>
         </header>
@@ -859,35 +842,41 @@
     <div class="empty__header"></div>
 </body>
 <!-- SCRIPT -->
-<!-- <script>
-    //Change header => fixed
-    window.onscroll = function () {
-        var header = document.getElementById('header');
-        var scrollPosition = window.scrollY || document.documentElement.scrollTop;
-
-        // Khi cuộn xuống đủ xa, thay đổi position thành fixed
-        if (scrollPosition > 0) {
-            header.classList.add('fixed');
-        } else {
-            header.classList.remove('fixed');
-        }
-    };
-
-</script> -->
-<!-- <script>
+<script>
     $(document).ready(function () {
-        $("#btnSend").click(function (event) {
-            var nameContact = $("#nameContact").val();
-            var telContact = $("#telContact").val();
-            var emailContact = $("#emailContact").val();
-            var questionContact = $("questionContact").val();
-            var parameters = "nameContact= " + nameContact + "&" + "telContact= " + telContact + "&" + "emailContact= " + emailContact + "&" + "password= " + password + "&" + "questionContact= " + questionContact
-            $.post("../../app/controller/contactController.php?=" + parameters, function (data, status) {
-                alert(status);
+        $("#btnSignUp").click(function () {
+            var announce =document.getElementById('announce');
+            announce.classList.add('show__announce');
+            var signUp =document.getElementById('sign-up');
+            signUp.classList.remove('show-sign-up');
+
+            var tel = $("#tel").val();
+            var pass = $("#pass").val();
+            var confirm_pass = $("#confirm_pass").val();
+            var full_name = $("#full_name").val();
+            var email = $("#email").val();
+
+            var requestData = {
+                full_name: full_name,
+                pass: pass,
+                phone: phone,
+                email: email,
+                confirm_pass: confirm_pass
+            };
+
+            $.ajax({
+                method: "POST",
+                url: "../../app/controller/registerController.php?",
+                data: requestData,
+                success: function (notification) {
+                    // Cập nhật thông báo phản hồi
+                    $("#message__announce").html(notification);
+                }
             });
         });
-    }); -->
+    });
 </script>
+
 <script>feather.replace()</script>
 <script src="../../public/js/header.js"></script>
 

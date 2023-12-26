@@ -2,19 +2,19 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate and sanitize user input
     $phone = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_STRING);
-    $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
-    $confirm_password = filter_input(INPUT_POST, 'confirm_password', FILTER_SANITIZE_STRING);
+    $pass = filter_input(INPUT_POST, 'pass', FILTER_SANITIZE_STRING);
+    $confirm_pass = filter_input(INPUT_POST, 'confirm_pass', FILTER_SANITIZE_STRING);
     $full_name = filter_input(INPUT_POST, 'full_name', FILTER_SANITIZE_STRING);
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
 
     // Validate other form fields as needed
 
-    // Check if passwords match
-    if ($password != $confirm_password) {
+    // Check if passs match
+    if ($pass != $confirm_pass) {
         echo "Mật khẩu không khớp. Vui lòng nhập lại.";
     } else {
-        // Hash the password using bcrypt
-        $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+        // Hash the pass using bcrypt
+        $hashed_pass = password_hash($pass, PASSWORD_BCRYPT);
 
         // Database connection parameters
         $servername = "localhost";
@@ -48,14 +48,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Email is available, proceed with user registration
 
             // Use prepared statements to prevent SQL injection
-            $insert_user_query = $conn->prepare("INSERT INTO users (password, full_name, phone, email, type_id) VALUES (?, ?, ?, ?, 2)");
+            $insert_user_query = $conn->prepare("INSERT INTO users (pass, full_name, phone, email, type_id) VALUES (?, ?, ?, ?, 2)");
 
             // Check if prepare() was successful
             if (!$insert_user_query) {
                 die("Prepare failed: " . $conn->error);
             }
 
-            $insert_user_query->bind_param("ssss", $hashed_password, $full_name, $phone, $email);
+            $insert_user_query->bind_param("ssss", $hashed_pass, $full_name, $phone, $email);
 
             // Execute the statement
             if ($insert_user_query->execute()) {

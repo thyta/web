@@ -211,6 +211,7 @@ btnCloseSignUp.addEventListener('click', () => {
     signUp.style.display = 'none';
     overlayRight.style.display = 'none';
 });
+
 //EVENT SIGN UP: END
 //EVENT ACCOUNT: START
 function openAccount() {
