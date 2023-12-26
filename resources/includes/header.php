@@ -571,46 +571,42 @@
             <i data-feather="x" class="close__contact close-sample" id="close-contact"></i>
             <div class="contact__container">
                 <div class="contact__title">Liên hệ với The Cosmetic Scrupts</div>
-                <form action="../../app/controller/contactController.php" method="POST">
-                    <div class="contact__col">
+                <div class="contact__col">
+                    <div>
                         <div>
-                            <div>
 
-                                <input type="text" class="contact__name group__input" required="required"
-                                    name="nameContact" id="nameContact" placeholder="Tên của bạn*" tabindex="1"
-                                    autocomplete="off">
-                            </div>
-                            <span data-v-00568c7a class="group__status">Vui lòng nhập tên của bạn!</span>
+                            <input type="text" class="contact__name group__input" required="required" name="nameContact"
+                                id="nameContact" placeholder="Tên của bạn*" tabindex="1" autocomplete="off">
                         </div>
-                        <div>
-                            <div>
-                                <input type="tel" class="contact__tel group__input" required="required"
-                                    name="telContact" id="telContact" placeholder="Số điện thoại*" tabindex="1"
-                                    autocomplete="off">
-                            </div>
-                            <span data-v-00568c7a class="group__status">Vui lòng nhập số điện thoại hợp lệ!</span>
-                        </div>
+                        <span data-v-00568c7a class="group__status">Vui lòng nhập tên của bạn!</span>
                     </div>
                     <div>
                         <div>
-                            <input type="email" class="contact__email group__input" required="required"
-                                name="emailContact" id="emailContact" placeholder="Địa chỉ Email*" tabindex="1"
-                                autocomplete="off">
+                            <input type="tel" class="contact__tel group__input" required="required" name="telContact"
+                                id="telContact" placeholder="Số điện thoại*" tabindex="1" autocomplete="off">
                         </div>
-                        <span data-v-00568c7a class="group__status">Vui lòng nhập email hợp lệ!</span>
+                        <span data-v-00568c7a class="group__status">Vui lòng nhập số điện thoại hợp lệ!</span>
                     </div>
+                </div>
+                <div>
                     <div>
-                        <div>
-                            <input type="text" class="contact__question group__input" required="required"
-                                name="questionContact" id="questionContact" placeholder="Nhập câu hỏi của bạn*"
-                                tabindex="1" autocomplete="off">
-                        </div>
-                        <span data-v-00568c7a class="group__status">Vui lòng nhập câu hỏi!</span>
+                        <input type="email" class="contact__email group__input" required="required" name="emailContact"
+                            id="emailContact" placeholder="Địa chỉ Email*" tabindex="1" autocomplete="off">
                     </div>
-                    <div class="sign-up__btn">
-                        <button type="submit" class="btnSend button" id="btnSend">GỬI COSMETIC</button>
+                    <span data-v-00568c7a class="group__status">Vui lòng nhập email hợp lệ!</span>
+                </div>
+                <div>
+                    <div>
+                        <input type="text" class="contact__question group__input" required="required"
+                            name="questionContact" id="questionContact" placeholder="Nhập câu hỏi của bạn*"
+                            tabindex="1" autocomplete="off">
                     </div>
-                </form>
+                    <span data-v-00568c7a class="group__status">Vui lòng nhập câu hỏi!</span>
+                </div>
+                <div class="sign-up__btn">
+                    <button type="submit" class="btnSend button" id="btnSend">GỬI COSMETIC</button>
+                </div>
+
             </div>
         </div>
         <!-- CONTACT: END -->
@@ -706,7 +702,7 @@
                 <div class="input__container">
                     <i data-feather="lock" class="input__icon"></i>
                     <input type="password" class="sign-up__input " required="required" name="confirm_pass"
-                        id="confirm_password" placeholder="Nhập lại mật khẩu*" tabindex="1">
+                        id="confirm_pass" placeholder="Nhập lại mật khẩu*" tabindex="1">
                 </div>
 
                 <div class="sign-up__btn">
@@ -719,8 +715,8 @@
 
         <!-- TABLE ANNOUNCE -->
         <div class="announce" id="announce">
-            <div id="message__announce"></div>
-            <button class="btnOK button">OK</button>
+            <p id="message__announce" style="font-size: 22px; font-family: 'Roboto'; font-weight: 500;"></p>
+            <button class="btnOK button" id="btnOK">OK</button>
         </div>
         <!-- HEADER MOBILE: START -->
         <header class="header__mobile">
@@ -842,40 +838,86 @@
     <div class="empty__header"></div>
 </body>
 <!-- SCRIPT -->
+<!-- AJAX CONTACT: START -->
 <script>
     $(document).ready(function () {
-        $("#btnSignUp").click(function () {
-            var announce =document.getElementById('announce');
+        $("#btnSend").click(function () {
+            var announce = document.getElementById('announce');
             announce.classList.add('show__announce');
-            var signUp =document.getElementById('sign-up');
-            signUp.classList.remove('show-sign-up');
+            var contact = document.getElementById('contact');
+            contact.classList.remove('show-contact');
 
-            var tel = $("#tel").val();
-            var pass = $("#pass").val();
-            var confirm_pass = $("#confirm_pass").val();
-            var full_name = $("#full_name").val();
-            var email = $("#email").val();
+            var nameContact = $("#nameContact").val();
+            var telContact = $("#telContact").val();
+            var emailContact = $("#emailContact").val();
+            var questionContact= $("#questionContact").val();
 
             var requestData = {
-                full_name: full_name,
-                pass: pass,
-                phone: phone,
-                email: email,
-                confirm_pass: confirm_pass
+                nameContact: nameContact,
+                telContact: telContact,
+                emailContact: emailContact,
+                questionContact: questionContact
             };
-
             $.ajax({
                 method: "POST",
-                url: "../../app/controller/registerController.php?",
+                url: "../../app/controller/contactController.php",
                 data: requestData,
                 success: function (notification) {
                     // Cập nhật thông báo phản hồi
                     $("#message__announce").html(notification);
                 }
             });
+            $("#btnOK").click(function () {
+                announce.classList.remove('show__announce');
+                overlayRight.style.display = 'none';
+            });
         });
+
     });
 </script>
+<!-- AJAX CONTACT: END -->
+
+<!-- AJAX SIGN UP: START -->
+<script>
+    $(document).ready(function () {
+        $("#btnSignUp").click(function () {
+            var announce = document.getElementById('announce');
+            announce.classList.add('show__announce');
+            var signUp = document.getElementById('sign-up');
+            signUp.classList.remove('show-sign-up');
+            signUp.style.display = 'none';
+
+            var phone = $("#tel").val();
+            var password = $("#pass").val();
+            var confirm_password = $("#confirm_pass").val();
+            var full_name = $("#full_name").val();
+            var email = $("#email").val();
+
+            var requestData = {
+                tel: phone,
+                full_name: full_name,
+                email: email,
+                pass: password,
+                confirm_pass: confirm_password
+            };
+            $.ajax({
+                method: "POST",
+                url: "../../app/controller/registerController.php",
+                data: requestData,
+                success: function (notification) {
+                    // Cập nhật thông báo phản hồi
+                    $("#message__announce").html(notification);
+                }
+            });
+            $("#btnOK").click(function () {
+                announce.classList.remove('show__announce');
+                overlayRight.style.display = 'none';
+            });
+        });
+
+    });
+</script>
+<!-- AJAX SIGN UP: END -->
 
 <script>feather.replace()</script>
 <script src="../../public/js/header.js"></script>

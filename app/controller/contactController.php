@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             VALUES ('" . $name . "','" . $tel . "','" . $email . "','" . $question . "')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "The question was sent successfully";
+        echo "Câu hỏi của bạn đã được gửi. Chúng tôi sẽ phản hồi cho bạn trong thời gian sớm nhất. Cảm ơn bạn luôn đồng hành cùng The Cosmetic Scrupts nhé!";
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
