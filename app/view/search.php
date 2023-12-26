@@ -18,11 +18,12 @@
     <!-- Include jQuery Library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
+    <?php include('../../resources/head/fh_head.php') ?>
     <!-- include header -->
     <?php
     session_start();
     // Check if the user is logged in
-    
+
     // IF not session or not logged in
     if (!isset($_SESSION['user_id'])) {
         include '../../resources/includes/header.php';
@@ -30,6 +31,7 @@
         include '../../resources/includes/headerLogged.php';
     }
     ?>
+    
     <style>
         @media screen and (max-width: 1023px) {
             .search {

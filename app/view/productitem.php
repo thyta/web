@@ -12,6 +12,19 @@
     <!-- include config for header and footer -->
     <?php include '../../resources/head/fh_head.php' ?>
 
+    <!-- include header -->
+    <?php
+    session_start();
+    // Check if the user is logged in
+
+    // IF not session or not logged in
+    if (!isset($_SESSION['user_id'])) {
+        include '../../resources/includes/header.php';
+    } else {
+        include '../../resources/includes/headerLogged.php';
+    }
+    ?>
+
     <!-- import ajax -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
@@ -64,12 +77,6 @@
 </head>
 
 <body>
-
-    <!-- include header -->
-    <?php
-    include '../../resources/includes/header.php';
-    ?>
-
     <div class="body">
         <div class="base-product row" style="padding-top: 50px; padding-bottom:8%">
             <div class="slick-slider-img product-item-base col-md-6">

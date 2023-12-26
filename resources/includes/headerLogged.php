@@ -19,7 +19,7 @@
     <!-- Feather icon -->
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-
+    <?php include('../../resources/head/fh_head.php') ?>
 </head>
 
 <body>
@@ -41,9 +41,10 @@
                         <a href="" style="font-size: 16px; color: #1f1c17;" class="link__pc--wb">Bài viết</a>
                     </li>
                 </ul>
-                <div class="navigation__logo"><img src="../../public/img/logo.png" alt=""></div>
+                <div class="navigation__logo"><a href="../../app/view/homepage.php"><img src="../../public/img/logo.png"
+                            alt=""></a></div>
                 <ul class="navigation__list">
-                    <li class="navigation__item"><a href="" class="search" id="btn-search">
+                    <li class="navigation__item"><a href="../../app/view/search.php" class="search" id="btn-search">
                             <i data-feather="search"></i></a></li>
                     <li class="navigation__item">
                         <div><button type="button" onclick="openAccount()" class="navigation__link btn__wb"
@@ -54,8 +55,10 @@
                                     <div class="account__container">
                                         <div class="account__item"><a href="#" class="link__sample">
                                                 <i data-feather="phone" class="account__icon"></i>
-                                                0387779614</a></div>
-                                        <div class="account__item"><a href="#" class="link__sample">
+                                                <?php echo $_SESSION['phone'] ?>
+                                            </a></div>
+                                        <div class="account__item"><a href="../../app/view/account.php"
+                                                class="link__sample">
                                                 <i data-feather="user" class="account__icon"></i>
                                                 Thông tin tài khoản</a>
                                         </div>
@@ -867,9 +870,8 @@
                 <div class="navigation__logo"><img src="../../public/img/logo.png" alt=""></div>
 
                 <ul class="navigation__list--mobile">
-                    <li class="navigation__item"><button type="button" onclick="onRight()"
-                            class="navigation__link btn__wb" id="btn"><i data-feather="search"
-                                id="search-menu"></i></button></li>
+                    <li class="navigation__item"><a href="../../app/view/search.php" class="navigation__link btn__wb"><i
+                                data-feather="search" id="search-menu"></i></a></li>
                     <li class="navigation__item"><button type="button" onclick="onRight()"
                             class="navigation__link btn__wb" id="btn"><i data-feather="shopping-bag"
                                 id="cart-id"></i></button></li>
@@ -904,6 +906,7 @@
         </header>
         <!-- HEADER MOBILE: END -->
     </div>
+    <div class="empty__header"></div>
 </body>
 <!-- SCRIPT -->
 <script>

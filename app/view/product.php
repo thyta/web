@@ -10,12 +10,23 @@
     <link rel="stylesheet" href="../../public/css/product.css">
 
     <?php include '../../resources/head/fh_head.php' ?>
+
+    <?php include('../../resources/head/fh_head.php') ?>
+    <!-- include header -->
+    <?php
+    session_start();
+    // Check if the user is logged in
+
+    // IF not session or not logged in
+    if (!isset($_SESSION['user_id'])) {
+        include '../../resources/includes/header.php';
+    } else {
+        include '../../resources/includes/headerLogged.php';
+    }
+    ?>
 </head>
 
 <body>
-    <!-- include header -->
-    <?php include '../../resources/includes/header.php' ?>
-
     <div class="body">
         <div class="heading_page">CHĂM SÓC DA</div>
         <div class="product-list tay_trang">

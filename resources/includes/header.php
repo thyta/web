@@ -19,6 +19,7 @@
     <!-- Feather icon -->
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <?php include('../../resources/head/fh_head.php') ?>
 
     <script>
         $(document).ready(function () {
@@ -84,6 +85,33 @@
                     }
                 });
             });
+
+            $(document).ready(function () {
+                $("#btnLogin").on("click", function (e) {
+                    e.preventDefault();
+
+                    var phone = $("#phone").val();
+                    var password = $("#password").val();
+
+                    $.ajax({
+                        type: "POST",
+                        url: "../controller/logginController.php",
+                        data: { phone: phone, password: password },
+                        success: function (response) {
+                            if (response.trim() === "Đăng nhập thành công") {
+                                // Đăng nhập thành công, làm thứ gì đó (ví dụ: reload trang)
+                                location.reload();
+                            } else {
+                                // Hiển thị thông báo lỗi
+                                alert(response);
+                            }
+                        },
+                        error: function () {
+                            alert("Đã xảy ra lỗi trong quá trình xử lý đăng nhập.");
+                        }
+                    });
+                });
+            });
         });
     </script>
 </head>
@@ -107,9 +135,10 @@
                         <a href="" style="font-size: 16px; color: #1f1c17;" class="link__pc--wb">Bài viết</a>
                     </li>
                 </ul>
-                <div class="navigation__logo"><img src="../../public/img/logo.png" alt=""></div>
+                <div class="navigation__logo"><a href="../../app/view/homepage.php"><img src="../../public/img/logo.png"
+                            alt=""></a></div>
                 <ul class="navigation__list">
-                    <li class="navigation__item"><a href="" class="search" id="btn-search">
+                    <li class="navigation__item"><a href="../../app/view/search.php" class="search" id="btn-search">
                             <i data-feather="search"></i></a></li>
                     <li class="navigation__item"><button type="button" onclick="onRight()"
                             class="navigation__link btn__wb" id="btn-login">Đăng nhập</button></li>
@@ -669,7 +698,7 @@
                     </table>
                 </div>
             </div> -->
-            <!-- CART: END -->
+                <!-- CART: END -->
 
         </header>
         <!-- HEADER PC: END -->
@@ -724,8 +753,7 @@
         <!-- CONTACT: END -->
 
         <!-- LOGIN: START -->
-        <form action="../controller/logginController.php" method="post" class="login side-bar-center" id="login">
-
+        <div class="login side-bar-center" id="login">
             <i data-feather="x" class="close__login close-sample" id="close-login"></i>
             <div class="login__container">
                 <div class="d-flex justify-content-between align-content-center">
@@ -767,7 +795,7 @@
                     <input type="checkbox" tabindex="1" class="checkbox bg-primary-yellow border-transparent">
                     <p class="m-0  p-lg-2">Ghi nhớ mật khẩu cho lần sau</p>
                 </div>
-                <button type="submit" class="dang-nhap">ĐĂNG NHẬP</button>
+                <button type="submit" class="dang-nhap" id="btnLogin">ĐĂNG NHẬP</button>
                 <div class="dn-khac mt-4 d-flex justify-content-between">
                     <p style="font-size: 16px; color: #414548" class="">Hoặc đăng nhập bằng</p>
                     <div class="icon-dn-khac">
@@ -777,7 +805,7 @@
                     </div>
                 </div>
             </div>
-        </form>
+        </div>
         <!-- LOGIN: END -->
 
         <!-- SIGN UP: START -->
@@ -846,7 +874,8 @@
             </script> -->
 
         </div>
-
+        <!-- TABLE ANNOUNCE -->
+        <div class="announce"></div>
         <!-- SIGN UP: END -->
 
         <!-- HEADER MOBILE: START -->
@@ -956,17 +985,17 @@
                 <div class="navigation__logo"><img src="../../public/img/logo.png" alt=""></div>
 
                 <ul class="navigation__list--mobile">
-                    <li class="navigation__item"><button type="button" onclick="onRight()"
-                            class="navigation__link btn__wb" id="btn"><i data-feather="search"
-                                id="search-menu"></i></button></li>
-                    <li class="navigation__item"><button type="button" onclick="onRight()"
-                            class="navigation__link btn__wb" id="btn"><i data-feather="shopping-bag"
-                                id="cart-id"></i></button></li>
+                    <li class="navigation__item"><a href="../../app/view/search.php" class="navigation__link btn__wb"><i
+                                data-feather="search" id="search-menu"></i></a></li>
+                    <li class="navigation__item"><button type="button" class="navigation__link btn__wb" id="btn"><i
+                                data-feather="shopping-bag" id="cart-id"></i></button></li>
                 </ul>
             </nav>
         </header>
         <!-- HEADER MOBILE: END -->
+
     </div>
+    <div class="empty__header"></div>
 </body>
 <!-- SCRIPT -->
 <!-- cart increase -->
@@ -1001,7 +1030,7 @@
     };
 
 </script>
-<script>
+<!-- <script>
     $(document).ready(function () {
         $("#btnSend").click(function (event) {
             var nameContact = $("#nameContact").val();
@@ -1009,11 +1038,11 @@
             var emailContact = $("#emailContact").val();
             var questionContact = $("questionContact").val();
             var parameters = "nameContact= " + nameContact + "&" + "telContact= " + telContact + "&" + "emailContact= " + emailContact + "&" + "password= " + password + "&" + "questionContact= " + questionContact
-            $.get("../../app/controller/contactController.php?=" + parameters, function (data, status) {
+            $.post("../../app/controller/contactController.php?=" + parameters, function (data, status) {
                 alert(status);
             });
         });
-    });
+    }); -->
 </script>
 <script>feather.replace()</script>
 <script src="../../public/js/header.js"></script>

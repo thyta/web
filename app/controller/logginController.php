@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Use prepared statements to prevent SQL injection
-    $stmt = $conn->prepare("SELECT id, phone, password FROM users WHERE phone = ?");
+    $stmt = $conn->prepare("SELECT id, phone, password, type_id FROM users WHERE phone = ?");
 
     // Check if prepare() was successful
     if (!$stmt) {
@@ -45,9 +45,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Set session variables
             $_SESSION['user_id'] = $row["id"];
             $_SESSION['phone'] = $row["phone"];
+            $_SESSION['type_id'] = $row["type_id"];
 
             // Redirect to the homepage or any other authenticated page
-            header("Location: /web/app/view/homepage.php");
+            // header("Location: /web/app/view/homepage.php");
+            echo "Đăng nhập thành công";
             exit;
         } else {
             echo "Mật khẩu không đúng. Vui lòng thử lại.";

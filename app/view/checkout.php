@@ -13,39 +13,16 @@
 
     <?php
     session_start();
-    // Kiểm tra đăng nhập
+    // Check if the user is logged in
     
-    // Chưa đăng nhập
+    // IF not session or not logged in
     if (!isset($_SESSION['user_id'])) {
-        // Hiển thị thông báo nếu chưa đăng nhập
-        echo '<script>$("body").html("<p>Bạn chưa đăng nhập.</p>");</script>';
+        include '../../resources/includes/header.php';
+    } else {
+        include '../../resources/includes/headerLogged.php';
     }
     ?>
-
-    <script>
-        $(document).ready(function () {
-            // AJAX request
-            $.ajax({
-                type: 'GET',
-                url: 'checkout.php', // Thay đổi đường dẫn tùy thuộc vào cấu trúc thư mục của bạn
-                dataType: 'json',
-                success: function (response) {
-                    if (response.status === 'error') {
-                        // Hiển thị thông báo nếu chưa đăng nhập
-                        $('body').html('<p>' + response.message + '</p>');
-                    } else {
-                        // Tiếp tục xử lý nếu đã đăng nhập
-                        var userData = response.data;
-                        console.log('User ID: ' + userData.user_id);
-                        console.log('Username: ' + userData.username);
-                    }
-                },
-                error: function (error) {
-                    console.log(error);
-                }
-            });
-        });
-    </script>
+    
 </head>
 
 
