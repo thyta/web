@@ -31,7 +31,8 @@ body {
 .cus-info,
 .cus-payment,
 .cus-cart,
-.cus-coupon {
+.cus-coupon,
+.divMainCart {
     padding: 4%;
     background-color: #FEFBF4;
     margin: 2%;

@@ -62,35 +62,42 @@ CREATE TABLE IF NOT EXISTS `contacts` (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Thanh toán
--- Tạo bảng orders
-USE web;
-
+-- Checkout
+-- Tạo bảng order_statuses
 -- Tạo bảng order_statuses
 CREATE TABLE IF NOT EXISTS order_statuses (
+    -- 1: wait; 2: confirm; 3: cancel
     status_id INT PRIMARY KEY AUTO_INCREMENT,
     status_name VARCHAR(50) NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS payment_methods (
+    -- 1: cod; 2: momo; 3: bank
+    payment_id INT PRIMARY KEY AUTO_INCREMENT,
+    payment_name VARCHAR(50) NOT NULL
+);
+
 -- Tạo bảng orders
 CREATE TABLE IF NOT EXISTS orders (
-    order_id INT PRIMARY KEY AUTO_INCREMENT,
-    user_id INT,
-    coupon_id INT,
+    order_id VARCHAR(25) NOT NULL PRIMARY KEY,
+    user_id INT NOT NULL,
+    total_price DECIMAL(10, 2) NOT NULL,
     order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    status_id INT,
+    address_order TEXT NOT NULL,
+    status_id INT NOT NULL DEFAULT 1,
+    payment_id INT NOT NULL,
+    -- Mặc định là 1 (wait)
     FOREIGN KEY (user_id) REFERENCES users(id),
-    FOREIGN KEY (status_id) REFERENCES order_statuses(status_id),
-    FOREIGN KEY (coupon_id) REFERENCES coupons(coupon_id)
+    FOREIGN KEY (status_id) REFERENCES order_statuses(status_id)
 );
 
 -- Tạo bảng order_items để lưu chi tiết sản phẩm trong mỗi đơn hàng
 CREATE TABLE IF NOT EXISTS order_items (
-    order_item_id INT PRIMARY KEY AUTO_INCREMENT,
-    order_id INT,
-    product_id INT,
+    order_id VARCHAR(25) NOT NULL,
+    product_id INT NOT NULL,
     quantity INT NOT NULL,
     total_amount DECIMAL(10, 2) NOT NULL,
+    PRIMARY KEY (order_id, product_id),
     FOREIGN KEY (order_id) REFERENCES orders(order_id),
     FOREIGN KEY (product_id) REFERENCES products(product_id)
 );

@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Use prepared statements to prevent SQL injection
-    $stmt = $conn->prepare("SELECT id, phone, password, type_id FROM users WHERE phone = ?");
+    $stmt = $conn->prepare("SELECT id, phone, full_name, password, type_id, email FROM users WHERE phone = ?");
 
     // Check if prepare() was successful
     if (!$stmt) {
@@ -45,6 +45,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Set session variables
             $_SESSION['user_id'] = $row["id"];
             $_SESSION['phone'] = $row["phone"];
+            $_SESSION['full_name'] = $row["full_name"];
+            $_SESSION['email'] = $row["email"];
             $_SESSION['type_id'] = $row["type_id"];
 
             // Redirect to the homepage or any other authenticated page

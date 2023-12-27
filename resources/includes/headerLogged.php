@@ -20,6 +20,73 @@
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <?php include('../../resources/head/fh_head.php') ?>
+
+    <script>
+        $(document).ready(function () {
+            // Sử dụng sự kiện delegation trên một phần tử cha tĩnh
+            $(".divMainCart").on("click", ".increase_cart", function () {
+                var productID = $(this).data("productid");
+                alert(productID);
+                $.ajax({
+                    url: "../../app/controller/cartController.php?action=add&productID=" + productID,
+                    method: "GET",
+                    success: function (data) {
+                        console.log("Response data:", data);
+                        $(".divMainCart").html(data);
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error:", error);
+                    }
+                });
+            });
+
+            $(".divMainCart").on("click", ".decrease_cart", function () {
+                var productID = $(this).data("productid");
+                alert(productID);
+                $.ajax({
+                    url: "../../app/controller/cartController.php?action=decrease&productID=" + productID,
+                    method: "GET",
+                    success: function (data) {
+                        console.log("Response data:", data);
+                        $(".divMainCart").html(data);
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error:", error);
+                    }
+                });
+            });
+
+            $(".divMainCart").on("click", ".remove_cart", function () {
+                var productID = $(this).data("productid");
+                alert(productID);
+                $.ajax({
+                    url: "../../app/controller/cartController.php?action=remove&productID=" + productID,
+                    method: "GET",
+                    success: function (data) {
+                        console.log("Response data:", data);
+                        $(".divMainCart").html(data);
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error:", error);
+                    }
+                });
+            });
+
+            $(".divMainCart").on("click", ".clear_cart", function () {
+                $.ajax({
+                    url: "../../app/controller/cartController.php?action=clear",
+                    method: "GET",
+                    success: function (data) {
+                        console.log("Response data:", data);
+                        $(".divMainCart").html(data);
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error:", error);
+                    }
+                });
+            });
+        })
+    </script>
 </head>
 
 <body>
@@ -575,10 +642,9 @@
             <!-- COSMETIC: END -->
 
             <!-- CART: START -->
-            <div class="cart side-bar-right divCart__ck" id="cart">
+            <div class="cart side-bar-right divMainCart" id="cart" style="margin: 20px; padding: 20px">
                 <i data-feather="x" class="close__cart close-sample" id="close-cart"></i>
-                <div></div>
-                <div class="cart-empty__body">
+                <!-- <div class="cart-empty__body">
                     <div class="title link__pc--wb">OOPSS</div>
                     <div class="message link__pc--wb">Giỏ hàng hiện đang trống <br>
                         Không có sản phẩm nào trong <br>
@@ -586,6 +652,55 @@
                     </div>
                     <a href="" class="button">TIẾP TỤC MUA SẮM</a>
                 </div>
+                <div>
+                    <table class="single-product-cart " style="width:100%;">
+                        <thead class="text-muted">
+                            <tr>
+                                <th scope="col" width="20%"></th>
+                                <th scope="col" width="60%"></th>
+                                <th scope="col" width="20%" class="text-right"> </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="tr-cart">
+                                <td><img class="img-cart" src="../../public/img/daugoibuoi500ml.png"
+                                        alt="dau goi dau buoi"></td>
+                                <td>
+                                    <div class="cart-name">
+                                        <p>Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp 500ml</p>
+                                    </div>
+                                    <div class="cart__quantity">
+                                        <button class="btn cart-btn" onclick="decreaseQuantity('quantity1')">-</button>
+                                        <input class="cart-quantity" type="text" id="quantity1" value="1" readonly>
+                                        <button class="btn cart-btn" onclick="increaseQuantity('quantity1')">+</button>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-block cart-btn" id="btnCreate">X</button>
+                                    <div>155.000 đ</div>
+                                </td>
+                            </tr>
+                            <tr class="tr-cart">
+                                <td><img class="img-cart" src="../../public/img/daugoibuoi500ml.png"
+                                        alt="dau goi dau buoi"></td>
+                                <td>
+                                    <div class="cart-name">
+                                        <p>Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp 500ml</p>
+                                    </div>
+                                    <div class="cart__quantity">
+                                        <button class="btn cart-btn" onclick="decreaseQuantity('quantity1')">-</button>
+                                        <input class="cart-quantity" type="text" id="quantity1" value="1" readonly>
+                                        <button class="btn cart-btn" onclick="increaseQuantity('quantity1')">+</button>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-block cart-btn" id="btn-cancel">X</button>
+                                    <div>155.000 đ</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>-->
             </div>
             <!-- CART: END -->
 
@@ -945,6 +1060,15 @@
             $.get("../../app/controller/contactController.php?=" + parameters, function (data, status) {
                 alert(status);
             });
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        // Thực hiện yêu cầu AJAX khi trang được tải
+        $.get("../../app/controller/cartController.php?action=load", function (data, status) {
+            console.log("Response data:", data);
+            $(".divMainCart").html(data);
         });
     });
 </script>

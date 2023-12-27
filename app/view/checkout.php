@@ -10,19 +10,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../../public/css/checkout.css">
-
+    <link rel="stylesheet" href="../../public/css/header.css">
+    <!-- <script scr="../../public/js/cart.js"></script> -->
     <?php
     session_start();
     // Check if the user is logged in
     
     // IF not session or not logged in
     if (!isset($_SESSION['user_id'])) {
-        include '../../resources/includes/header.php';
+        echo "<script>alert('chua dang nhap');</script>";
     } else {
-        include '../../resources/includes/headerLogged.php';
+        echo "<script>alert('da dang nhap');</script>";
     }
     ?>
-    
+
 </head>
 
 
@@ -39,16 +40,18 @@
             <div class="cus-info">
                 <div class="cus-info-detail">
                     <p>Thông tin liên hệ của bạn</p>
-                    <p>Trần Anh Thy</p>
-                    <p>anhthy18072003.tran@gmail.com</p>
-                    <p>0987814172</p>
+                    <p>
+                        <?php echo $_SESSION['full_name']; ?>
+                    </p>
+                    <p>
+                        <?php echo $_SESSION['email'] ?>
+                    </p>
+                    <p>
+                        <?php echo $_SESSION['phone'] ?>
+                    </p>
                 </div>
                 <div class="deliveryAddress">
-                    <div class="d-flex justify-content-between">
-                        <input class="thyanh" type="text" placeholder="Họ và tên">
-                        <input class="thyanh" type="text" placeholder="Nhập số điện thoại">
-                    </div>
-                    <div class="d-flex justify-content-between">
+                    <div class="d-flex justify-content- between">
                         <select class="thyanh" id="city">
                             <option value="" selected>Chọn tỉnh thành</option>
                         </select>
@@ -60,18 +63,18 @@
                         <select class="thyanh" id="ward">
                             <option value="" selected>Chọn phường xã</option>
                         </select>
-                        <input class="thyanh" type="text" placeholder="Số nhà, đường, khu vực">
+                        <input class="thyanh" id="home" type="text" placeholder="Số nhà, đường, khu vực">
                     </div>
                 </div>
             </div>
 
             <div class="cus-payment">
                 <p>Phương thức thanh toán</p>
-                <input type="radio" id="cod" name="payment" value="HTML">
+                <input type="radio" id="cod" name="payment" value="1">
                 <label for="cod">Thanh toán khi giao hàng (COD)</label><br>
-                <input type="radio" id="momo" name="payment" value="JavaScript">
+                <input type="radio" id="momo" name="payment" value="2">
                 <label for="momo">Thanh toán bằng Ví MoMo</label><br>
-                <input type="radio" id="cash" name="payment" value="CSS">
+                <input type="radio" id="bank" name="payment" value="3">
                 <label for="bank">Thanh toán bằng thẻ ATM/VISA/MASTER (Alepay)</label>
             </div>
         </div>
@@ -79,71 +82,39 @@
         <div class="cus-info-container col-md-6 p-0 m-0">
             <div class="cus-cart">
                 <p>Chi tiết đơn hàng</p>
-                <table class="single-product-cart" style="width:100%;">
-                    <thead class="text-muted">
-                        <tr>
-                            <th scope="col" width="20%"></th>
-                            <th scope="col" width="60%"></th>
-                            <th scope="col" width="20%" class="text-right"> </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="tr-cart">
-                            <td><img class="img-cart" src="../../public/img/daugoibuoi500ml.png" alt="dau goi dau buoi">
-                            </td>
-                            <td>
-                                <div class="cart-name">
-                                    <p>Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp 500ml</p>
-                                </div>
-                                <div class="cart__quantity">
-                                    <button class="btn cart-btn" onclick="decreaseQuantity('quantity1')">-</button>
-                                    <input class="cart-quantity" type="text" id="quantity1" value="1" readonly>
-                                    <button class="btn cart-btn" onclick="increaseQuantity('quantity1')">+</button>
-                                </div>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-block cart-btn" id="btnCreate">X</button>
-                                <div>155.000 đ</div>
-                            </td>
-                        </tr>
-                        <tr class="tr-cart">
-                            <td><img class="img-cart" src="../../public/img/daugoibuoi500ml.png" alt="dau goi dau buoi">
-                            </td>
-                            <td>
-                                <div class="cart-name">
-                                    <p>Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp 500ml</p>
-                                </div>
-                                <div class="cart__quantity">
-                                    <button class="btn cart-btn" onclick="decreaseQuantity('quantity1')">-</button>
-                                    <input class="cart-quantity" type="text" id="quantity1" value="1" readonly>
-                                    <button class="btn cart-btn" onclick="increaseQuantity('quantity1')">+</button>
-                                </div>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-block cart-btn" id="btn-cancel">X</button>
-                                <div>155.000 đ</div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="divMainCart">
+
+                </div>
             </div>
+
             <div class="cus-coupon">
                 <div>
                     NHẬP MÃ KHUYẾN MÃI HOẶC THẺ QUÀ TẶNG
                 </div>
                 <div>
-                    <input class="nownib-1" type="text">
-                    <button class="nownib-2">Áp dụng</button>
+                    <input class="nownib-1" type="text" id="couponCodeInput">
+                    <button class="nownib-2" id="btnCoupon">Áp dụng</button>
                 </div>
             </div>
             <div class="cus-total d-flex justify-content-between">
                 <div>
                     <p>Tổng cộng</p>
-                    <h2>955 000 đ</h2>
+                    <h2 id="totalAfter">
+                        <?php
+                        // Lấy giá từ session
+                        $totalPrice = $_SESSION['totalPrice'];
+
+                        // Định dạng giá theo định dạng VND
+                        $formattedTotalPrice = number_format($totalPrice, 0, ',', '.') . ' VND';
+
+                        // In giá đã định dạng
+                        echo $formattedTotalPrice;
+                        ?>
+                    </h2>
                 </div>
                 <div>
                     <a class="btn" href="">
-                        <p class="btn-payment"><b>Đặt hàng</b></p>
+                        <button class="btn-payment" id="btnPayment"><b>Đặt hàng</b></button>
                     </a>
                 </div>
             </div>
@@ -156,7 +127,6 @@
             <p>© 2023 Cocoon Vietnam. All rights reserved.</p>
         </div>
     </div>
-
 </body>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
@@ -206,13 +176,176 @@
     var printResult = () => {
         if ($("#district").find(':selected').data('id') != "" && $("#city").find(':selected').data('id') != "" &&
             $("#ward").find(':selected').data('id') != "") {
-            let result = $("#city option:selected").text() +
+            let addressPayment = $("#city option:selected").text() +
                 " - " + $("#district option:selected").text() + " - " +
-                $("#ward option:selected").text();
-            $("#result").text(result)
-            // alert(result)
+                $("#ward option:selected").text() + " - " + $("#home").val();
+            // alert(addressPayment);
         }
     }
+</script>
+
+
+<script>
+    $(document).ready(function () {
+        // Thực hiện yêu cầu AJAX khi trang được tải
+        $.get("../../app/controller/cartController.php?action=load", function (data, status) {
+            console.log("Response data:", data);
+            $(".divMainCart").html(data);
+        });
+    });
+
+    $(document).ready(function () {
+        // Sử dụng sự kiện delegation trên một phần tử cha tĩnh
+        $(".divMainCart").on("click", ".increase_cart", function () {
+            var productID = $(this).data("productid");
+            $.ajax({
+                url: "../../app/controller/cartController.php?action=add&productID=" + productID,
+                method: "GET",
+                success: function (data) {
+                    console.log("Response data:", data);
+                    $(".divMainCart").html(data);
+                },
+                error: function (xhr, status, error) {
+                    console.error("Error:", error);
+                }
+            });
+        });
+
+        $(".divMainCart").on("click", ".decrease_cart", function () {
+            var productID = $(this).data("productid");
+            $.ajax({
+                url: "../../app/controller/cartController.php?action=decrease&productID=" + productID,
+                method: "GET",
+                success: function (data) {
+                    console.log("Response data:", data);
+                    $(".divMainCart").html(data);
+                },
+                error: function (xhr, status, error) {
+                    console.error("Error:", error);
+                }
+            });
+        });
+
+        $(".divMainCart").on("click", ".remove_cart", function () {
+            var productID = $(this).data("productid");
+            alert(productID);
+            $.ajax({
+                url: "../../app/controller/cartController.php?action=remove&productID=" + productID,
+                method: "GET",
+                success: function (data) {
+                    console.log("Response data:", data);
+                    $(".divMainCart").html(data);
+                },
+                error: function (xhr, status, error) {
+                    console.error("Error:", error);
+                }
+            });
+        });
+
+        $(".divMainCart").on("click", ".clear_cart", function () {
+            $.ajax({
+                url: "../../app/controller/cartController.php?action=clear",
+                method: "GET",
+                success: function (data) {
+                    console.log("Response data:", data);
+                    $(".divMainCart").html(data);
+                },
+                error: function (xhr, status, error) {
+                    console.error("Error:", error);
+                }
+            });
+        });
+
+        $(document).ready(function () {
+            $("#btnLogin").on("click", function (e) {
+                e.preventDefault();
+
+                var phone = $("#phone").val();
+                var password = $("#password").val();
+
+                $.ajax({
+                    type: "POST",
+                    url: "../controller/logginController.php",
+                    data: { phone: phone, password: password },
+                    success: function (response) {
+                        if (response.trim() === "Đăng nhập thành công") {
+                            // Đăng nhập thành công, làm thứ gì đó (ví dụ: reload trang)
+                            location.reload();
+                        } else {
+                            // Hiển thị thông báo lỗi
+                            alert(response);
+                        }
+                    },
+                    error: function () {
+                        alert("Đã xảy ra lỗi trong quá trình xử lý đăng nhập.");
+                    }
+                });
+            });
+        });
+
+        $(document).ready(function () {
+            $("#btnCoupon").on("click", function () {
+                // Lấy giá trị mã giảm giá từ input
+                var couponCode = $("#couponCodeInput").val();
+                console.log(couponCode);
+
+                // Kiểm tra xem mã giảm giá có tồn tại không
+                if (couponCode) {
+                    $.ajax({
+                        // Sử dụng tham số coupon_code để truyền mã giảm giá
+                        url: "../../app/controller/couponController.php?coupon_code=" + couponCode,
+                        method: "GET",
+                        success: function (data) {
+                            console.log("Response data:", data);
+                            // Hiển thị giá mới sau khi áp dụng mã giảm giá
+                            $("#totalAfter").html(data);
+                        },
+                        error: function (xhr, status, error) {
+                            console.error("Error:", error);
+                        }
+                    });
+                } else {
+                    // Xử lý khi người dùng không nhập mã giảm giá
+                    console.log("Vui lòng nhập mã giảm giá.");
+                    // Có thể thêm thông báo khác tùy ý
+                }
+            });
+        });
+
+        $(document).ready(function () {
+            $("#btnPayment").on("click", function (e) {
+                e.preventDefault();
+
+                var homeAddress = $("#home").val();
+
+                var addressPayment = $("#city option:selected").text() +
+                    " - " + $("#district option:selected").text() + " - " +
+                    $("#ward option:selected").text() + " - " + homeAddress;
+
+                var paymentMethod = $("input[name='payment']:checked").val();
+
+                // console.log(addressPayment);
+                // console.log(paymentMethod);
+
+
+                $.ajax({
+                    url: "../../app/controller/checkoutController.php?homeAddress=" + addressPayment +
+                        "&paymentMethod=" + paymentMethod,
+                    method: "GET",
+                    success: function (data) {
+                        console.log("Response data:", data);
+                        window.location.href = "../../app/view/homepage.php";
+
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error:", error);
+                    }
+                });
+            });
+        });
+
+    })
+
 </script>
 
 </html>

@@ -696,9 +696,9 @@
                             </tr>
                         </tbody>
                     </table>
-                </div>
-            </div> -->
-                <!-- CART: END -->
+                </div>-->
+            </div>
+            <!-- CART: END -->
 
         </header>
         <!-- HEADER PC: END -->

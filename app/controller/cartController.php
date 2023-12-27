@@ -4,6 +4,8 @@ $username = "root";
 $password = "";
 $dbname = "web";
 
+session_start();
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {
@@ -65,6 +67,7 @@ if ($action == "add") {
         foreach ($cart as $productID => $productInfo) {
             $totalPrice += $productInfo['price'] * $productInfo['quantity'];
         }
+        $_SESSION['totalPrice'] = $totalPrice;
 
         echo '<div class="text-right" style="margin-right:35px">';
         echo '<button class="btn btn-danger clear_cart">Xoá giỏ hàng</button>';
@@ -92,7 +95,8 @@ if ($action == "add") {
         echo '</tbody>';
         echo '</table>';
         echo '<div class="text-right" style="margin-right:35px">';
-        echo '<div class="total-price font-weight-bold" style="font-size: 20px">Tổng giá: ' . number_format($totalPrice) . ' vnđ</div>';
+        echo '<div class="total-price font-weight-bold" style="font-size: 20px">Tổng giá: ' . number_format($totalPrice, 0, ',', '.') . ' vnđ</div>';
+
         echo '</div>';
     } else {
         // Thiếu productID, xử lý lỗi
@@ -130,6 +134,7 @@ if ($action == "add") {
             foreach ($cart as $productID => $productInfo) {
                 $totalPrice += $productInfo['price'] * $productInfo['quantity'];
             }
+            $_SESSION['totalPrice'] = $totalPrice;
 
             echo '<div class="text-right" style="margin-right:35px">';
             echo '<button class="btn btn-danger clear_cart">Xoá giỏ hàng</button>';
@@ -157,7 +162,7 @@ if ($action == "add") {
             echo '</tbody>';
             echo '</table>';
             echo '<div class="text-right" style="margin-right:35px">';
-            echo '<div class="total-price font-weight-bold" style="font-size: 20px">Tổng giá: ' . number_format($totalPrice) . ' vnđ</div>';
+            echo '<div class="total-price font-weight-bold" style="font-size: 20px">Tổng giá: ' . number_format($totalPrice, 0, ',', '.') . ' vnđ</div>';
             echo '</div>';
         } else {
             // Không tìm thấy sản phẩm trong giỏ hàng
@@ -194,6 +199,7 @@ if ($action == "add") {
             foreach ($cart as $productID => $productInfo) {
                 $totalPrice += $productInfo['price'] * $productInfo['quantity'];
             }
+            $_SESSION['totalPrice'] = $totalPrice;
 
             echo '<div class="text-right" style="margin-right:35px">';
             echo '<button class="btn btn-danger clear_cart">Xoá giỏ hàng</button>';
@@ -221,7 +227,8 @@ if ($action == "add") {
             echo '</tbody>';
             echo '</table>';
             echo '<div class="text-right" style="margin-right:35px">';
-            echo '<div class="total-price font-weight-bold" style="font-size: 20px">Tổng giá: ' . number_format($totalPrice) . ' vnđ</div>';
+            echo '<div class="total-price font-weight-bold" style="font-size: 20px">Tổng giá: ' . number_format($totalPrice, 0, ',', '.') . ' vnđ</div>';
+
             echo '</div>';
         } else {
             // Không tìm thấy sản phẩm trong giỏ hàng
@@ -253,6 +260,7 @@ if ($action == "add") {
         foreach ($cart as $productID => $productInfo) {
             $totalPrice += $productInfo['price'] * $productInfo['quantity'];
         }
+        $_SESSION['totalPrice'] = $totalPrice;
 
         echo '<div class="text-right" style="margin-right:35px">';
         echo '<button class="btn btn-danger clear_cart">Xoá giỏ hàng</button>';
@@ -280,7 +288,8 @@ if ($action == "add") {
         echo '</tbody>';
         echo '</table>';
         echo '<div class="text-right" style="margin-right:35px">';
-        echo '<div class="total-price font-weight-bold" style="font-size: 20px">Tổng giá: ' . number_format($totalPrice) . ' vnđ</div>';
+        echo '<div class="total-price font-weight-bold" style="font-size: 20px">Tổng giá: ' . number_format($totalPrice, 0, ',', '.') . ' vnđ</div>';
+
         echo '</div>';
     } else {
         echo '<div class="cart-empty__body">';

@@ -18,19 +18,18 @@
     <script>
         $(document).ready(function () {
             // Initial load
-            $.get("../../controller/admin/adManageController.php?page=1", function (data, status) {
+            $.get("../../controller/admin/adValidorderController.php?page=1", function (data, status) {
                 console.log("Initial Load AJAX Response:", data);
-                $(".divManageProduct").html(data);
+                $(".divManageOrder").html(data);
             })
 
             $(".page-btn").click(function () {
                 // Get the value of the clicked button
                 var pageBtnValue = $(this).val();
                 // Send search request to web server with the button value
-                $.get("../../controller/admin/adManageController.php?page=" + pageBtnValue, function (data, status) {
-                    $(".divManageProduct").html(data);
+                $.get("../../controller/admin/adValidorderController.php?page=" + pageBtnValue, function (data, status) {
+                    $(".divManageOrder").html(data);
                 });
-
             });
         });
     </script>
@@ -41,13 +40,13 @@
         <table class="table table-bordered">
             <thead class="thead-light">
                 <tr>
-                    <th style="width: 20%;">ID</th>
-                    <th style="width: 20%;">Tên sản phẩm</th>
-                    <th style="width: 20%;">Phân loại</th>
+                    <th style="width: 20%;">User ID</th>
+                    <th style="width: 20%;">Order ID</th>
+                    <th style="width: 20%;">Tổng mức giá</th>
                     <th style="width: 40%;">Hành động</th>
                 </tr>
             </thead>
-            <tbody class="divManageProduct">
+            <tbody class="divManageOrder">
             </tbody>
         </table>
         <div class="pagination justify-content-center divPerPage">
@@ -56,7 +55,6 @@
             <button class="btn btn-secondary page-btn mx-1" value="3">3</button>
             <button class="btn btn-secondary page-btn mx-1" value="4">4</button>
             <button class="btn btn-secondary page-btn mx-1" value="5">5</button>
-            <button class="btn btn-secondary page-btn mx-1" value="6">6</button>
         </div>
     </div>
 </body>
