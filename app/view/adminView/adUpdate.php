@@ -1,8 +1,19 @@
+<?php
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../../../app/view/homepage.php");
+}
+
+// IF not session or not logged in
+if (isset($_SESSION['user_type']) == 2) {
+    echo "<script> alert'bạn không phải admin'</script>";
+    header("Location: ../../../app/view/homepage.php");
+} ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin - Update Product</title>
 
@@ -73,7 +84,7 @@
 </head>
 
 <body>
-
+    <img src="../../../public/img/logo.png" alt="" style="width: 15%; height: auto; margin-left: 6%">
     <div class="container mt-5 row">
         <!-- load the product information use script -->
         <div class="col-sm-4 divProductInfo">

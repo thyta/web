@@ -15,7 +15,7 @@
     <?php
     session_start();
     // Check if the user is logged in
-
+    
     // IF not session or not logged in
     if (!isset($_SESSION['user_id'])) {
         include '../../resources/includes/header.php';
@@ -23,6 +23,7 @@
         include '../../resources/includes/headerLogged.php';
     }
     ?>
+    <title>Home page</title>
 
 </head>
 
@@ -450,7 +451,7 @@
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="../../public/js/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="../../public/js/bootstrap.min.js"></script>
+<!-- <script src="../../public/js/bootstrap.min.js"></script> -->
 
 <?php include '../../resources/includes/footer.php' ?>
 

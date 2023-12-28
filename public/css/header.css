@@ -504,7 +504,7 @@ li {
 }
 
 .group__status {
-    color: #be2f31;
+    color: #414548;
     font-size: 12px;
     font-style: italic;
 }
@@ -680,6 +680,46 @@ li {
 /* CSS LOGIN: END */
 
 /* CSS SIGN UP: START */
+.announce {
+    position: fixed;
+    top: 36%;
+    left: 36%;
+    right: 36%;
+    bottom: 15%;
+    background-color: #fefbf4;
+    width: 28%;
+    height: 36%;
+    z-index: 103;
+    opacity: 0;
+    border-radius: 8px;
+    box-shadow: 0 1px 21px rgba(229, 184, 96, .25);
+    padding: 24px;
+    display: none;
+}
+
+.show__announce {
+    opacity: 1;
+    display: block;
+    animation: fadeIn 1.5s ease;
+}
+
+.btnOK {
+    position: absolute;
+    width: 28%;
+    height: 14%;
+    margin: 2% 30%;
+    bottom: 0;
+    padding: 20px;
+}
+
+.btnOK:hover {
+    background-color: #414548;
+}
+
+.btnSignUp:hover {
+    background-color: #414548;
+}
+
 .sign-up {
     position: fixed;
     top: 5%;
@@ -720,14 +760,13 @@ li {
     border-bottom: #b48a3682 1px solid;
 }
 
-<<<<<<< HEAD
-=======
+
 .sign-up__input:focus {
     border-bottom: #414548 1px solid;
     outline: none;
 }
 
->>>>>>> dbca86cf4ad668d465be02d36c76a357cd822a3f
+
 .input__icon {
     color: #C5A25D;
 }
@@ -915,6 +954,27 @@ li {
         left: 0;
         width: 100%;
         height: 100%;
+    }
+
+    .announce {
+        position: fixed;
+        top: 20%;
+        left: 10%;
+        right: 10%;
+        bottom: 15%;
+        background-color: #fefbf4;
+        width: 80%;
+        height: 35%;
+        z-index: 103;
+        border-radius: 8px;
+        box-shadow: 0 1px 21px rgba(229, 184, 96, .25);
+        padding: 24px;
+    }
+
+    .btnOK {
+        width: 18%;
+        height: 14%;
+        margin: 2% 34%;
     }
 
     .show-login-mobile {

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Cosmetic Scrupts</title>
+
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <!-- Themify fonticon -->
     <link rel="stylesheet" href="../../public/font/themify-icons/themify-icons.css">
+    <?php include('../../resources/head/fh_head.php') ?>
     <!-- Css -->
     <link rel="stylesheet" href="../../public/css/header.css">
     <!-- Font family -->
@@ -19,7 +20,8 @@
     <!-- Feather icon -->
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <?php include('../../resources/head/fh_head.php') ?>
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
     <script>
         $(document).ready(function () {
@@ -114,6 +116,7 @@
             });
         });
     </script>
+
 </head>
 
 <body>
@@ -637,6 +640,7 @@
                 </ul>
             </div>
             <!-- COSMETIC: END -->
+
             <!-- CART: END -->
             <div class="cart side-bar-right divMainCart" id="cart" style="margin: 20px; padding: 20px">
                 <i data-feather="x" class="close__cart close-sample" id="close-cart"></i>
@@ -709,51 +713,49 @@
             <i data-feather="x" class="close__contact close-sample" id="close-contact"></i>
             <div class="contact__container">
                 <div class="contact__title">Liên hệ với The Cosmetic Scrupts</div>
-                <form action="../../app/controller/contactController.php" method="POST">
-                    <div class="contact__col">
+                <div class="contact__col">
+                    <div>
                         <div>
-                            <div>
-                                <input type="text" class="contact__name group__input" required="required"
-                                    name="nameContact" id="nameContact" placeholder="Tên của bạn*" tabindex="1"
-                                    autocomplete="off">
-                            </div>
-                            <span data-v-00568c7a class="group__status">Vui lòng nhập tên của bạn!</span>
+
+                            <input type="text" class="contact__name group__input" required="required" name="nameContact"
+                                id="nameContact" placeholder="Tên của bạn*" tabindex="1" autocomplete="off">
                         </div>
-                        <div>
-                            <div>
-                                <input type="tel" class="contact__tel group__input" required="required"
-                                    name="telContact" id="telContact" placeholder="Số điện thoại*" tabindex="1"
-                                    autocomplete="off">
-                            </div>
-                            <span data-v-00568c7a class="group__status">Vui lòng nhập số điện thoại hợp lệ!</span>
-                        </div>
+                        <span data-v-00568c7a class="group__status">Vui lòng nhập tên của bạn!</span>
                     </div>
                     <div>
                         <div>
-                            <input type="email" class="contact__email group__input" required="required"
-                                name="emailContact" id="emailContact" placeholder="Địa chỉ Email*" tabindex="1"
-                                autocomplete="off">
+                            <input type="tel" class="contact__tel group__input" required="required" name="telContact"
+                                id="telContact" placeholder="Số điện thoại*" tabindex="1" autocomplete="off">
                         </div>
-                        <span data-v-00568c7a class="group__status">Vui lòng nhập email hợp lệ!</span>
+                        <span data-v-00568c7a class="group__status">Vui lòng nhập số điện thoại hợp lệ!</span>
                     </div>
+                </div>
+                <div>
                     <div>
-                        <div>
-                            <input type="text" class="contact__question group__input" required="required"
-                                name="questionContact" id="questionContact" placeholder="Nhập câu hỏi của bạn*"
-                                tabindex="1" autocomplete="off">
-                        </div>
-                        <span data-v-00568c7a class="group__status">Vui lòng nhập câu hỏi!</span>
+                        <input type="email" class="contact__email group__input" required="required" name="emailContact"
+                            id="emailContact" placeholder="Địa chỉ Email*" tabindex="1" autocomplete="off">
                     </div>
-                    <div class="sign-up__btn">
-                        <button type="submit" class="btnSend button" id="btnSend">GỬI COSMETIC</button>
+                    <span data-v-00568c7a class="group__status">Vui lòng nhập email hợp lệ!</span>
+                </div>
+                <div>
+                    <div>
+                        <input type="text" class="contact__question group__input" required="required"
+                            name="questionContact" id="questionContact" placeholder="Nhập câu hỏi của bạn*"
+                            tabindex="1" autocomplete="off">
                     </div>
-                </form>
+                    <span data-v-00568c7a class="group__status">Vui lòng nhập câu hỏi!</span>
+                </div>
+                <div class="sign-up__btn">
+                    <button type="submit" class="btnSend button" id="btnSend">GỬI COSMETIC</button>
+                </div>
+
             </div>
         </div>
         <!-- CONTACT: END -->
 
         <!-- LOGIN: START -->
-        <div class="login side-bar-center" id="login">
+        <form action="../controller/logginController.php" method="post" class="login side-bar-center" id="login">
+
             <i data-feather="x" class="close__login close-sample" id="close-login"></i>
             <div class="login__container">
                 <div class="d-flex justify-content-between align-content-center">
@@ -784,7 +786,7 @@
                 <div class="d-flex login-tai-khoan">
                     <p class="icon ti-lock"></p>
                     <input data-v-00568c7a="" name="password" placeholder="Nhập mật khẩu" type="password"
-                        class="login__input" id="password">
+                        class="login__input" id="password" tabindex="1">
                     <span class="error-message" id="passError"></span>
                 </div>
 
@@ -795,7 +797,7 @@
                     <input type="checkbox" tabindex="1" class="checkbox bg-primary-yellow border-transparent">
                     <p class="m-0  p-lg-2">Ghi nhớ mật khẩu cho lần sau</p>
                 </div>
-                <button type="submit" class="dang-nhap" id="btnLogin">ĐĂNG NHẬP</button>
+                <button type="submit" class="dang-nhap">ĐĂNG NHẬP</button>
                 <div class="dn-khac mt-4 d-flex justify-content-between">
                     <p style="font-size: 16px; color: #414548" class="">Hoặc đăng nhập bằng</p>
                     <div class="icon-dn-khac">
@@ -805,7 +807,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
         <!-- LOGIN: END -->
 
         <!-- SIGN UP: START -->
@@ -815,69 +817,49 @@
             <div class="sign-up__container">
                 <div class="group__title">Đăng ký tài khoản</div>
                 <p>Chào mừng bạn đến với The Cosmetic Scrupts!!! </p>
-                <form action="../../app/controller/registerController.php" method="POST">
-                    <div class="input__container">
-                        <i data-feather="user" class="input__icon"></i>
-                        <input type="text" class="sign-up__input" required="required" name="full_name" id="full_name"
-                            placeholder="Tên của bạn*" tabindex="1">
-                    </div>
+                <div class="input__container">
+                    <i data-feather="user" class="input__icon"></i>
+                    <input type="text" class="sign-up__input" required="required" name="full_name" id="full_name"
+                        placeholder="Tên của bạn*" tabindex="1">
+                </div>
 
-                    <div class="input__container">
-                        <i data-feather="mail" class="input__icon"></i>
-                        <input type="email" class="sign-up__input" required="required" name="email" id="email"
-                            placeholder="Email của bạn*" tabindex="1">
-                    </div>
+                <div class="input__container">
+                    <i data-feather="mail" class="input__icon"></i>
+                    <input type="email" class="sign-up__input" required="required" name="email" id="email"
+                        placeholder="Email của bạn*" tabindex="1">
+                </div>
 
-                    <div class="input__container">
-                        <i data-feather="phone" class="input__icon"></i>
-                        <input type="tel" class="sign-up__input" required="required" name="phone" id="phone"
-                            placeholder="Số điện thoại*" tabindex="1">
-                    </div>
+                <div class="input__container">
+                    <i data-feather="phone" class="input__icon"></i>
+                    <input type="tel" class="sign-up__input" required="required" name="phone" id="tel"
+                        placeholder="Số điện thoại*" tabindex="1">
+                </div>
 
-                    <div class="input__container">
-                        <i data-feather="lock" class="input__icon"></i>
-                        <input type="password" class="sign-up__input" required="required" name="password" id="password"
-                            placeholder="Nhập mật khẩu*" tabindex="1">
-                    </div>
+                <div class="input__container">
+                    <i data-feather="lock" class="input__icon"></i>
+                    <input type="password" class="sign-up__input" required="required" name="password" id="pass"
+                        placeholder="Nhập mật khẩu*" tabindex="1">
+                </div>
 
-                    <div class="input__container">
-                        <i data-feather="lock" class="input__icon"></i>
-                        <input type="password" class="sign-up__input " required="required" name="confirm_password"
-                            id="confirm_password" placeholder="Nhập lại mật khẩu*" tabindex="1">
-                    </div>
+                <div class="input__container">
+                    <i data-feather="lock" class="input__icon"></i>
+                    <input type="password" class="sign-up__input " required="required" name="confirm_pass"
+                        id="confirm_pass" placeholder="Nhập lại mật khẩu*" tabindex="1">
+                </div>
 
-                    <div class="sign-up__btn">
-                        <button class="btnSignUp button" id="btnSignUp">ĐĂNG KÝ</button>
-                    </div>
-                </form>
-                <div id="sign-up-message"></div>
+                <div class="sign-up__btn">
+                    <button type="submit" class="btnSignUp button" id="btnSignUp">ĐĂNG KÝ</button>
+                </div>
             </div>
-            <!-- ĐÃ CỐ AJAX NHƯNG TẠM THỜI CHƯA ĐƯỢC. KIỂU NÓ KHÔNG ĂN -->
-            <!-- <script>
-                $(document).ready(function () {
-                    $("#btnSignUp").click(function (event) {
-                        event.preventDefault(); // Ngăn chặn hành vi mặc định của nút
-
-                        var fullName = $("#full_name").val();
-                        var email = $("#email").val();
-                        var phone = $("#phone").val();
-                        var password = $("#password").val();
-                        var confirmPassword = $("#confirm_password").val();
-
-                        var parameters = "fullName= " + fullName + "&" + "email= " + email + "&" + "phone= " + phone + "&" + "password= " + password + "&" + "confirmPassword= " + confirmPassword
-
-                        $.get("../../app/controller/registerController.php?=" + parameters, function (data, status) {
-                            $("#sign-up-message").html(data);
-                        });
-                    });
-                });
-            </script> -->
-
         </div>
-        <!-- TABLE ANNOUNCE -->
-        <div class="announce"></div>
+
         <!-- SIGN UP: END -->
 
+        <!-- TABLE ANNOUNCE -->
+        <div class="announce" id="announce">
+            <p id="message__announce" style="font-size: 22px; font-family: 'Roboto'; font-weight: 500;"></p>
+            <button class="btnOK button" id="btnOK">OK</button>
+        </div>
         <!-- HEADER MOBILE: START -->
         <header class="header__mobile">
             <div class="banner">Tận hưởng giao hàng toàn quốc với hóa đơn 99.000 đ +</div>
@@ -997,9 +979,6 @@
     </div>
     <div class="empty__header"></div>
 </body>
-<!-- SCRIPT -->
-<!-- cart increase -->
-
 <!-- cart on load -->
 <script>
     $(document).ready(function () {
@@ -1010,40 +989,88 @@
         });
     });
 </script>
-
-<!-- add btn control -->
-
-
-
+<!-- SCRIPT -->
+<!-- AJAX CONTACT: START -->
 <script>
-    //Change header => fixed
-    window.onscroll = function () {
-        var header = document.getElementById('header');
-        var scrollPosition = window.scrollY || document.documentElement.scrollTop;
-
-        // Khi cuộn xuống đủ xa, thay đổi position thành fixed
-        if (scrollPosition > 0) {
-            header.classList.add('fixed');
-        } else {
-            header.classList.remove('fixed');
-        }
-    };
-
-</script>
-<!-- <script>
     $(document).ready(function () {
-        $("#btnSend").click(function (event) {
+        $("#btnSend").click(function () {
+            var announce = document.getElementById('announce');
+            announce.classList.add('show__announce');
+            var contact = document.getElementById('contact');
+            contact.classList.remove('show-contact');
+
             var nameContact = $("#nameContact").val();
             var telContact = $("#telContact").val();
             var emailContact = $("#emailContact").val();
-            var questionContact = $("questionContact").val();
-            var parameters = "nameContact= " + nameContact + "&" + "telContact= " + telContact + "&" + "emailContact= " + emailContact + "&" + "password= " + password + "&" + "questionContact= " + questionContact
-            $.post("../../app/controller/contactController.php?=" + parameters, function (data, status) {
-                alert(status);
+            var questionContact = $("#questionContact").val();
+
+            var requestData = {
+                nameContact: nameContact,
+                telContact: telContact,
+                emailContact: emailContact,
+                questionContact: questionContact
+            };
+            $.ajax({
+                method: "POST",
+                url: "../../app/controller/contactController.php",
+                data: requestData,
+                success: function (notification) {
+                    // Cập nhật thông báo phản hồi
+                    $("#message__announce").html(notification);
+                }
+            });
+            $("#btnOK").click(function () {
+                announce.classList.remove('show__announce');
+                overlayRight.style.display = 'none';
             });
         });
-    }); -->
+
+    });
 </script>
+<!-- AJAX CONTACT: END -->
+
+<!-- AJAX SIGN UP: START -->
+<script>
+    $(document).ready(function () {
+        $("#btnSignUp").click(function () {
+            var announce = document.getElementById('announce');
+            announce.classList.add('show__announce');
+            var signUp = document.getElementById('sign-up');
+            signUp.classList.remove('show-sign-up');
+            signUp.style.display = 'none';
+
+            var phone = $("#tel").val();
+            var password = $("#pass").val();
+            var confirm_password = $("#confirm_pass").val();
+            var full_name = $("#full_name").val();
+            var email = $("#email").val();
+
+            var requestData = {
+                tel: phone,
+                full_name: full_name,
+                email: email,
+                pass: password,
+                confirm_pass: confirm_password
+            };
+            $.ajax({
+                method: "POST",
+                url: "../../app/controller/registerController.php",
+                data: requestData,
+                success: function (notification) {
+                    // Cập nhật thông báo phản hồi
+                    $("#message__announce").html(notification);
+                }
+            });
+            $("#btnOK").click(function () {
+                announce.classList.remove('show__announce');
+                overlayRight.style.display = 'none';
+            });
+        });
+
+    });
+</script>
+<!-- AJAX SIGN UP: END -->
+
 <script>feather.replace()</script>
 <script src="../../public/js/header.js"></script>
 

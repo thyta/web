@@ -1,3 +1,5 @@
+<?php include '../../../resources/head/checkAdmin.php' ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,6 +58,7 @@
 </head>
 
 <body class="bg-light">
+    <img src="../../../public/img/logo.png" alt="" style="width: 15%; height: auto; margin-left: 6%">
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-8">

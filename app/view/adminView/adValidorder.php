@@ -1,3 +1,14 @@
+<?php
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../../../app/view/homepage.php");
+}
+
+// IF not session or not logged in
+if (isset($_SESSION['user_type']) == 2) {
+    echo "<script> alert'bạn không phải admin'</script>";
+    header("Location: ../../../app/view/homepage.php");
+} ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,6 +47,7 @@
 </head>
 
 <body class="bg-light">
+    <img src="../../../public/img/logo.png" alt="" style="width: 15%; height: auto; margin-left: 6%">
     <div class="container mt-5">
         <table class="table table-bordered">
             <thead class="thead-light">

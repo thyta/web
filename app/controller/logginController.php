@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['type_id'] = $row["type_id"];
 
             // Redirect to the homepage or any other authenticated page
-            // header("Location: /web/app/view/homepage.php");
+            header("Location: /web/app/view/homepage.php");
             echo "Đăng nhập thành công";
             exit;
         } else {

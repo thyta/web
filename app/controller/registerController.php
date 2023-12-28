@@ -1,17 +1,17 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate and sanitize user input
-    $phone = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_STRING);
-    $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
-    $confirm_password = filter_input(INPUT_POST, 'confirm_password', FILTER_SANITIZE_STRING);
+    $phone = filter_input(INPUT_POST, 'tel', FILTER_SANITIZE_STRING);
     $full_name = filter_input(INPUT_POST, 'full_name', FILTER_SANITIZE_STRING);
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-
-    // Validate other form fields as needed
+    $password = filter_input(INPUT_POST, 'pass', FILTER_SANITIZE_STRING);
+    $confirm_password = filter_input(INPUT_POST, 'confirm_pass', FILTER_SANITIZE_STRING);
 
     // Check if passwords match
     if ($password != $confirm_password) {
-        echo "Mật khẩu không khớp. Vui lòng nhập lại.";
+        $notification = "Tớ nghĩ là mật khẩu bạn nhập không khớp đó. Bạn hãy thử nhập lại nhé!.";
+            echo $notification;
+
     } else {
         // Hash the password using bcrypt
         $hashed_password = password_hash($password, PASSWORD_BCRYPT);
@@ -43,7 +43,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $check_phone_result = $check_phone_query->get_result();
 
         if ($check_phone_result->num_rows > 0) {
-            echo "Số điện thoại đã được sử dụng. Vui lòng nhập số khác.";
+            $notification = "Oh sorry! Đăng ký không thành công mất rùi. Có vẻ như bạn chưa nhập số điện thoại hoặc đã được sử dụng rồi đó, đừng buồn và hãy nhập lại số khác nhé bạn iu <3";
+            echo $notification;
+
         } else {
             // Email is available, proceed with user registration
 
@@ -59,7 +61,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Execute the statement
             if ($insert_user_query->execute()) {
-                echo "Đăng ký thành công! Welcome: " . $full_name;
+                $notification = "Đăng ký thành công! Chào mừng " . $full_name . " đã đến với thế giới mỹ phẩm The Cosmetic Scrupts kiêm thành viên thứ 7749 của gia đình chúng ta Olala!";
+                echo $notification;
             } else {
                 echo "Đăng ký không thành công. Vui lòng thử lại.";
                 // Optionally, you can output more details about the error for debugging:

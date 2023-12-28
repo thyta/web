@@ -18,7 +18,7 @@
     
     // IF not session or not logged in
     if (!isset($_SESSION['user_id'])) {
-        echo "<script>alert('chua dang nhap');</script>";
+        header("Location: ../../app/view/homepage.php");
     } else {
         echo "<script>alert('da dang nhap');</script>";
     }

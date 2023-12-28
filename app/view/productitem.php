@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nước tẩy hoa hồng</title>
 
     <!--Style-->
     <link rel="stylesheet" href="../../public/css/productitem.css">
@@ -16,7 +15,7 @@
     <?php
     session_start();
     // Check if the user is logged in
-
+    
     // IF not session or not logged in
     if (!isset($_SESSION['user_id'])) {
         include '../../resources/includes/header.php';
@@ -37,7 +36,6 @@
     }
 
     $PHP_productID = isset($_GET["productID"]) ? $_GET["productID"] : null;
-
     if ($PHP_productID) {
         $sql = "SELECT p.*, c.category_name FROM products p JOIN categories c ON p.category_id = c.category_id WHERE product_id = $PHP_productID";
         $result = $conn->query($sql);
@@ -53,6 +51,9 @@
         }
     }
     ?>
+    <title>
+        <?php echo $product_name ?>
+    </title>
     <script>
         $(document).ready(function () {
             // Sử dụng sự kiện delegation trên một phần tử cha tĩnh (thay thế 'body' bằng phần tử cha tĩnh gần nhất)
@@ -87,18 +88,24 @@
             <div class="product-summary col-md-6">
                 <!-- load catergory -->
                 <div class="product-link">
-                    <a href="#"><?php echo $category_name; ?></a>
+                    <a href="#">
+                        <?php echo $category_name; ?>
+                    </a>
                 </div>
                 <!-- load name -->
                 <div class="product-heading mt-3">
                     <?php echo $product_name; ?>
                 </div>
                 <!-- load prive -->
-                <div class="product-price"><?php echo number_format($price, 0); ?> đ</div>
+                <div class="product-price">
+                    <?php echo number_format($price, 0); ?> đ
+                </div>
                 <!-- load description -->
                 <div class="txt-fuel-1">
                     <div class="clamped-text">
-                        <p style="font-size: 15px"><?php echo $description; ?></p>
+                        <p style="font-size: 15px">
+                            <?php echo $description; ?>
+                        </p>
                     </div>
                     <button id="readMoreBtn">Xem thêm</button>
                     <button id="readLessBtn">Rút gọn</button>
@@ -170,4 +177,5 @@
 </body>
 
 <?php include '../../resources/includes/footer.php' ?>
+
 </html>
