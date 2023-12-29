@@ -152,7 +152,6 @@
             // Function to perform search
             function performSearch() {
                 var keyword = $("#txtKeyword").val();
-                alert(keyword);
                 $.ajax({
                     url: "../controller/searchController.php?keyword=" + keyword,
                     method: "GET",

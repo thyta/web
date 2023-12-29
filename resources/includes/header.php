@@ -496,7 +496,7 @@
                     <p class="group__title--third">Tẩy Da Chết Mặt</p>
                     <ul class="group__product--list" id="skincare-5-list">
                         <li class="group__product--item">
-                            <a href="" class="group__product--link link__pc--wb">
+                            <a href="../../app/view/productitem.php?productID=34" class="group__product--link link__pc--wb">
                                 <div class="group__info--product">
                                     <div class="group__name--product">Cà phê Đắk Lắk làm sạch da chết mặt 150ml</div>
                                     <div class="group__describe--product">Cho làn da mềm mại và rạng rỡ</div>

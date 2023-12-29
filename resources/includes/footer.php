@@ -28,13 +28,13 @@
         <!-- email form to register -->
         <div class="col-lg-6 p-0 m-0 d-flex align-items-end flex-column" style="height: auto">
             <div class="emailForm">
-                <h2 style="font-size: 40px; padding-top: 10%">Đăng ký để nhận thông tin khuyến mãi sớm nhất từ Cocoon</h2>
+                <h2 style="font-size: 40px; padding-top: 10%">Đăng ký để nhận thông tin khuyến mãi sớm nhất từ The Cosmetics scrupts</h2>
                 <form action="#">
                     <div class="mb-3">
                         <input type="email" class="form-control custom-input" id="inputEmail" aria-describedby="emailHelp"
                             placeholder="Nhập địa chỉ Email" style="font-size: 15px">
                         <div class="form-text" style="font-size: 12px">Đăng ký để nhận thông tin liên lạc về các sản phẩm, dịch vụ, cửa hàng, sự
-                            kiện và các vấn đề đáng quan tâm của Cocoon.</div>
+                            kiện và các vấn đề đáng quan tâm của The Cosmetics scrupts.</div>
                     </div>
                 </form>
             </div>

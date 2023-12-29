@@ -24,7 +24,7 @@
             // Sử dụng sự kiện delegation trên một phần tử cha tĩnh
             $(".divMainCart").on("click", ".increase_cart", function () {
                 var productID = $(this).data("productid");
-                alert(productID);
+                // alert(productID);
                 $.ajax({
                     url: "../../app/controller/cartController.php?action=add&productID=" + productID,
                     method: "GET",
@@ -40,7 +40,7 @@
 
             $(".divMainCart").on("click", ".decrease_cart", function () {
                 var productID = $(this).data("productid");
-                alert(productID);
+                // alert(productID);
                 $.ajax({
                     url: "../../app/controller/cartController.php?action=decrease&productID=" + productID,
                     method: "GET",
@@ -56,7 +56,7 @@
 
             $(".divMainCart").on("click", ".remove_cart", function () {
                 var productID = $(this).data("productid");
-                alert(productID);
+                // alert(productID);
                 $.ajax({
                     url: "../../app/controller/cartController.php?action=remove&productID=" + productID,
                     method: "GET",
@@ -252,7 +252,7 @@
                         </li>
 
                         <li class="group__product--item">
-                            <a href="" class="group__product--link link__pc--wb">
+                            <a href="../../app/view/productitem.php?productID=34" class="group__product--link link__pc--wb">
                                 <div class="group__info--product">
                                     <div class="group__name--product">Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp
                                         140ml
@@ -668,6 +668,7 @@
 
             <div class="cart side-bar-right divMainCart" id="cart" style="margin: 20px; padding: 20px">
                 <i data-feather="x" class="close__cart close-sample" id="close-cart"></i>
+                
                 <!-- <div class="cart-empty__body">
                     <div class="title link__pc--wb">OOPSS</div>
                     <div class="message link__pc--wb">Giỏ hàng hiện đang trống <br>

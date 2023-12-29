@@ -96,8 +96,9 @@ if ($action == "add") {
         echo '</table>';
         echo '<div class="text-right" style="margin-right:35px">';
         echo '<div class="total-price font-weight-bold" style="font-size: 20px">Tổng giá: ' . number_format($totalPrice, 0, ',', '.') . ' vnđ</div>';
-
         echo '</div>';
+        echo "<a href='checkout.php'style='font-size:45px; text-decoration: none; color: green; margin-left: 63%'><b>Đặt hàng</b></a>";
+
     } else {
         // Thiếu productID, xử lý lỗi
         echo "Thiếu ID sản phẩm cho hành động addToCart.";
@@ -164,6 +165,7 @@ if ($action == "add") {
             echo '<div class="text-right" style="margin-right:35px">';
             echo '<div class="total-price font-weight-bold" style="font-size: 20px">Tổng giá: ' . number_format($totalPrice, 0, ',', '.') . ' vnđ</div>';
             echo '</div>';
+            echo "<a href='checkout.php'style='font-size:45px; text-decoration: none; color: green; margin-left: 63%'><b>Đặt hàng</b></a>";
         } else {
             // Không tìm thấy sản phẩm trong giỏ hàng
             echo "Sản phẩm không tồn tại trong giỏ hàng.";
@@ -228,8 +230,9 @@ if ($action == "add") {
             echo '</table>';
             echo '<div class="text-right" style="margin-right:35px">';
             echo '<div class="total-price font-weight-bold" style="font-size: 20px">Tổng giá: ' . number_format($totalPrice, 0, ',', '.') . ' vnđ</div>';
-
             echo '</div>';
+            echo "<a href='checkout.php'style='font-size:45px; text-decoration: none; color: green; margin-left: 63%'><b>Đặt hàng</b></a>";
+
         } else {
             // Không tìm thấy sản phẩm trong giỏ hàng
             echo "Sản phẩm không tồn tại trong giỏ hàng.";
@@ -289,8 +292,8 @@ if ($action == "add") {
         echo '</table>';
         echo '<div class="text-right" style="margin-right:35px">';
         echo '<div class="total-price font-weight-bold" style="font-size: 20px">Tổng giá: ' . number_format($totalPrice, 0, ',', '.') . ' vnđ</div>';
-
         echo '</div>';
+        echo "<a href='checkout.php'style='font-size:45px; text-decoration: none; color: green; margin-left: 63%'><b>Đặt hàng</b></a>";
     } else {
         echo '<div class="cart-empty__body">';
         echo '<div class="title link__pc--wb">OOPSS</div>';
