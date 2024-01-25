@@ -10,19 +10,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
 
     <!-- include config for header and footer -->
-    <?php include('../../resources/head/fh_head.php') ?>
-    <!-- include header -->
     <?php
-    session_start();
-    // Check if the user is logged in
-    
-    // IF not session or not logged in
-    if (!isset($_SESSION['user_id'])) {
-        include '../../resources/includes/header.php';
-    } else {
-        include '../../resources/includes/headerLogged.php';
-    }
+    include '../../resources/head/fh_head.php';
+
+    include '../../resources/head/login-check-php';
     ?>
+    
     <title>Home page</title>
 
 </head>
@@ -46,7 +39,7 @@
                     </a>
                 </div>
             </div>
-            <div class="slider-img img-1" style="background-image: url('../../public/img/img_slider_1.jpg');" ></div>
+            <div class="slider-img img-1" style="background-image: url('../../public/img/img_slider_1.jpg');"></div>
         </div>
         <div class="slider-item slider-item-2">
             <div class="slider-desc slider-desc-2">
@@ -120,7 +113,7 @@
             </div>
         </div>
     </div>
-    <div class="banner-grand" >
+    <div class="banner-grand">
         <div class="banner-script">
             <p class="banner-heading" style="font-size: 60px; padding-bottom:30px;">Triết lý thương hiệu</p>
             <p class="banner-desc" style="font-size: 20px; padding-bottom:30px;">
