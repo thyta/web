@@ -50,15 +50,15 @@ body, html {
 }
 
 .img-1 {
-    background-image: url('../img/img-slider_1.jpg');
+    background-image: url('../../public/img/img_slider_1.jpg');
 }
 
 .img-2 {
-    background-image: url('../img/img-slider_2.jpg');
+    background-image: url('../../public/img/index_New_product_2.png');
 }
 
 .img-3 {
-    background-image: url('../img/img-slider_1.jpg');
+    background-image: url('../../public/img/index_New_product_3.png');
 }
 
 .See-more {

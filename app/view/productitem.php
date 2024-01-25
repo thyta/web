@@ -62,7 +62,7 @@
                 // alert(productID);
 
                 $.ajax({
-                    url: "../../app/controller/cartController.php?action=add&productID=" + productID,
+                    url: "../../app/controller/cart-controller.php?action=add&productID=" + productID,
                     method: "GET",
                     success: function (data) {
                         console.log("Response data:", data);

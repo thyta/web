@@ -46,7 +46,7 @@
                     </a>
                 </div>
             </div>
-            <div class="slider-img img-1"></div>
+            <div class="slider-img img-1" style="background-image: url('../../public/img/img_slider_1.jpg');" ></div>
         </div>
         <div class="slider-item slider-item-2">
             <div class="slider-desc slider-desc-2">
@@ -62,13 +62,13 @@
                     </a>
                 </div>
             </div>
-            <div class="slider-img img-2"></div>
+            <div class="slider-img img-2" style="background-image: url('../../public/img/img_slider_2.jpg');"></div>
         </div>
         <div class="slider-item slider-item-3 ">
             <div class="slider-desc slider-desc-3">
                 <div class="text-box">
                     <p class="sub-heading" style="font-size: 30px;">ĐỔI VỎ CHAI ONLINE</p>
-                    <h1 class="heading" style="font-size: 72px;">CÙNG COCOON SỐNG XANH MỖI NGÀY</h1>
+                    <h1 class="heading" style="font-size: 72px;">CÙNG THE COSMETIS SCRUPTS SỐNG XANH MỖI NGÀY</h1>
                     <p class="description" style="font-size: 16px; padding: 20px 0px 40px 0px">Cocoon luôn sẵn sàng nhận
                         vỏ chai cũ từ các bạn và trao đi các sản phẩm mới. Dù bạn ở bất cứ nơi đâu tại Việt Nam hãy cùng
                         tham gia đổi vỏ chai với Cocoon nhé.</p>
@@ -78,7 +78,7 @@
                     </a>
                 </div>
             </div>
-            <div class="slider-img img-3"></div>
+            <div class="slider-img img-3" style="background-image: url('../../public/img/img_slider_3.jpg');"></div>
         </div>
         <div class="btn-next " style="position:absolute;">
             <div class="ti-angle-right" onclick="nextSlide()" style="color: rgb(241, 216, 216); font-size:30px; "></div>
@@ -120,7 +120,7 @@
             </div>
         </div>
     </div>
-    <div class="banner-grand">
+    <div class="banner-grand" >
         <div class="banner-script">
             <p class="banner-heading" style="font-size: 60px; padding-bottom:30px;">Triết lý thương hiệu</p>
             <p class="banner-desc" style="font-size: 20px; padding-bottom:30px;">

@@ -21,17 +21,19 @@
 
     <?php
     session_start();
+
+    // IF not session or not logged in
+    if (!isset($_SESSION['user_id'])) {
+        header("Location: ../../app/view/404.php");
+    }
+
+
     include '../../resources/includes/headerLogged.php';
+
+    include '../model/connectdb.php';
+
     $id = $_SESSION['user_id'];
     $sql = "SELECT * FROM users where id = $id";
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "web";
-
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    //Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
@@ -59,7 +61,7 @@
             </p>
         </div>
 
-        <form method="post" action="../controller/deleteAccountController.php">
+        <form method="post" action="../controller/delete-account-controller.php">
             <input type="submit" class="btnDelete" value="XÓA TÀI KHOẢN">
         </form>
     </div>

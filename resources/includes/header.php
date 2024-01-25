@@ -30,7 +30,7 @@
                 var productID = $(this).data("productid");
                 alert(productID);
                 $.ajax({
-                    url: "../../app/controller/cartController.php?action=add&productID=" + productID,
+                    url: "../../app/controller/cart-controller.php?action=add&productID=" + productID,
                     method: "GET",
                     success: function (data) {
                         console.log("Response data:", data);
@@ -46,7 +46,7 @@
                 var productID = $(this).data("productid");
                 alert(productID);
                 $.ajax({
-                    url: "../../app/controller/cartController.php?action=decrease&productID=" + productID,
+                    url: "../../app/controller/cart-controller.php?action=decrease&productID=" + productID,
                     method: "GET",
                     success: function (data) {
                         console.log("Response data:", data);
@@ -62,7 +62,7 @@
                 var productID = $(this).data("productid");
                 alert(productID);
                 $.ajax({
-                    url: "../../app/controller/cartController.php?action=remove&productID=" + productID,
+                    url: "../../app/controller/cart-controller.php?action=remove&productID=" + productID,
                     method: "GET",
                     success: function (data) {
                         console.log("Response data:", data);
@@ -76,7 +76,7 @@
 
             $(".divMainCart").on("click", ".clear_cart", function () {
                 $.ajax({
-                    url: "../../app/controller/cartController.php?action=clear",
+                    url: "../../app/controller/cart-controller.php?action=clear",
                     method: "GET",
                     success: function (data) {
                         console.log("Response data:", data);
@@ -97,7 +97,7 @@
 
                     $.ajax({
                         type: "POST",
-                        url: "../controller/logginController.php",
+                        url: "../controller/login-controller.php",
                         data: { phone: phone, password: password },
                         success: function (response) {
                             if (response.trim() === "Đăng nhập thành công") {
@@ -754,8 +754,7 @@
         <!-- CONTACT: END -->
 
         <!-- LOGIN: START -->
-        <form action="../controller/logginController.php" method="post" class="login side-bar-center" id="login">
-
+        <form action="../controller/-controller.php" method="post" class="login side-bar-center" id="login">
             <i data-feather="x" class="close__login close-sample" id="close-login"></i>
             <div class="login__container">
                 <div class="d-flex justify-content-between align-content-center">
@@ -983,7 +982,7 @@
 <script>
     $(document).ready(function () {
         // Thực hiện yêu cầu AJAX khi trang được tải
-        $.get("../../app/controller/cartController.php?action=load", function (data, status) {
+        $.get("../../app/controller/cart-controller.php?action=load", function (data, status) {
             console.log("Response data:", data);
             $(".divMainCart").html(data);
         });
@@ -1012,7 +1011,7 @@
             };
             $.ajax({
                 method: "POST",
-                url: "../../app/controller/contactController.php",
+                url: "../../app/controller/insert-contact-controller.php",
                 data: requestData,
                 success: function (notification) {
                     // Cập nhật thông báo phản hồi

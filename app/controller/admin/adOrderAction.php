@@ -2,7 +2,7 @@
 
 try {
     // Đường dẫn đến tệp autoload.php của PHPMailer (nếu bạn sử dụng Composer)
-    require '../../../vendor/autoload.php';
+    require '../../vendor/autoload.php';
 
     // Tạo một đối tượng PHPMailer
     $mail = new PHPMailer\PHPMailer\PHPMailer();
