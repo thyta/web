@@ -754,7 +754,7 @@
         <!-- CONTACT: END -->
 
         <!-- LOGIN: START -->
-        <form action="../controller/-controller.php" method="post" class="login side-bar-center" id="login">
+        <form action="../controller/login-controller.php" method="post" class="login side-bar-center" id="login">
             <i data-feather="x" class="close__login close-sample" id="close-login"></i>
             <div class="login__container">
                 <div class="d-flex justify-content-between align-content-center">

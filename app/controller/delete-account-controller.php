@@ -32,4 +32,5 @@ if (isset($_SESSION['user_id'])) {
     // User not logged in
     echo "Error: User not logged in.";
 }
+
 ?>
