@@ -8,34 +8,26 @@
     <!--Style-->
     <link rel="stylesheet" href="../../public/css/productitem.css">
 
-    <!-- include config for header and footer -->
-    <?php include '../../resources/head/fh_head.php' ?>
-
-    <!-- include header -->
+    <!-- include config and header -->
     <?php
-    session_start();
-    // Check if the user is logged in
-    
-    // IF not session or not logged in
-    if (!isset($_SESSION['user_id'])) {
-        include '../../resources/includes/header.php';
-    } else {
-        include '../../resources/includes/headerLogged.php';
-    }
-    ?>
+    include '../../resources/head/head-config.php';
 
-    <!-- import ajax -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    include '../../resources/head/login-check-php';
+    ?>
 
     <!-- connect to the database -->
     <?php
-    $conn = new mysqli("localhost", "root", "", "web");
 
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+    include '../model/connectdb.php';
 
     $PHP_productID = isset($_GET["productID"]) ? $_GET["productID"] : null;
+
+    // If product ID is null, redirect to 404 page
+    if ($PHP_productID === null) {
+        include '404.php';
+        die();
+    }
+
     if ($PHP_productID) {
         $sql = "SELECT p.*, c.category_name FROM products p JOIN categories c ON p.category_id = c.category_id WHERE product_id = $PHP_productID";
         $result = $conn->query($sql);
@@ -47,13 +39,17 @@
             $price = $row["price"];
             $description = $row["description"];
             $imgLink = $row["imgLink"];
-            // Add more fields as needed
         }
     }
     ?>
+
     <title>
         <?php echo $product_name ?>
     </title>
+
+    <!-- import ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
     <script>
         $(document).ready(function () {
             // Sử dụng sự kiện delegation trên một phần tử cha tĩnh (thay thế 'body' bằng phần tử cha tĩnh gần nhất)

@@ -7,7 +7,7 @@ if (isset($_SESSION['user_id'])==null) {
 }
 
 if ($_SESSION['type_id'] == 2) {
-    header("Location: ../../../app/view/homepage.php");
+    header("Location: ../../../app/view/404.php");
     exit(); // Ensure that the script stops execution after redirection
 }
 ?>

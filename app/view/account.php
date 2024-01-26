@@ -5,16 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Font family -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- FontAwsome -->
-    <link rel="stylesheet" href="../../public/css/font-awesome.min.css">
-    <script src="https://kit.fontawesome.com/89154cd7a2.js" crossorigin="anonymous"></script>
-    <!-- Feather icon -->
-    <script src="https://unpkg.com/feather-icons"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <!-- include config and header -->
+    <?php
+    include '../../resources/head/head-config.php';
+    ?>
+
+    <title>Account</title>
+
     <!-- CSS -->
     <link rel="stylesheet" href="../../public/css/account.css">
     <!-- include header -->
@@ -26,7 +23,6 @@
     if (!isset($_SESSION['user_id'])) {
         header("Location: ../../app/view/404.php");
     }
-
 
     include '../../resources/includes/headerLogged.php';
 
@@ -44,26 +40,22 @@
 </head>
 
 <body>
-    <div>
-        <h3 class="account__title">TÀI KHOẢN</h3>
-    </div>
     <div class="account__container">
-        <h4 class="person__email"><i data-feather="user" class="person__icon"></i> Thông tin tài khoản</h4>
-        <div class="account__person">
-            <p><i data-feather="phone" class="person__icon"></i>
-                <?php echo $row['phone']; ?>
-            </p>
+        <div class="account__person mx-auto">
             <p><i data-feather="user" class="person__icon"></i>
                 <?php echo $row['full_name']; ?>
+            </p>
+            <p><i data-feather="phone" class="person__icon"></i>
+                <?php echo $row['phone']; ?>
             </p>
             <p> <i data-feather="mail" class="person__icon"></i>
                 <?php echo $row['email']; ?>
             </p>
-        </div>
 
-        <form method="post" action="../controller/delete-account-controller.php">
-            <input type="submit" class="btnDelete" value="XÓA TÀI KHOẢN">
-        </form>
+            <form method="post" action="../controller/delete-account-controller.php">
+                <input type="submit" class="btnDelete" value="XÓA TÀI KHOẢN">
+            </form>
+        </div>
     </div>
 </body>
 <script>feather.replace()</script>

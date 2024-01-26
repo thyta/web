@@ -5,23 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <!-- Themify fonticon -->
-    <link rel="stylesheet" href="../../public/font/themify-icons/themify-icons.css">
-    <?php include('../../resources/head/fh_head.php') ?>
-    <!-- Css -->
-    <link rel="stylesheet" href="../../public/css/header.css">
-    <!-- Font family -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
-    <!-- Feather icon -->
-    <script src="https://unpkg.com/feather-icons"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <!-- Jquery -->
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <?php
+    include '../../resources/head/head-config.php';
+    ?>
 
     <script>
         $(document).ready(function () {
@@ -141,7 +127,7 @@
                 <div class="navigation__logo"><a href="../../app/view/homepage.php"><img src="../../public/img/logo.png"
                             alt=""></a></div>
                 <ul class="navigation__list">
-                    <li class="navigation__item"><a href="../../app/view/search.php" class="search" id="btn-search">
+                    <li class="navigation__item"><a href="../../app/view/search-product-view.php" class="search" id="btn-search">
                             <i data-feather="search"></i></a></li>
                     <li class="navigation__item"><button type="button" onclick="onRight()"
                             class="navigation__link btn__wb" id="btn-login">Đăng nhập</button></li>
@@ -1053,7 +1039,7 @@
             };
             $.ajax({
                 method: "POST",
-                url: "../../app/controller/registerController.php",
+                url: "../../app/controller/register-controller.php",
                 data: requestData,
                 success: function (notification) {
                     // Cập nhật thông báo phản hồi

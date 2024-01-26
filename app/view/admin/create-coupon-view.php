@@ -1,3 +1,5 @@
+<?php include '../../../resources/head/admin-check.php' ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +9,7 @@
 
     <link rel="stylesheet" href="../../../public/css/headerAdmin.css">
 
-    <title>Admin - Manage Product</title>
+    <title>Admin - Create Coupon</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -18,53 +20,11 @@
             margin: 5px;
         }
     </style>
-
-    <script>
-        $(document).ready(function () {
-            // Initial load
-            $.get("../../model/load-product-manage.php?page=1", function (data, status) {
-                console.log("Initial Load AJAX Response:", data);
-                $(".divManageProduct").html(data);
-            })
-
-            $(".page-btn").click(function () {
-                // Get the value of the clicked button
-                var pageBtnValue = $(this).val();
-                // Send search request to web server with the button value
-                $.get("../../controller/admin/adManageController.php?page=" + pageBtnValue, function (data, status) {
-                    $(".divManageProduct").html(data);
-                });
-
-            });
-        });
-    </script>
 </head>
 
 <body class="bg-light">
     <img src="../../../public/img/logo.png" alt="" style="width: 15%; height: auto; margin-left: 6%">
 
-    <div class="container mt-5">
-        <table class="table table-bordered">
-            <thead class="thead-light">
-                <tr>
-                    <th style="width: 20%;">ID</th>
-                    <th style="width: 20%;">Tên sản phẩm</th>
-                    <th style="width: 20%;">Phân loại</th>
-                    <th style="width: 40%;">Hành động</th>
-                </tr>
-            </thead>
-            <tbody class="divManageProduct">
-            </tbody>
-        </table>
-        <div class="pagination justify-content-center divPerPage">
-            <button class="btn btn-secondary page-btn mx-1" value="1">1</button>
-            <button class="btn btn-secondary page-btn mx-1" value="2">2</button>
-            <button class="btn btn-secondary page-btn mx-1" value="3">3</button>
-            <button class="btn btn-secondary page-btn mx-1" value="4">4</button>
-            <button class="btn btn-secondary page-btn mx-1" value="5">5</button>
-            <button class="btn btn-secondary page-btn mx-1" value="6">6</button>
-        </div>
-    </div>
     <div class="coupon" style="margin:auto;">
         <div class="container__input">
             <label for="coupon_code">Mã khuyến mãi:</label>

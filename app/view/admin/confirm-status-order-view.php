@@ -1,3 +1,5 @@
+<?php include '../../../resources/head/admin-check.php' ?>
+
 <!DOCTYPE html>
 <html lang="en">
 

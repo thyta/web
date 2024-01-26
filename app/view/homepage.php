@@ -6,12 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Style of homepage-->
     <link rel="stylesheet" href="../../public/css/style.css">
-    <!-- Font family -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
 
-    <!-- include config for header and footer -->
+    <!-- include config and header -->
     <?php
-    include '../../resources/head/fh_head.php';
+    include '../../resources/head/head-config.php';
 
     include '../../resources/head/login-check-php';
     ?>

@@ -1,4 +1,4 @@
-<?php include '../../../resources/head/checkAdmin.php' ?>
+<?php include '../../../resources/head/admin-check.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,8 +41,6 @@
 
                 // Serialize parameters into a query string
                 var queryString = $.param(parameters);
-
-                alert(queryString);
 
                 $.get("../../../app/controller/admin/create-product-controller.php?" + queryString, function (data, status) {
                     console.log("Response data:", data);

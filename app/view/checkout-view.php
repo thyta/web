@@ -18,7 +18,7 @@
     
     // IF not session or not logged in
     if (!isset($_SESSION['user_id'])) {
-        header("Location: ../../app/view/404.php");
+        header("Location: ../../app/view/login-require.php");
     }
     ?>
 </head>

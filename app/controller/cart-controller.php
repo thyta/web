@@ -53,7 +53,7 @@ function displayCart($cart)
     echo '<div class="text-right" style="margin-right:35px">';
     echo '<div class="total-price font-weight-bold" style="font-size: 20px">Tổng giá: ' . number_format($totalPrice, 0, ',', '.') . ' vnđ</div>';
     echo '</div>';
-    echo "<a href='checkout.php'style='font-size:45px; text-decoration: none; color: green; margin-left: 63%'><b>Đặt hàng</b></a>";
+    echo "<a href='checkout-view.php'style='font-size:45px; text-decoration: none; color: green; margin-left: 63%'><b>Đặt hàng</b></a>";
 }
 
 function displayEmptyCart()

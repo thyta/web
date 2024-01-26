@@ -49,7 +49,7 @@ try {
     foreach ($cartItems as $item) {
         $productID = $item['id'];
         $quantity = $item['quantity'];
-        
+
         $getProductPriceQuery = "SELECT price FROM products WHERE product_id = $productID";
         $result = $conn->query($getProductPriceQuery);
         $productPrice = $result->fetch_assoc()['price'];
@@ -58,7 +58,10 @@ try {
 
         $insertOrderItemQuery = "INSERT INTO order_items (order_id, product_id, quantity, total_amount) 
                                  VALUES ('$order_id', $productID, $quantity, $totalAmount)";
-        $conn->query($insertOrderItemQuery);
+
+        
+
+        // $conn->query($insertOrderItemQuery);
     }
 
     // Commit transaction
