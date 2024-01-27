@@ -44,7 +44,7 @@ if ($result_per_page) {
                 echo "<td>" . $row["product_name"] . "</td>";
                 echo "<td>" . $row["category_name"] . "</td>";
                 echo "<td class='actions'>";
-                echo "<a class='btn' href='../../view/adminView/update-product-view.php?id=" . $row["product_id"] . "'>Update</a>";
+                echo "<a class='btn' href='../../view/admin/update-product-view.php?id=" . $row["product_id"] . "'>Update</a>";
                 echo "<a class='btn' href='../../controller/admin/delete-product-controller.php?id=" . $row["product_id"] . "'>Delete</a>";
                 echo "</td>";
                 echo "</tr>";

@@ -14,7 +14,7 @@
             // Sử dụng sự kiện delegation trên một phần tử cha tĩnh
             $(".divMainCart").on("click", ".increase_cart", function () {
                 var productID = $(this).data("productid");
-                alert(productID);
+                // alert(productID);
                 $.ajax({
                     url: "../../app/controller/cart-controller.php?action=add&productID=" + productID,
                     method: "GET",
@@ -30,7 +30,7 @@
 
             $(".divMainCart").on("click", ".decrease_cart", function () {
                 var productID = $(this).data("productid");
-                alert(productID);
+                // alert(productID);
                 $.ajax({
                     url: "../../app/controller/cart-controller.php?action=decrease&productID=" + productID,
                     method: "GET",
@@ -482,7 +482,7 @@
                     <p class="group__title--third">Tẩy Da Chết Mặt</p>
                     <ul class="group__product--list" id="skincare-5-list">
                         <li class="group__product--item">
-                            <a href="../../app/view/productitem.php?productID=34" class="group__product--link link__pc--wb">
+                            <a href="../../app/view/single-product.php?productID=21" class="group__product--link link__pc--wb">
                                 <div class="group__info--product">
                                     <div class="group__name--product">Cà phê Đắk Lắk làm sạch da chết mặt 150ml</div>
                                     <div class="group__describe--product">Cho làn da mềm mại và rạng rỡ</div>

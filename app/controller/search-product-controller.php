@@ -27,7 +27,7 @@ if ($result->num_rows > 0) {
         $formatted_price = number_format($row['price'], 0, ',', '.');
         echo '<p class="product_price">' . $formatted_price . ' đ</p>';
         echo '</span>';
-        echo '<div>';
+        echo '<div>';   
         echo '</div>';
         echo '</div>';
         echo '</a>';

@@ -10,7 +10,7 @@
     <?php
     include '../../resources/head/head-config.php';
 
-    include '../../resources/head/login-check-php';
+    include '../../resources/head/login-check.php';
     ?>
 
     <link rel="stylesheet" href="../../public/css/search-product.css">

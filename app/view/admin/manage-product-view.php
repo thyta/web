@@ -42,6 +42,9 @@
     </script>
 </head>
 
+<?php include '../../../resources/includes/headerAdmin.php'; ?>
+
+
 <body class="bg-light">
     <img src="../../../public/img/logo.png" alt="" style="width: 15%; height: auto; margin-left: 6%">
 

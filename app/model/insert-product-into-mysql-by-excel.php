@@ -1,9 +1,9 @@
 <?php
-require 'vendor/autoload.php';
+require '../../vendor/autoload.php';
 
 use PhpOffice\PhpSpreadsheet\IOFactory;
 
-include 'app/model/connectdb.php';
+include 'connectdb.php';
 
 $spreadsheet = IOFactory::load('../../database/product-database-in-excel.xlsx');
 $sheet = $spreadsheet->getActiveSheet();

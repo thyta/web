@@ -72,6 +72,9 @@
 
 </head>
 
+<?php include '../../../resources/includes/headerAdmin.php'; ?>
+
+
 <body>
     <img src="../../../public/img/logo.png" alt="" style="width: 15%; height: auto; margin-left: 6%">
     <div class="container mt-5 row mx-auto" style="padding-bottom: 10%">
@@ -120,7 +123,7 @@
                         <input type="text" id="stockQuantity" class="form-control" name="stock_quantity" required>
                     </div>
 
-                    <?php include '../../../app/model/getCategory.php'; ?>
+                    <?php include '../../../app/model/get-category.php'; ?>
 
                 </div>
 

@@ -1,40 +1,36 @@
 <?php
 
 try {
-    // Đường dẫn đến tệp autoload.php của PHPMailer (nếu bạn sử dụng Composer)
+    // Path to the PHPMailer autoload.php file (if you are using Composer)
     require '../../../vendor/autoload.php';
 
-    // Tạo một đối tượng PHPMailer
     $mail = new PHPMailer\PHPMailer\PHPMailer();
 
-    // Thiết lập chế độ debug (0: không hiển thị, 2: hiển thị thông báo lỗi)
+    // Set debug mode (0: no output, 2: verbose debug output)
     $mail->SMTPDebug = 0;
 
-    // Sử dụng giao thức SMTP
+    // Use SMTP
     $mail->isSMTP();
 
-    // Thiết lập máy chủ SMTP của Google
+    // Set Google's SMTP server
     $mail->Host = 'smtp.gmail.com';
 
-    // Thiết lập cổng SMTP (cổng 587 thường được sử dụng cho TLS)
+    // Set SMTP port (port 587 is commonly used for TLS)
     $mail->Port = 587;
 
-    // Bật sử dụng TLS
+    // Turn on TLS
     $mail->SMTPSecure = 'tls';
 
-    // Bật chế độ xác thực SMTP
     $mail->SMTPAuth = true;
 
-    // Đặt địa chỉ email người gửi
+    // Set the sender's email address
     $mail->Username = '21521517@gm.uit.edu.vn';
 
-    // Đặt mật khẩu của tài khoản email
-    $mail->Password = 'taThy2003@';
+   // Set the email account's password
+    $mail->Password = '**********';
 
-    // Đặt tên người gửi
+    // Set sender's name
     $mail->setFrom('21521517@gm.uit.edu.vn', 'ThyAnh');
-
-
 
 
     // Check if the action and order_id parameters are set
@@ -72,12 +68,12 @@ try {
             $selectOrderItemsQuery = "SELECT * FROM order_items WHERE order_id = '$order_id'";
             $resultItems = $conn->query($selectOrderItemsQuery);
 
-            // Đặt địa chỉ email người nhận
+            // Set recipient's email address
             $mail->addAddress('anhthy18072003.tran@gmail.com', 'Daniis Axelor');
-            // Đặt chủ đề
+            // Set subject
             $mail->Subject = 'Xac nhan don hang';
 
-            // Đặt nội dung email
+            // Set content
             $mail->Body = "
                 <p>Xin chào</p>
                 <p>Cảm ơn bạn đã đặt hàng từ chúng tôi. Dưới đây là xác nhận đơn hàng của bạn:</p>
@@ -97,10 +93,9 @@ try {
                 <p>Trân trọng,</p>
             ";
 
-            // Thiết lập định dạng email là HTML
             $mail->isHTML(true);
 
-            // Gửi email
+            // Send email
             if (!$mail->send()) {
                 echo 'Message could not be sent. Mailer Error: ' . $mail->ErrorInfo;
             } else {
@@ -123,14 +118,12 @@ try {
             // Get order items from the database
             $selectOrderItemsQuery = "SELECT * FROM order_items WHERE order_id = '$order_id'";
             $resultItems = $conn->query($selectOrderItemsQuery);
-            // Đặt địa chỉ email người nhận
 
-            // Đặt địa chỉ email người nhận
+            // Reciepter's email
             $mail->addAddress('anhthy18072003.tran@gmail.com', 'Daniis Axelor');
-            // Đặt chủ đề
+
             $mail->Subject = 'Huy don hang';
 
-            // Đặt nội dung email
             $mail->Body = "
                 <p>Xin chào</p>
                 <p>Chúng tôi rất tiếc thông báo rằng đơn hàng của bạn đã bị hủy.</p>
@@ -154,10 +147,8 @@ try {
                 <p>Trân trọng,</p>
             ";
 
-            // Thiết lập định dạng email là HTML
             $mail->isHTML(true);
 
-            // Gửi email
             if (!$mail->send()) {
                 echo 'Message could not be sent. Mailer Error: ' . $mail->ErrorInfo;
             } else {

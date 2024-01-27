@@ -15,12 +15,16 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../../../public/css/adminCSS/adManage.css">
 
+
+
     <style>
         .page-btn {
             margin: 5px;
         }
     </style>
 </head>
+
+<?php include '../../../resources/includes/headerAdmin.php'; ?>
 
 <body class="bg-light">
     <img src="../../../public/img/logo.png" alt="" style="width: 15%; height: auto; margin-left: 6%">

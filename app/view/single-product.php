@@ -12,7 +12,7 @@
     <?php
     include '../../resources/head/head-config.php';
 
-    include '../../resources/head/login-check-php';
+    include '../../resources/head/login-check.php';
     ?>
 
     <!-- connect to the database -->

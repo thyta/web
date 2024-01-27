@@ -51,6 +51,8 @@
     </script>
 </head>
 
+<?php include '../../../resources/includes/headerAdmin.php'; ?>
+
 <body class="bg-light">
     <img src="../../../public/img/logo.png" alt="" style="width: 15%; height: auto; margin-left: 6%">
     <div class="container mt-5">
@@ -83,7 +85,7 @@
                             placeholder="100" required>
                     </div>
 
-                    <?php include '../../../app/model/getCategory.php'; ?>
+                    <?php include '../../../app/model/get-category.php'; ?>
 
                     <div class="form-group">
                         <label for="imgLink">Link hình ảnh:</label>

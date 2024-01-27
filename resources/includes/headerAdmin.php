@@ -1,25 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CSS -->
-    <link rel="stylesheet" href="../../public/css/headerAdmin.css">
-</head>
 
-<body>
-    <div class="header__admin">
-        <div class="admin__left">
-            <img src="../../public/img/logo.png" alt="">
-            <div    class="group__manager">Quản lý sản phẩm</div>
-            <div    class="group__manager">Tạo sản phẩm</div>
-            <div    class="group__manager">Xác nhận đơn hàng</div>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light shadow-lg" style="background-color: #FFC107">
+        <a class="navbar-brand" href="#">Admin Dashboard</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" style="color:black" href="confirm-status-order-view.php">Kiểm tra đơn hàng chờ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color:black" href="create-coupon-view.php">Tạo mới Coupon</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color:black" href="create-product-view.php">Tạo mới sản phẩm</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color:black" href="manage-product-view.php">Quản lý sản phẩm</a>
+                </li>
+            </ul>
         </div>
-        <div class="admin__right">
-            <div class="group__manager">Đăng xuất</div>
-        </div>
-    </div>
-</body>
-
-</html>
+    </nav>
+</header>

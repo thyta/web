@@ -11,6 +11,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
+    <link rel="icon" type="image/x-icon" href="../../../favicon.ico">
+
+
     <style>
         .page-btn {
             margin: 5px;
@@ -36,6 +39,9 @@
         });
     </script>
 </head>
+
+<?php include '../../../resources/includes/headerAdmin.php'; ?>
+
 
 <body class="bg-light">
     <img src="../../../public/img/logo.png" alt="" style="width: 15%; height: auto; margin-left: 6%">

@@ -1,4 +1,4 @@
--- CREATE DATABASE web;
+CREATE DATABASE web;
 USE web;
 
 CREATE TABLE IF NOT EXISTS user_types (
