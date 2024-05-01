@@ -1,13 +1,13 @@
 <?php
 // Database connection parameters (define these as constants if not already defined)
 if (!defined('DB_SERVER')) {
-    define('DB_SERVER', 'localhost');
+    define('DB_SERVER', 'fdb1032.awardspace.net');
 }
 if (!defined('DB_USERNAME')) {
-    define('DB_USERNAME', 'root');
+    define('DB_USERNAME', '4413756_wpress58d8b8cb');
 }
 if (!defined('DB_PASSWORD')) {
-    define('DB_PASSWORD', '');
+    define('DB_PASSWORD', 'taThy2003@');
 }
 if (!defined('DB_NAME')) {
     define('DB_NAME', 'webecom');
