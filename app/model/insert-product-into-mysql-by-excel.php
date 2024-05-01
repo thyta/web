@@ -9,6 +9,12 @@ $spreadsheet = IOFactory::load('../../database/product-database-in-excel.xlsx');
 $sheet = $spreadsheet->getActiveSheet();
 $data = $sheet->toArray();
 
+// Prepare the SQL statement
+$sql = "INSERT INTO products (product_name, description, category_id, price, imgLink, sold_quantity, stock_quantity, discount_percentage, discount_start_date, discount_end_date, status_product) 
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+$stmt = $conn->prepare($sql);
+
+// Iterate through the rows in the Excel file
 for ($i = 1; $i < count($data); $i++) {
     $row = $data[$i];
     $productName = $conn->real_escape_string($row[0]);
@@ -23,11 +29,12 @@ for ($i = 1; $i < count($data); $i++) {
     $discountEndDate = $row[10]; // Assuming discount_end_date is in a valid date format
     $statusProduct = (bool) $row[11];
 
-    $sql = "INSERT INTO products (product_name, description, category_id, price, imgLink, sold_quantity, stock_quantity, discount_percentage, discount_start_date, discount_end_date, status_product)
-            VALUES ('$productName', '$description', $categoryId, $price, '$imgLink', $soldQuantity, $stockQuantity, $discountPercentage, '$discountStartDate', '$discountEndDate', $statusProduct)";
-
-    $conn->query($sql);
+    // Bind parameters and execute the statement
+    $stmt->bind_param("ssiddiiisss", $productName, $description, $categoryId, $price, $imgLink, $soldQuantity, $stockQuantity, $discountPercentage, $discountStartDate, $discountEndDate, $statusProduct);
+    $stmt->execute();
 }
 
+// Close the statement and connection
+$stmt->close();
 $conn->close();
 ?>

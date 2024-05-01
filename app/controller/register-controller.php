@@ -1,17 +1,16 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate and sanitize user input
-    $phone = filter_input(INPUT_POST, 'tel', FILTER_SANITIZE_STRING);
-    $full_name = filter_input(INPUT_POST, 'full_name', FILTER_SANITIZE_STRING);
+    $phone = filter_input(INPUT_POST, 'tel', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $full_name = filter_input(INPUT_POST, 'full_name', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-    $password = filter_input(INPUT_POST, 'pass', FILTER_SANITIZE_STRING);
-    $confirm_password = filter_input(INPUT_POST, 'confirm_pass', FILTER_SANITIZE_STRING);
+    $password = filter_input(INPUT_POST, 'pass', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $confirm_password = filter_input(INPUT_POST, 'confirm_pass', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
     // Check if passwords match
     if ($password != $confirm_password) {
         $notification = "Tớ nghĩ là mật khẩu bạn nhập không khớp đó. Bạn hãy thử nhập lại nhé!.";
         echo $notification;
-
     } else {
         // Hash the password using bcrypt
         $hashed_password = password_hash($password, PASSWORD_BCRYPT);
@@ -33,7 +32,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($check_phone_result->num_rows > 0) {
             $notification = "Oh sorry! Đăng ký không thành công mất rùi. Có vẻ như bạn chưa nhập số điện thoại hoặc đã được sử dụng rồi đó, đừng buồn và hãy nhập lại số khác nhé bạn iu <3";
             echo $notification;
-
         } else {
             // Email is available, proceed with user registration
 

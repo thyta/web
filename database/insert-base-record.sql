@@ -1,4 +1,4 @@
-USE web;
+`-- USE web;
 
 INSERT INTO
     user_types (type_name)
@@ -121,4 +121,4 @@ VALUES
         'Tran Anh Thy',
         'anhthy18072003.tran@gmail.com',
         1
-    );
+    );`

@@ -10,7 +10,7 @@ if (!defined('DB_PASSWORD')) {
     define('DB_PASSWORD', '');
 }
 if (!defined('DB_NAME')) {
-    define('DB_NAME', 'web');
+    define('DB_NAME', 'webecom');
 }
 
 // Create connection

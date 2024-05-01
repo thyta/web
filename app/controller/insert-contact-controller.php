@@ -1,9 +1,9 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = filter_input(INPUT_POST, 'nameContact', FILTER_SANITIZE_STRING);
-    $tel = filter_input(INPUT_POST, 'telContact', FILTER_SANITIZE_STRING);
-    $email = filter_input(INPUT_POST, 'emailContact', FILTER_SANITIZE_STRING);
-    $question = filter_input(INPUT_POST, 'questionContact', FILTER_SANITIZE_STRING);
+    $name = filter_input(INPUT_POST, 'nameContact', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $tel = filter_input(INPUT_POST, 'telContact', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $email = filter_input(INPUT_POST, 'emailContact', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $question = filter_input(INPUT_POST, 'questionContact', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
     include '../model/connectdb.php';
     

@@ -1,5 +1,5 @@
-CREATE DATABASE web;
-USE web;
+-- CREATE DATABASE web;
+-- USE web;
 
 CREATE TABLE IF NOT EXISTS user_types (
     type_id INT PRIMARY KEY AUTO_INCREMENT,
@@ -50,20 +50,6 @@ CREATE TABLE IF NOT EXISTS coupons (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
-USE web;
-
--- BẢNG LIÊN HỆ CỦA BIN, ĐỪNG ĐỤNG DÔ T CHẶT TAY
-CREATE TABLE IF NOT EXISTS `contacts` (
-    contact_id INT AUTO_INCREMENT PRIMARY KEY,
-    contact_name VARCHAR(255) NOT NULL,
-    contact_phone VARCHAR(20) NOT NULL,
-    contact_email VARCHAR(255) NOT NULL,
-    question TEXT NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
--- Checkout
--- Tạo bảng order_statuses
 -- Tạo bảng order_statuses
 CREATE TABLE IF NOT EXISTS order_statuses (
     -- 1: wait; 2: confirm; 3: cancel
