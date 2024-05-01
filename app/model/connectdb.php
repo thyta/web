@@ -1,20 +1,11 @@
 <?php
-// Database connection parameters (define these as constants if not already defined)
-if (!defined('DB_SERVER')) {
-    define('DB_SERVER', 'fdb1032.awardspace.net');
-}
-if (!defined('DB_USERNAME')) {
-    define('DB_USERNAME', '4413756_wpress58d8b8cb');
-}
-if (!defined('DB_PASSWORD')) {
-    define('DB_PASSWORD', 'taThy2003@');
-}
-if (!defined('DB_NAME')) {
-    define('DB_NAME', 'webecom');
-}
+$servername = "us-cluster-east-01.k8s.cleardb.net";
+$username = "b5f417f880e6cf";
+$password = "f7fec413";
+$database = "heroku_6853f831c061b28";
 
 // Create connection
-$conn = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+$conn = mysqli_connect($servername, $username, $password, $database);
 
 // Check connection
 if ($conn->connect_error) {
