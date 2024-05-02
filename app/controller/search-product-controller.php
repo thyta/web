@@ -1,6 +1,7 @@
 <?php
 // Get keyword sent from the client
-$keyword = '%' . strtolower($_GET["keyword"]) . '%';
+$keyword = '%' . ($_GET["keyword"]) . '%';
+// $keyword = '' . ($_GET["keyword"]) . '';
 
 $sql = "SELECT * FROM products WHERE product_name LIKE '$keyword';";
 
@@ -14,8 +15,10 @@ if (!$result) {
 
 if ($result->num_rows > 0) {
     // Output data of each row
+    // echo "<h1> Results " . $keyword . "</h1>";
     echo '<div class="row">';
     while ($row = $result->fetch_assoc()) {
+        
         // Display product information in the template card
         echo '<a href="../../app/view/single-product.php?productID=' . $row['product_id'] . '" class="text-decoration-none col-md-4 col-sm-6 col-xs-12 thumbnail">';
         echo '<img src="' . $row['imgLink'] . '" alt="" class="search__img">';
@@ -34,9 +37,10 @@ if ($result->num_rows > 0) {
     }
     echo '</div>';
 } else {
-    echo "0 results";
+    echo "<h1> 0 results " . $keyword . "</h1>";
 }
 
 // Close the connection
 $conn->close();
 ?>
+    
