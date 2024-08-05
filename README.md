@@ -1,2 +1,4 @@
-link tới cách cấu trúc file, đọc cho hiểu nhé
-https://1drv.ms/w/s!AjdFdC9WxdM3g2RrJ19z7S8V1WMH?e=Ky7x65
+# everything done
+# please route to 
+=> https://youtu.be/8ALswIZRFKA?si=5dc9gah6e_xIoMOF for video demo
+=> https://drive.google.com/file/d/1QFVjIBxW2T77_SLpLIUrl4F8kEHU3rOF/view?usp=sharing for report
